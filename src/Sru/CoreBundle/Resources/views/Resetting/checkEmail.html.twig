@@ -1,0 +1,8 @@
+{% extends "SruCoreBundle:FrontOffice:layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content %}
+<p class="alert-box success text-center">
+{{ 'resetting.check_email'|trans({'%email%': email}) }}
+</p>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+
+
+{% block content %}
+    {{ parent() }}
+    <h1>Modification d'une caractéristique</h1>
+
+
+    <hr>
+    {% if erreurs is defined  %}
+        <div class="alert alert-danger">Erreurs :  {{ erreurs }}</div>
+    {% endif %}
+
+    {% include"SruCoreBundle:BackOffice/Feature:form.edit.html.twig" %}
+
+
+{% endblock %}
+
+
+

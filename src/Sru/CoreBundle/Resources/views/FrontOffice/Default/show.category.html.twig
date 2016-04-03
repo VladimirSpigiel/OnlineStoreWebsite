@@ -1,0 +1,41 @@
+{% extends "SruCoreBundle:FrontOffice:layout.html.twig" %}
+
+    {% block title %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+
+
+    {% endblock %}
+
+
+    {% block content %}
+        {{ parent() }}
+
+        <br><br>
+
+
+        <div id="fond row">
+            <div class="ruban">
+                <h2 class="text-center" style="margin-top:5px;">{{ category }}</h2>
+            </div>
+            <div class="ruban_gauche"></div>
+            <div class="ruban_droit"></div>
+        </div>
+        <br><br>
+        <div class="all_products">
+            {% include "SruCoreBundle:FrontOffice/Default:index.content.html.twig"  %}
+        </div>
+
+
+    {% endblock %}
+
+
+
+    {% block javascripts %}
+        {{ parent() }}
+
+
+    {% endblock %}

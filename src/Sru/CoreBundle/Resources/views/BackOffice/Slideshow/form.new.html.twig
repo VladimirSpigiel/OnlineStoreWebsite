@@ -1,0 +1,15 @@
+
+
+<form method="post" class="text-left shipmentZoneForm" role="form" action="{{ path('admin_slideshow_create') }}" {{ form_enctype(form) }}>
+
+
+
+    <button class="btn btn-success">
+        <span class="glyphicon glyphicon-ok"></span> &nbsp;
+        Créer le carousel</button>
+
+    <br><br>
+
+    {% include  "SruCoreBundle:BackOffice/Slideshow:form.content.html.twig" %}
+
+</form>

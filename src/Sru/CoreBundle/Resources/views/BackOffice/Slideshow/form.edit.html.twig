@@ -1,0 +1,15 @@
+
+
+<form method="post" class="text-left" role="form" action="{{ path('admin_slideshow_update', {id: entity.id}) }}" {{ form_enctype(form) }}>
+
+
+
+    <button class="btn btn-warning">
+        <span class="glyphicon glyphicon-ok"></span> &nbsp;
+        Modifier le carousel</button>
+
+    <br><br>
+
+    {% include  "SruCoreBundle:BackOffice/Slideshow:form.content.html.twig" %}
+
+</form>

@@ -1,0 +1,64 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Utilisateur : {{ entity.username }}</h1>
+    <hr>
+
+    <a href="{{ path('admin_user_edit', {id : entity.id}) }}" class="btn btn-warning">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp; Modifier</a>
+    <a href="{{ path('admin_user_delete', {id : entity.id}) }}" class="btn btn-danger">
+        <span class="glyphicon glyphicon-trash"></span>&nbsp; Supprimer</a>
+    <br><br>
+
+
+    <div class="table-responsive">
+        <table class="table table-bordered text-left table-striped table-hover">
+            <thead class="bg-primary">
+            <tr>
+                <th>Nom d'utilisateur</th>
+
+                <th>Email</th>
+                <th>Dernière connexion</th>
+                <th class="text-center">Actif</th>
+                <th class="text-center">Profil</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>{{ entity.username }}</td>
+
+                    <td>{{ entity.email }}</td>
+                    <td>{{ entity.lastLogin|date('H:i:s d-m-Y') }}</td>
+                    <td class="text-center">
+                        {% if entity.enabled == true %}
+                            <span class="glyphicon glyphicon-thumbs-up text-success"></span>
+                        {% else %}
+                            <span class="glyphicon glyphicon-thumbs-down text-danger"></span>
+                        {% endif %}
+                    </td>
+
+                    <td class="text-center">
+                        {% if entity.profil %}
+                            {{ entity.profil.libelle }}
+                        {% else %}
+                            Aucun
+                        {% endif %}
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+    <h3>Ses commandes</h3>
+
+
+    <br>
+
+    <h4>Ses promotions</h4>
+
+{% endblock %}

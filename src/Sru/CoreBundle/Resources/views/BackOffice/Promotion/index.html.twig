@@ -1,0 +1,149 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Gestion des promotions</h1>
+    <hr>
+
+    <a href="{{ path('admin_promotion_new') }}" class="btn btn-success">
+        <span class="glyphicon glyphicon-plus"></span>&nbsp; Créer une promotion</a>
+    <div class="text-center"> {{ knp_pagination_render(entities) }}</div>
+
+<form method="post" action="{{ path('admin_promotion_options') }}">
+
+
+
+    {% include "SruCoreBundle:BackOffice/Filter:checkbox.html.twig"
+    with {"enable" : "true","disable": "true"}%}
+    <br>
+
+    <div class="table-responsive">
+        <table class="table table-bordered text-left table-striped table-hover">
+            <thead class="bg-primary">
+            <tr>
+                <th class="text-center"><input type="checkbox" class="selectAll"  ></th>
+                <th>Image</th>
+                <th>
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Code", "field" : "code"} %}
+                </th>
+
+                <th>
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Nom", "field" : "name"} %}
+                </th>
+                <th>
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Réduction (%)", "field" : "reduction"} %}
+                </th>
+                <th>
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Produit", "field" : "product"} %}
+                </th>
+                <th>Catégorie</th>
+
+                <th>
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Date début", "field" : "beginAtDate"} %}
+                </th>
+                <th>
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Date de fin", "field" : "expireAtDate"} %}
+                </th>
+                <th class="text-center">
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Actif", "field" : "enabled"} %}
+                </th>
+                <th class="text-center">
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Public", "field" : "public"} %}
+                </th>
+                <th class="text-center">Modifier</th>
+                <th class="text-center">Supprimer</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td class="text-center"><input type="checkbox" class="checker" name="entity[]" value="{{ entity.id }}"></td>
+                    <td class="col-lg-1 text-center">
+                        {% if entity.picture %}
+
+
+                                    <img src="{{ asset('bundles/srucore/images/') ~ entity.picture.name }}" height="50">
+
+
+
+                        {% else %}
+                            <div class="img-thumbnail text-center">
+                                <b>Aucune image</b>
+                            </div>
+                        {% endif %}
+                    </td>
+                    <td>{{ entity.code }}</td>
+                    <td>{{ entity.name }}</td>
+                    <td>{{ entity.reduction }}</td>
+
+                    <td>
+                        <select>
+                            {% for product in entity.product %}
+                                <option>
+                                    {{ product }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </td>
+
+                    <td>
+                        <select>
+                            {% for category in entity.category %}
+                                <option>
+                                    {{ category }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </td>
+
+                    <td>{{ entity.Beginatdate|date('d-m-Y') }}</td>
+                    <td>{{ entity.Expireatdate|date('d-m-Y') }}</td>
+
+                    <td class="text-center">
+                        <a href="{{ path('admin_promotion_state', {id : entity.id}) }}">
+                            {% if entity.enabled == true %}
+                                <span class="glyphicon glyphicon-thumbs-up text-success"></span>
+                            {% else %}
+                                <span class="glyphicon glyphicon-thumbs-down text-danger"></span>
+                            {% endif %}
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a href="{{ path('admin_promotion_public', {id : entity.id}) }}">
+                            {% if entity.public == true %}
+                                <span class="glyphicon glyphicon-eye-open text-success"></span>
+                            {% else %}
+                                <span class="glyphicon glyphicon-eye-close text-warning"></span>
+                            {% endif %}
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a href="{{ path('admin_promotion_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                    </td>
+                    <td class="text-center">
+                        <a href="{{ path('admin_promotion_delete', { 'id': entity.id }) }}" onclick="return confirm('Etes-vous sur de vouloir supprimer {{ entity.code }} ?')">
+                            <span class="glyphicon glyphicon-remove text-danger"></span>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% include "SruCoreBundle:BackOffice/Filter:checkbox.html.twig"
+    with {"enable" : "true","disable": "true"}%}
+    </form>
+
+    <div class="text-center"> {{ knp_pagination_render(entities) }}</div>
+{% endblock %}

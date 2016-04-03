@@ -1,0 +1,12 @@
+<form method="post" class="text-left shipmentZoneForm" role="form" action="{{ path('admin_shipmentZone_update', {id:entity.id}) }}" {{ form_enctype(form) }}>
+
+
+    <button class="btn btn-warning">
+        <span class="glyphicon glyphicon-ok"></span> &nbsp;
+        Modifier la zone de livraison</button>
+
+    <br><br>
+
+    {% include "SruCoreBundle:BackOffice/ShipmentZone:form.content.html.twig" %}
+
+</form>

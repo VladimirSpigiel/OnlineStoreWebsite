@@ -1,0 +1,32 @@
+admin_profil:
+    pattern:  /page/{page}/filter/{field}.{orderby}/options/{fieldO}{criteria}
+    defaults: { _controller: "SruCoreBundle:Profil:index", page : 1, field: libelle, orderby : asc, fieldO : null, criteria : null }
+
+admin_profil_options:
+    pattern:  /options
+    defaults: { _controller: "SruCoreBundle:Profil:options"}
+
+admin_profil_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:Profil:show" }
+
+admin_profil_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:Profil:new" }
+
+admin_profil_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:Profil:create" }
+    requirements: { _method: post }
+
+admin_profil_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:Profil:edit" }
+
+admin_profil_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:Profil:update" }
+
+admin_profil_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:Profil:delete" }

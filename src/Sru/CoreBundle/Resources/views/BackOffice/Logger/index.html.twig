@@ -1,0 +1,90 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Gestion des logs</h1>
+    <hr>
+
+    <h3 class="text-center">Lecture</h3>
+
+    <div class="col-sm-12">
+        <div class="well text-center">
+
+
+
+        <div class="table-responsive">
+            <table class="table table-bordered text-left table-striped table-hover">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Date</th>
+                    <th>Message</th>
+                    <th>Cause</th>
+                    <th>Par</th>
+                    <th>Depuis</th>
+                    <th>Lien</th>
+                </tr>
+                </thead>
+                <tbody>
+
+
+            {% for entity in logsDb  %}
+
+                {% if loop.index0 < 5 %}
+                <tr>
+                    <td>{{ entity.thrownAt|date('H:i:s d-m-Y') }}</td>
+                    <td>{{ entity.message }}</td>
+                    <td>{{ entity.reason }}</td>
+                    <td>{{ entity.thrownBy }}</td>
+                    <td>{{ entity.thrownFrom }}</td>
+                    <td>{{ entity.href }}</td>
+                </tr>
+                {% endif %}
+
+             {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+            <a href="{{ path('logger_db') }}" class="btn btn-default">Lire les logs en base de données ({{ logsDb|length }} lignes)</a>
+
+        </div>
+
+    </div>
+
+
+
+
+        <!---------------------------------------->
+    <div class="row"></div>
+
+    <h3 class="text-center">Supression</h3>
+
+    <div class="col-sm-6">
+        <p class="well text-center">
+            <a href="{{ path('logger_db_delete') }}" class="btn btn-default"
+               onclick="return confirm('Etes-vous sur ?')">Effacer les logs en base de données ({{ logsDb|length }} lignes)</a>
+
+        </p>
+
+    </div>
+
+    <div class="col-sm-6">
+        <p class="well text-center">
+            <a href="{{ path('logger_txt_delete') }}" class="btn btn-default"
+               onclick="return confirm('Etes-vous sur ?')">Effacer les logs en fichier texte ({{ logsTxt|length-1 }} lignes)</a>
+        </p>
+    </div>
+
+         <!---------------------------------------->
+
+    <div class="col-sm-12">
+        <p class="well text-center">
+            <a href="{{ path('logger_all_delete') }}" class="btn btn btn-danger"
+               onclick="return confirm('Etes-vous sur ?')">Effacer les logs ({{ logsDb|length + logsTxt|length-1 }} lignes)</a>
+        </p>
+
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+
+
+{% block content %}
+    {{ parent() }}
+    <h1>Modification d'un état</h1>
+
+
+    <hr>
+    {% if erreurs is defined  %}
+        <div class="alert alert-danger">Erreurs :  {{ erreurs }}</div>
+    {% endif %}
+
+    {% include"SruCoreBundle:BackOffice/OrderUserInfo:form.edit.html.twig" %}
+
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/srucore/css/bootstrap-switch.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/srucore/js/bootstrap-switch.js') }}"></script>
+{% endblock %}
+
+
+

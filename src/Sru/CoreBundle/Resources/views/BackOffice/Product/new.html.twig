@@ -1,0 +1,36 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/srucore/css/bootstrap-multiselect.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/srucore/css/bootstrap-switch.css') }}">
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+
+    <h1>Création d'un produit</h1>
+
+
+    <hr>
+    {% if erreurs is defined  %}
+        <div class="alert alert-danger">Erreurs :  {{ erreurs }}</div>
+    {% endif %}
+
+    {% include "SruCoreBundle:BackOffice/Product:form.new.html.twig" %}
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+
+
+    <script src="{{ asset('bundles/srucore/js/bootstrap-multiselect.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/srucore/js/bootstrap-switch.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/srucore/js/ajax/create.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/srucore/js/product/price.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/srucore/js/picture/pictureHandler.js') }}" ></script>
+
+
+
+{% endblock %}

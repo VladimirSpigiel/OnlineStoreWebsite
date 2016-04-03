@@ -1,0 +1,85 @@
+{% extends "SruCoreBundle:FrontOffice:layout.html.twig" %}
+
+    {% block title %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+
+    {% endblock %}
+
+
+    {% block body %}
+        {{ parent() }}
+        <h2 class="text-center">Commande</h2>
+
+        {% for erreur in app.session.flashbag.get("erreurs") %}
+            <div class="alert alert-danger text-center">{{ erreur }}</div>
+        {% endfor %}
+        <form method="post">
+            <div class="row">
+
+                    <div class="well col-lg-5">
+                        <h4>1. Coupon de réduction</h4>
+                        Vous posssédez un coupon ? Entrez son code et validez si vous souhaitez l'utiliser.
+                        <br><br>
+                        <label for="code">Saisissez votre code :</label>
+                        <div class="input-group col-lg-5">
+                            <input type="text" class="form-control">
+                              <span class="input-group-btn">
+                                <button class="btn btn-primary" name="code" type="submit">Valider</button>
+                              </span>
+
+                        </div><!-- /input-group -->
+                    </div>
+
+            </div>
+
+            <div class="row">
+
+                    <div class="well col-lg-5">
+                        <h4>2. Mode de paiement</h4>
+                        A venir ...
+                        <br><br>
+                    </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="well col-lg-5">
+                    <h4>3. Adresse de livraison</h4>
+                    <div class="input-group ">
+                        <select class="form-control">
+                            {% for entity in adresses %}
+                                <option value="{{ entity.id }}">{{ entity.firstname ~ " "~ entity.lastname ~ " - " ~entity.street ~ " " ~ entity.zipCode ~ " " ~ entity.city ~ " " ~ entity.country }}</option>
+                            {% endfor %}
+
+                        </select>
+                              <span class="input-group-btn">
+                                <a href="{{ path('profil_informations_new') }}" class="btn btn-success" >Créer une adresse</a>
+                              </span>
+
+                    </div><!-- /input-group -->
+                    <br><br>
+                </div>
+
+            </div>
+
+
+
+        </form>
+
+
+
+
+
+    {% endblock %}
+
+
+
+    {% block javascripts %}
+        {{ parent() }}
+    {% endblock %}

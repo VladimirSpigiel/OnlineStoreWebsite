@@ -1,0 +1,70 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Produit : {{ entity.name }}</h1>
+    <hr>
+
+    <a href="{{ path('admin_product_edit',{id : entity.id}) }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>&nbsp; Modifier</a>
+    <a href="{{ path('admin_product_delete',{id : entity.id}) }}" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>&nbsp; Supprimer</a>
+    <br><br>
+    <div class="table-responsive">
+        <table class="table table-bordered text-left table-striped table-hover">
+            <thead class="bg-primary">
+            <tr>
+
+                <th>Image</th>
+                <th>Nom</th>
+
+                <th>Référence</th>
+
+                <th>Catégories</th>
+                <th>Prix de base</th>
+
+                <th>Prix final</th>
+                <th>Stock</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="col-lg-1">
+                        {% if entity.picture|length > 0 %}
+                            {% for picture in entity.picture %}
+                                {% if picture.defaultPicture == true %}
+                                    <img src="{{ asset('bundles/srucore/images/') ~ picture.name }}" height="50">
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            <div class="img-thumbnail text-center">
+                                <b>Aucune image</b>
+                            </div>
+                        {% endif %}
+                    </td>
+
+                    <td>{{ entity.name }}</td>
+
+                    <td>{{ entity.ref }}</td>
+
+                    <td>
+                        <select>
+                            {% for cat in entity.category %}
+
+                                <option>{{ cat.name }}</option>
+
+                            {% endfor %}
+                        </select>
+                    </td>
+
+                    <td>{{ entity.priceHt|number_format(2,".") }} €</td>
+                    <td>{{ entity.priceTtc|number_format(2,".") }} €</td>
+
+                    <td>{{ entity.stock }}</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

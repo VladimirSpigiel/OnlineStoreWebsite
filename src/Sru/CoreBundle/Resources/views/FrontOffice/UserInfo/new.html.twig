@@ -1,0 +1,15 @@
+{% extends "SruCoreBundle:FrontOffice:layout.html.twig" %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="row">
+    <h1>Création d'une adresse</h1>
+
+        <hr>
+        {% if erreurs is defined  %}
+            <div class="alert alert-danger">Erreurs :  {{ erreurs }}</div>
+        {% endif %}
+
+        {% include "SruCoreBundle:FrontOffice/UserInfo:form.new.html.twig" %}
+    </div>
+{% endblock %}

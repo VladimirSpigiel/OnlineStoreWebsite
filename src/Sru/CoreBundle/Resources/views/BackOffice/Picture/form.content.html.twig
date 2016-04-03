@@ -1,0 +1,32 @@
+<div class="well col-sm-8">
+    <div class="form-group">
+        {{ form_errors(form.url) }}
+        {{ form_label(form.url, 'Lien URL de l\'image ') }}
+        {{ form_widget(form.url, {'attr' : {'class' : 'form-control url'} }) }}
+
+    </div>
+
+    <div class="form-group">
+        {{ form_errors(form.name) }}
+        {{ form_label(form.name, 'Nom de l\'image ') }}
+        {{ form_widget(form.name, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+
+</div>
+
+<script src="{{ asset('bundles/srucore/js/Jquery.js') }}"></script>
+<script>
+    $(document).ready(function(e){
+
+        $('.preview').attr("src", $('.url').val())
+
+        $('.url').keyup(function(){
+
+                $('.preview').attr("src", $(this).val())
+
+
+        })
+
+    })
+</script>

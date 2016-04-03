@@ -1,0 +1,86 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Visualisation des commandes</h1>
+    <hr>
+
+
+    <div class="text-center"> {{ knp_pagination_render(entities) }}</div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered text-left table-striped table-hover">
+            <thead class="bg-primary">
+            <tr>
+
+                <th>Date</th>
+                <th>Numéro</th>
+                <th>Utilisateur</th>
+                <th>Etat</th>
+                <th>Nombre d'articles</th>
+                <th>Prix total</th>
+                <th>Règlement</th>
+
+                <th class="text-center">Modifier</th>
+                <th class="text-center">Visualiser</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+
+                    <td class="col-lg-2">
+                        {{ entity.creationDate|date('d-m-Y') }}
+                    </td>
+                    <td>
+                        {{ entity.num }}
+                    </td>
+                    <td>{{ entity.user.email }}</td>
+
+                    <td>
+                        {% if entity.orderInfo %}
+                            {{ entity.orderInfo.state }}
+                        {% endif %}
+                    </td>
+
+                    {% set total = 0 %}
+                    {% set nbr = 0 %}
+                    {% for choice in entity.choice %}
+                        {% set nbr = nbr + choice.quantity %}
+
+                        {% if choice.promotion %}
+                            {% set total = total + ((choice.product.priceTtc - ((choice.product.priceTtc*choice.promotion.reduction) / 100)) * choice.quantity)  %}
+                        {% else %}
+                            {% set total = total + (choice.product.priceTtc * choice.quantity) %}
+                        {% endif %}
+
+                    {% endfor %}
+                    <td>
+                        {{ nbr }}
+                    </td>
+
+                    <td>
+
+
+                        {{ total|number_format(2,',') }} €
+                    </td>
+                    <td>
+                        par {{ entity.method|lower }}
+                    </td>
+
+                    <td class="text-center">
+                        <a href="{{ path('admin_order_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                    </td>
+                    <td class="text-center">
+                        <a href="{{ path('admin_order_show', { 'id': entity.id }) }}">
+                            <span class="glyphicon glyphicon-eye-open text-success"></span></a>
+                    </td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-center"> {{ knp_pagination_render(entities) }}</div>
+{% endblock %}

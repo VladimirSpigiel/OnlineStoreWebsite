@@ -1,0 +1,34 @@
+admin_picture:
+    pattern:  /
+    defaults: { _controller: "SruCoreBundle:Picture:index" }
+
+admin_picture_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:Picture:show" }
+
+admin_picture_new:
+    pattern:  /new/{type}/{id}
+    defaults: { _controller: "SruCoreBundle:Picture:new", type :null, id:null }
+
+admin_picture_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:Picture:create" }
+    requirements: { _method: post }
+
+admin_picture_edit:
+    pattern:  /edit/{type}/{id}
+    defaults: { _controller: "SruCoreBundle:Picture:edit" }
+
+admin_picture_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:Picture:update" }
+    requirements: { _method: post|put }
+
+admin_picture_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:Picture:delete" }
+
+admin_picture_upload:
+    pattern:  /upload
+    defaults: { _controller: "SruCoreBundle:Picture:upload" }
+

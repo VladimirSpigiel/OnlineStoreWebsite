@@ -1,0 +1,49 @@
+{% extends "SruCoreBundle:FrontOffice:layout.html.twig" %}
+
+    {% block title %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+    {% endblock %}
+
+
+    {% block body %}
+        {{ parent() }}
+        <h2 class="">Vos adresses</h2>
+
+        {% for entity in adresses %}
+            <div class=" col-lg-3 text-center">
+                <div class="well">
+                    <label>Nom  :</label> {{ entity.lastname }}
+                    {{ entity.firstname }}<BR>
+                    <label>Adresse  :</label> {{ entity.street }}<br>
+                    <label>Code postal  :</label> {{ entity.zipCode }}<br>
+                    <label>Ville  :</label> {{ entity.city }}<br>
+                    <label>Pays  :</label> {{ entity.country }}
+                    <div class="row">
+                        <a href="{{ path('profil_informations_edit', {id : entity.id}) }}" class="btn btn-warning pull-left"><span class="glyphicon glyphicon-pencil"></span> &nbsp;Modifier</a>
+                        <a href="{{ path('profil_informations_delete', {id : entity.id}) }}" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span> &nbsp;Supprimer</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="col-lg-3 text-center" >
+            <div class="well "style="height: 200px;"><br><br><br>
+                <a href="{{ path('profil_informations_new') }}" class="btn btn-success">Créer une adresse</a>
+            </div>
+        </div>
+
+        <h2 style="clear: both;">
+            <br>
+            Vos commandes</h2>
+
+    {% endblock %}
+
+
+
+    {% block javascripts %}
+        {{ parent() }}
+    {% endblock %}

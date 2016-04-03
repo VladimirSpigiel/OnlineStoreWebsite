@@ -1,0 +1,64 @@
+{% if entities|length == 0 %}
+
+<div class="large-12 warning alert-box">
+    Aucune commande
+</div>
+
+{% else %}
+
+    <table class="large-12">
+        <thead>
+           <th>Date</th>
+           <th>Numéro de commande</th>
+           <th>Article(s)</th>
+           <th>Prix total</th>
+           <th>Paiement</th>
+           <th>Avancement</th>
+
+        </thead>
+        <tbody>
+            {% for entity in entities %}
+
+                <tr>
+                    <td>Le {{ entity.creationDate|date('d-m-Y') }} à {{ entity.creationDate|date('H:i:s') }}</td>
+                    <td>{{ entity.num }}</td>
+                    <td>
+                        {% set nbr = 0 %}
+                        {% set prix = 0 %}
+                        <ul>
+                        {% for choice in entity.choice %}
+                            {% if choice.product %}
+
+                                {% if choice.product.name|length > 30 %}
+                                <li>{{ choice.quantity }}x &nbsp; <a href="{{ path('product_show', {id: choice.product.id}) }}">{{ choice.product.name[:30]~" ... " }}</a></li>
+                                {% else %}
+                                    <li>{{ choice.quantity }}x &nbsp;<a href="{{ path('product_show', {id: choice.product.id}) }}">{{ choice.product.name }}</a></li>
+                                {% endif %}
+
+                            {% elseif choice.productArchive %}
+                                {% if choice.productArchive.name|length > 30 %}
+                                    <li>{{ choice.quantity }}x &nbsp; {{ choice.productArchive.name[:30]~" ... " }}</li>
+                                {% else %}
+                                    <li>{{ choice.quantity }}x &nbsp;{{ choice.productArchive.name }}</li>
+                                {% endif %}
+
+                            {% endif %}
+                            {% set prix = prix + choice.price %}
+                        {% endfor %}
+                        </ul>
+
+                    </td>
+
+                    <td>{{ prix|number_format(2,',') }} €</td>
+                    <td>{{ entity.method }}</td>
+                    <td>{{ entity.orderInfo.state }}</td>
+                </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endif %}
+
+<br><br><br>

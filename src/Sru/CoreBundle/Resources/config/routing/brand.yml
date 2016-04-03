@@ -1,0 +1,37 @@
+admin_brand:
+    pattern:  /page/{page}/filter/{field}.{orderby}/options/{fieldO}{criteria}
+    defaults: { _controller: "SruCoreBundle:Brand:index", page : 1, field: name, orderby : asc, fieldO : null, criteria : null }
+
+admin_brand_options:
+    pattern:  /options
+    defaults: { _controller: "SruCoreBundle:Brand:options" }
+
+admin_brand_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:Brand:show" }
+
+admin_brand_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:Brand:new" }
+
+admin_brand_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:Brand:create" }
+    requirements: { _method: post }
+
+admin_brand_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:Brand:edit" }
+
+admin_brand_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:Brand:update" }
+    requirements: { _method: post|put }
+
+admin_brand_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:Brand:delete" }
+
+admin_brand_state:
+    pattern:  /{id}/state
+    defaults: { _controller: "SruCoreBundle:Brand:changeState" }

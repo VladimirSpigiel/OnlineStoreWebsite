@@ -1,0 +1,33 @@
+admin_user:
+    pattern:  /page/{page}/filter/{field}.{orderby}/options/{fieldO}{criteria}
+    defaults: { _controller: "SruCoreBundle:User:index", page : 1, field: email, orderby : asc, fieldO : null, criteria : null }
+
+admin_user_options:
+    pattern:  /options
+    defaults: { _controller: "SruCoreBundle:User:options" }
+
+admin_user_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:User:show" }
+
+admin_user_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:User:new" }
+
+admin_user_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:User:create" }
+    requirements: { _method: post }
+
+admin_user_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:User:edit" }
+
+admin_user_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:User:update" }
+
+admin_user_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:User:delete" }
+

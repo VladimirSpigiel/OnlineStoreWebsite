@@ -1,0 +1,67 @@
+<div class="well col-sm-10">
+    <div class="form-group">
+        {{ form_errors(form.name) }}
+        {{ form_label(form.name, 'Nom') }}
+        {{ form_widget(form.name, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+
+    <div class="form-group">
+        {{ form_errors(form.price) }}
+        {{ form_label(form.price, 'Prix (€)') }}
+        {{ form_widget(form.price, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+
+    <div class="form-group">
+        {{ form_errors(form.minDelay) }}
+        {{ form_label(form.minDelay, 'Délai minimum (jours)') }}
+        {{ form_widget(form.minDelay, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+
+    <div class="form-group">
+        {{ form_errors(form.maxDelay) }}
+        {{ form_label(form.maxDelay, 'Délai maximum (jours)') }}
+        {{ form_widget(form.maxDelay, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+
+    <div class="form-group">
+        {{ form_errors(form.urlTracking) }}
+        {{ form_label(form.urlTracking, 'URL tracking') }}
+        {{ form_widget(form.urlTracking, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+
+    <div class="form-group">
+        {{ form_errors(form.shipmentZone) }}
+        {{ form_label(form.shipmentZone, 'Zones de livraison') }}<br>
+        {{ form_widget(form.shipmentZone, {'attr' : {'class' : 'form-control shipmentZone'} }) }}
+
+    </div>
+
+
+</div>
+
+<br><br>
+
+<div class="modals">
+
+</div>
+
+
+
+
+<script>
+    $(document).ready(function(e){
+
+        $('.shipmentZone').multiselect({
+            'buttonClass':'btn btn-primary',
+            'nonSelectedText' : 'Aucun choix',
+            'nSelectedText' : "choix"
+        });
+
+    })
+</script>
+

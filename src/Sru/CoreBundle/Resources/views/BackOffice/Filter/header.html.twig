@@ -1,0 +1,56 @@
+{% if app.request.attributes.get('field') == field %}
+
+
+
+    {% if app.request.attributes.get('orderby') == "asc" %}
+        <span class="glyphicon glyphicon-arrow-down"></span>
+        {% if show is defined %}
+            <a href="{{ path(app.request.attributes.get('_route'), {id: entity.id,
+            page : app.request.attributes.get('page'),
+            field : field, orderby: 'desc',
+            fieldO : app.request.attributes.get('fieldO'),
+            criteria : app.request.attributes.get('criteria')}) }}" style="color:#FFF;">{{ name }}</a>
+        {% else %}
+            <a href="{{ path(app.request.attributes.get('_route'), {
+            page : app.request.attributes.get('page'),
+            field : field, orderby: 'desc',
+            fieldO : app.request.attributes.get('fieldO'),
+            criteria : app.request.attributes.get('criteria')}) }}" style="color:#FFF;">{{ name }}</a>
+
+        {% endif %}
+    {% else %}
+
+        <span class="glyphicon glyphicon-arrow-up"></span>
+        {% if show is defined %}
+
+            <a href="{{ path(app.request.attributes.get('_route'), {id: entity.id,
+            page : app.request.attributes.get('page'),
+            field : field, orderby: 'asc',
+            fieldO : app.request.attributes.get('fieldO'),
+            criteria : app.request.attributes.get('criteria')}) }}" style="color:#FFF;">{{ name }}</a>
+        {% else %}
+
+            <a href="{{ path(app.request.attributes.get('_route'), {
+            page : app.request.attributes.get('page'),
+            field : field, orderby: 'asc',
+            fieldO : app.request.attributes.get('fieldO'),
+            criteria : app.request.attributes.get('criteria')}) }}" style="color:#FFF;">{{ name }}</a>
+        {% endif %}
+    {% endif %}
+{% else %}
+    {% if show is defined %}
+        <a href="{{ path(app.request.attributes.get('_route'), {id: entity.id,
+        page : app.request.attributes.get('page'),
+        field : field, orderby: 'asc',
+        fieldO : app.request.attributes.get('fieldO'),
+        criteria : app.request.attributes.get('criteria')}) }}" style="color:#FFF;">{{ name }}</a>
+
+    {% else %}
+        <a href="{{ path(app.request.attributes.get('_route'), {
+        page : app.request.attributes.get('page'),
+        field : field, orderby: 'asc',
+        fieldO : app.request.attributes.get('fieldO'),
+        criteria : app.request.attributes.get('criteria')}) }}" style="color:#FFF;">{{ name }}</a>
+
+    {% endif %}
+{% endif %}

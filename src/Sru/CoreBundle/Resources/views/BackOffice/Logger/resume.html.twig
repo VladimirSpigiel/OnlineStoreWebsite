@@ -1,0 +1,90 @@
+
+<!-- Calculated values -->
+
+{% set errors = 0 %}
+{% set informations = 0 %}
+
+{% for log in logs %}
+    {% if log.isInformation %}
+        {% set informations = informations + 1 %}
+    {% elseif log.isError%}
+        {% set errors= errors + 1 %}
+    {% endif %}
+{% endfor %}
+
+
+
+<div class="log hidden-xs dropdown">
+
+
+    <span class="glyphicon glyphicon-bell icon
+    {% if errors >= 10 %}max{% elseif errors > 5 %}med{% elseif errors > 0 %}min{% endif %}" data-toggle="dropdown"></span>
+    <span class="nbr
+    {% if errors >= 10 %}max{% elseif errors > 5 %}med{% elseif errors > 0 %}min{% endif %}">!</span>
+
+    <ul class="dropdown-menu">
+
+
+        <li role="presentation" class="">
+
+                     
+                     <span class="pull-left btn btn-default col-sm-4 errorsBtn"><span class="glyphicon glyphicon-fire"></span> {{ errors }} erreurs</span>
+                    <span class="btn btn-default col-sm-4 consultedBtn">Marquer comme vu</span>
+
+                    <span class="pull-right btn btn-default col-sm-4 informationsBtn">{{ informations }} informations <span class="glyphicon glyphicon-warning-sign"></span></span>
+                    <br>
+        </li>
+            <br>
+        <li role="presentation" class="text-center">
+            <span class="btn btn-default  col-sm-11 quick">Consulter les logs rapidement</span>
+            <span class="btn btn-primary  col-sm-1 more" style="font-weight: bold;"><span class="glyphicon glyphicon-cog"></span></span>
+            <br><br><hr>
+        </li>
+
+
+
+
+
+        <li role="presentation" class="errors">
+
+
+                {% for log in logs %}
+                    {% if log.isError %}
+                        <a role="menuitem" tabindex="-1" href="#" class="alert alert-danger">
+                          Le {{ log.thrownAt|date("d/m/Y")}} à {{ log.thrownAt|date("H:i:s")}} : {{ log.message }}
+                        </a>
+                    {% endif %}
+                {% endfor %}
+
+            {% if errors == 0 %}
+
+                <h3><span class="text-center"> Aucune erreur ! </span></h3>
+
+            {% endif %}
+
+
+
+        </li>
+
+        <li role="presentation" class="informations" style="display: none;">
+
+            {% for log in logs %}
+                {% if log.isInformation %}
+                    <a role="menuitem" tabindex="-1" href="#" class="alert alert-primary">
+                        Le {{ log.thrownAt|date("d/m/Y")}} à {{ log.thrownAt|date("H:i:s")}} : {{ log.message }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+
+
+            {% if informations == 0 %}
+
+                <h3><span class="text-center"> Aucune information ! </span></h3>
+
+            {% endif %}
+        </li>
+
+    </ul>
+
+
+</div>

@@ -1,0 +1,318 @@
+<ul class="nav nav-tabs col-sm-10">
+    <li class="active a"><a href="#tab_a" data-toggle="tab">Informations </a></li>
+    <li class="c"><a href="#tab_c" data-toggle="tab">Tarifications</a></li>
+    <li class="b"><a href="#tab_b" data-toggle="tab">Laisons</a></li>
+</ul>
+<div class="tab-content ">
+
+
+    <!--------------------------------------------------------------------------------------->
+    <!--------------------------------------------------------------------------------------->
+    <div class="tab-pane active" id="tab_a">
+        <div class="well col-sm-10">
+
+            <div class="col-sm-2">
+                <div class="form-group">
+                    {{ form_errors(form.ref) }}
+                    {{ form_label(form.ref, 'Référence') }}
+                    {{ form_widget(form.ref, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div class="form-group">
+                    {{ form_errors(form.ean) }}
+                    {{ form_label(form.ean, 'Code EAN') }}
+                    {{ form_widget(form.ean, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    {{ form_errors(form.name) }}
+                    {{ form_label(form.name, 'Nom du produit') }}
+                    {{ form_widget(form.name, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div class="form-group">
+                    {{ form_errors(form.stock) }}
+                    {{ form_label(form.stock, 'Stock') }}
+                    {{ form_widget(form.stock, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    {{ form_errors(form.weight) }}
+                    {{ form_label(form.weight, 'Poids en gramme') }}
+                    {{ form_widget(form.weight, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+            </div>
+
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    {{ form_errors(form.shortDescription) }}
+                    {{ form_label(form.shortDescription, 'Courte description') }}
+                    {{ form_widget(form.shortDescription, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    {{ form_errors(form.keywords) }}
+                    {{ form_label(form.keywords, 'Mots clef') }}
+                    {{ form_widget(form.keywords, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group">
+                    {{ form_errors(form.description) }}
+                    {{ form_label(form.description, 'Description') }}
+                    {{ form_widget(form.description, {'attr' : {'class' : 'form-control', 'style':'min-height:120px;'} }) }}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--------------------------------------------------------------------------------------->
+    <!--------------------------------------------------------------------------------------->
+    <div class="tab-pane" id="tab_b">
+        <div class="well col-sm-10">
+
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    {{ form_errors(form.brand) }}
+                    {{ form_label(form.brand, 'Marque') }}
+                    {{ form_widget(form.brand, {'attr' : {'class' : 'form-control brand'} }) }}
+                    <a href="#" class="btn btn-default new_brand"><span class="glyphicon glyphicon-plus"></span>
+                        &nbsp; Créer une marque
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    {{ form_errors(form.provider) }}
+                    {{ form_label(form.provider, 'Fournisseur') }}
+                    {{ form_widget(form.provider, {'attr' : {'class' : 'form-control provider'} }) }}
+
+                    <a href="#" class="btn btn-default new_provider" ><span class="glyphicon glyphicon-plus"></span>
+                        &nbsp; Créer un fournisseur
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <br><br>
+                    {{ form_errors(form.category) }}
+                    {{ form_label(form.category, 'Catégorie(s)') }}<br>
+
+                    {{ form_widget(form.category, {'attr' : {'class' : 'form-control category'} }) }}<br>
+                    <a href="#" class="btn btn-default new_category" ><span class="glyphicon glyphicon-plus"></span>
+                        &nbsp; Créer une catégorie
+                    </a>
+
+
+                </div>
+            </div>
+
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <br><br>
+                    {{ form_errors(form.feature) }}
+                    {{ form_label(form.feature, 'Caractéristique(s)') }}<br>
+
+                    {{ form_widget(form.feature, {'attr' : {'class' : 'form-control feature'} }) }}<br>
+                    <a href="#" class="btn btn-default new_feature"><span class="glyphicon glyphicon-plus"></span>
+                        &nbsp; Créer une caractéristique
+                    </a>
+
+                </div>
+            </div>
+
+
+
+            <div class="col-sm-12">
+                <hr>
+            <div class="form-group text-center">
+                {{ form_errors(form.picture) }}
+                {{ form_label(form.picture, 'Image(s)') }}<br>
+
+                <div class="picturesInfo">
+
+                </div>
+
+                <input type="hidden" class="pictures" name="pictures">
+
+                <h4> Glissez déposez vos images sur cet onglet </h4>
+                                <br>
+
+                <div class="preview">
+                    {% for picture in entity.picture %}
+                    {% if picture.defaultPicture == false %}
+                    <div class='img-thumbnail thumbnail' data-default='' data-id='{{ picture.id }}'>
+                        {% else %}
+                        <div class='img-thumbnail thumbnail default' data-default='default' data-id='{{ picture.id }}'>
+                            {% endif %}
+                            <div>
+                                {% if picture.defaultPicture == false %}
+                                    <button class='btn btn-success pull-left makeDefault'><span class='glyphicon glyphicon-pushpin'></span></button>
+                                {% else %}
+                                    <button class='btn btn-default pull-left makeDefault'><span class='glyphicon glyphicon-pushpin'></span></button>
+
+                                {% endif %}
+                                <button class='btn btn-danger pull-right remove'><span class='glyphicon glyphicon-remove'></span></button>
+
+                            </div>
+                            <img class='img-responsive' src='{{ asset('bundles/srucore/images/') ~ picture.name }}'>
+
+                            <input class='form-control text-center name' value='{{ picture.name }}'>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+
+        </div>
+        </div>
+
+
+    </div>
+
+
+    <!--------------------------------------------------------------------------------------->
+    <!--------------------------------------------------------------------------------------->
+    <div class="tab-pane tarif" id="tab_c">
+        <div class="well col-sm-10">
+
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    {{ form_errors(form.priceProvider) }}
+                    {{ form_label(form.priceProvider, 'Prix fournisseur ( € )') }}
+                    {{ form_widget(form.priceProvider, {'attr' : {'class' : 'form-control prixF'} }) }}
+
+                </div>
+            </div>
+
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    {{ form_errors(form.ecoParticipation) }}
+                    {{ form_label(form.ecoParticipation, 'Eco participation ( € )') }}
+                    {{ form_widget(form.ecoParticipation, {'attr' : {'class' : 'form-control prixE'} }) }}
+
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    {{ form_errors(form.margin) }}
+                    {{ form_label(form.margin, 'Marge ( % )') }}
+                    {{ form_widget(form.margin, {'attr' : {'class' : 'form-control prixM'} }) }}
+
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    {{ form_errors(form.priceHt) }}
+                    {{ form_label(form.priceHt, 'Prix HT ( € )') }}
+                    {{ form_widget(form.priceHt, {'attr' : {'class' : 'form-control prixH'} }) }}
+
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    {{ form_errors(form.tva) }}
+                    {{ form_label(form.tva, 'Tva ( % )') }}
+                    {{ form_widget(form.tva, {'attr' : {'class' : 'form-control tva', 'taux' : form.vars.value.tva } }) }}
+
+                </div>
+            </div>
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    {{ form_errors(form.priceTtc) }}
+                    {{ form_label(form.priceTtc, 'Prix TTC ( € )') }}
+                    {{ form_widget(form.priceTtc, {'attr' : {'class' : 'form-control prixT'} }) }}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+<div class="modals">
+
+</div>
+
+
+
+<script>
+    $(document).ready(function(e){
+
+
+        $('.tarif input:not(".prixT"):not(".prixH")').keyup(operate);
+        $('.tarif select').change(operate);
+
+        $('.category , .picture , .feature').multiselect({
+            'buttonClass':'btn btn-primary',
+            'nonSelectedText' : 'Aucun choix',
+            'nSelectedText' : "choix"
+        });
+
+        $(".actif").bootstrapSwitch();
+
+        addAjax("category","Création d'une catégorie", "{{ path('admin_category_new') }}",true );
+        addAjax("brand","Création d'une marque", "{{ path('admin_brand_new') }}",false );
+        addAjax("feature","Création d'une caractéristique", "{{ path('admin_feature_new') }}",true );
+        addAjax("provider","Création d'un fournisseur", "{{ path('admin_provider_new') }}",false );
+
+    })
+</script>
+
+<script src="{{ asset('bundles/srucore/js/picture/classUpload.js') }}" ></script>
+<script src="{{ asset('bundles/srucore/js/picture/classDropFile.js') }}" ></script>
+
+<script>
+
+    $(function($){
+
+        new DropFile("#tab_b",
+                     true,
+                     true,
+                     '{{ path('admin_picture_upload') }}',
+                     '{{ asset('bundles/srucore/images') }}',
+                     '{{ path('admin_picture_delete', {id:"PLACEHOLDER"}) }}'
+                    );
+
+    })
+
+</script>

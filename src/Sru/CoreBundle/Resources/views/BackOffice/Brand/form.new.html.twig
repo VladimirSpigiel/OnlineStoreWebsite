@@ -1,0 +1,14 @@
+<form method="post" class="text-left brandForm" role="form" action="{{ path('admin_brand_create') }}" {{ form_enctype(form) }}>
+
+
+
+
+    <button class="btn btn-success">
+        <span class="glyphicon glyphicon-ok"></span> &nbsp;
+        Créer la marque</button>
+
+    <br><br>
+
+    {% include "SruCoreBundle:BackOffice/Brand:form.content.html.twig" %}
+
+</form>

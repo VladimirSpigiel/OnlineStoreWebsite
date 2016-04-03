@@ -1,0 +1,31 @@
+cart:
+    pattern:  /
+    defaults: { _controller: "SruCoreBundle:Cart:index" }
+
+cart_delete:
+    pattern:  /vider
+    defaults: { _controller: "SruCoreBundle:Cart:delete" }
+
+cart_add:
+    pattern:  /ajouter/{id}/{quantity}/{idPromotion}
+    defaults: { _controller: "SruCoreBundle:Cart:add", quantity: 1, idPromotion : null }
+
+cart_add_from_show:
+    pattern:  /detailfs/ajouter/{id}
+    defaults: { _controller: "SruCoreBundle:Cart:addFromShow" }
+
+cart_remove:
+    pattern:  /supprimer/{id}
+    defaults: { _controller: "SruCoreBundle:Cart:remove"}
+
+cart_modify:
+    pattern:  /modifier/{id}/{quantity}/{delivery}
+    defaults: { _controller: "SruCoreBundle:Cart:modify", delivery: "standard"}
+
+cart_promotion:
+    pattern:  /promotion
+    defaults: { _controller: "SruCoreBundle:Cart:promotion"}
+
+cart_promotion_cancel:
+    pattern: /promotion/cancel/{id}
+    defaults: {_controller: "SruCoreBundle:Cart:promotionCancel"}

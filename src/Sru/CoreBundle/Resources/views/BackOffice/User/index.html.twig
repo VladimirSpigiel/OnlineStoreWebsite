@@ -1,0 +1,89 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Gestion des utilisateurs</h1>
+    <hr>
+    
+    <a href="{{ path('admin_user_new') }}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>&nbsp; Créer un utilisateur</a>
+    <div class="text-center"> {{ knp_pagination_render(entities) }}</div>
+
+
+    <form method="post" action="{{ path('admin_user_options') }}">
+
+
+
+    {% include "SruCoreBundle:BackOffice/Filter:checkbox.html.twig"
+     %}
+    <br>
+
+    <div class="table-responsive">
+    <table class="table table-bordered text-left table-striped table-hover">
+        <thead class="bg-primary">
+            <tr>
+                <th class="text-center"><input type="checkbox" class="selectAll"  ></th>
+
+                <th>{% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                with {'name' : "Email", "field" : "email"} %}</th>
+
+
+
+                <th>{% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                with {'name' : "Dernière connexion", "field" : "lastLogin"} %}</th>
+
+                <th>Profil</th>
+
+                <th class="text-center">
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Activé", "field" : "enabled"} %}
+                </th>
+                <th class="text-center">Modifier</th>
+                <th class="text-center">Supprimer</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td class="text-center"><input type="checkbox" class="checker" name="entity[]" value="{{ entity.id }}"></td>
+                <td>{{ entity.email }}</td>
+
+
+
+                <td>{% if entity.lastLogin %}{{ entity.lastLogin|date('H:i:s d-m-Y') }}{% endif %}</td>
+                <td>
+                    {% if entity.profil %}
+                        {{ entity.profil.libelle }}
+                    {% else %}
+                        Aucun
+                    {% endif %}
+                </td>
+
+                <td class="text-center">
+                    {% if entity.enabled == true %}
+                        <span class="glyphicon glyphicon-thumbs-up text-success"></span>
+                    {% else %}
+                        <span class="glyphicon glyphicon-thumbs-down text-danger"></span>
+                    {% endif %}
+
+                </td>
+                <td class="text-center">
+                        <a href="{{ path('admin_user_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                </td>
+                <td class="text-center">
+                        <a href="{{ path('admin_user_delete', { 'id': entity.id }) }}" onclick="return confirm('Etes-vous sur de vouloir supprimer {{ entity.username }} ?')">
+                            <span class="glyphicon glyphicon-remove text-danger"></span>
+                        </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+        {% include "SruCoreBundle:BackOffice/Filter:checkbox.html.twig"
+         %}
+</form>
+    <div class="text-center"> {{ knp_pagination_render(entities) }}</div>
+
+    {% endblock %}

@@ -1,0 +1,80 @@
+
+        <div class="well col-sm-8 drop">
+
+
+            <div class="form-group">
+                {{ form_errors(form.name) }}
+                {{ form_label(form.name, 'Nom') }}
+                {{ form_widget(form.name, {'attr' : {'class' : 'form-control'} }) }}
+
+            </div>
+
+            <br>
+            <div class="picturesInfo">
+
+            </div>
+
+            <input type="hidden" class="pictures" name="pictures">
+            <h4> Glissez déposez vos images sur cet onglet </h4>
+            <br>
+
+            <div class="preview">
+                {% if entity.picture %}
+                {% if entity.picture.defaultPicture == false %}
+                <div class='img-thumbnail thumbnail' data-default='' data-id='{{ entity.picture.id }}'>
+                    {% else %}
+                    <div class='img-thumbnail thumbnail default' data-default='default' data-id='{{ entity.picture.id }}'>
+                        {% endif %}
+                        <div>
+                            {% if entity.picture.defaultPicture == false %}
+                                <button class='btn btn-success pull-left makeDefault'><span class='glyphicon glyphicon-pushpin'></span></button>
+                            {% else %}
+                                <button class='btn btn-default pull-left makeDefault'><span class='glyphicon glyphicon-pushpin'></span></button>
+
+                            {% endif %}
+                            <button class='btn btn-danger pull-right remove'><span class='glyphicon glyphicon-remove'></span></button>
+
+                        </div>
+                        <img class='img-responsive' src='{{ asset('bundles/srucore/images/') ~ entity.picture.name }}'>
+
+                        <input class='form-control text-center' value='{{ entity.picture.name }}'>
+                    </div>
+
+                </div>
+                {% endif %}
+            </div>
+
+
+        </div>
+
+
+
+
+<div class="modals">
+
+</div>
+
+
+<script src="{{ asset('bundles/srucore/js/picture/classUpload.js') }}" ></script>
+<script src="{{ asset('bundles/srucore/js/picture/classDropFile.js') }}" ></script>
+
+<script>
+
+    $(function($){
+
+        $(".actif").bootstrapSwitch();
+
+        new DropFile(".drop",
+                     false,
+                     false,
+                     '{{ path('admin_picture_upload') }}',
+                     '{{ asset('bundles/srucore/images') }}',
+                     '{{ path('admin_picture_delete', {id:"PLACEHOLDER"}) }}'
+                    );
+
+    })
+
+
+
+
+</script>

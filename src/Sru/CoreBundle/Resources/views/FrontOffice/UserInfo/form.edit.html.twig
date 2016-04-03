@@ -1,0 +1,11 @@
+<form method="post" class="text-left" role="form" action="{{ path('profil_informations_update', {id: entity.id}) }}" {{ form_enctype(form) }}>
+
+
+    <br><br>
+
+    {% include "SruCoreBundle:FrontOffice/UserInfo:form.content.html.twig" %}
+    <button class="button">
+
+        Modifier l'adresse</button>
+
+</form>

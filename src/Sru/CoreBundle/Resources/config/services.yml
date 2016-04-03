@@ -1,0 +1,20 @@
+parameters:
+#    sru_core.example.class: Sru\CoreBundle\Example
+
+services:
+    sru_core.registration.form.type:
+            class: Sru\CoreBundle\Form\Type\RegistrationFormType
+            arguments: [%fos_user.model.user.class%]
+            tags:
+                - { name: form.type, alias: sru_corebundle_user_registration }
+
+    login_listener:
+           class: Sru\CoreBundle\Listener\LoginListener
+           arguments: [@security.context, doctrine.orm.entity_manager]
+           tags:
+               - { name: kernel.event_listener, event: security.interactive_login }
+
+    Pixmania_import:
+               class: Sru\CoreBundle\Service\PixmaniaImport
+               arguments: [@doctrine,@security.context,"Pixmania"]
+

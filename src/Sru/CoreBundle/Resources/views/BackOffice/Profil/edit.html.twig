@@ -1,0 +1,47 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset('bundles/srucore/css/bootstrap-multiselect.css') }}">
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+
+    <h1>Modification d'un profil</h1>
+
+    <hr>
+    {% if erreurs is defined  %}
+        <div class="alert alert-danger">Erreurs :  {{ erreurs }}</div>
+    {% endif %}
+
+    <form method="post" class="text-left" role="form" action="{{ path('admin_profil_update', {id: entity.id}) }}" {{ form_enctype(form) }}>
+
+
+        <button class="btn btn-warning">
+            <span class="glyphicon glyphicon-ok"></span> &nbsp;
+            Modifier le profil</button>
+
+
+        <br><br>
+        {% include "SruCoreBundle:BackOffice/Profil:form.content.html.twig" %}
+
+
+    </form>
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/srucore/js/bootstrap-multiselectProfil.js') }}" type="text/javascript"></script>
+    <script>
+        $(function(){
+            $('.roles').multiselect({
+                'buttonClass':'btn btn-primary',
+                'nonSelectedText' : 'Aucun choix',
+                'nSelectedText' : "choix"
+            });
+        })
+    </script>
+{% endblock %}

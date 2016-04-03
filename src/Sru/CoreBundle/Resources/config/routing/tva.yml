@@ -1,0 +1,33 @@
+admin_tva:
+    pattern:  /page/{page}/filter/{field}.{orderby}/options/{fieldO}{criteria}
+    defaults: { _controller: "SruCoreBundle:Tva:index", page : 1, field: taux, orderby : asc, fieldO : null, criteria : null }
+
+admin_tva_options:
+    pattern:  /options
+    defaults: { _controller: "SruCoreBundle:Tva:options" }
+
+admin_tva_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:Tva:show" }
+
+admin_tva_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:Tva:new" }
+
+admin_tva_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:Tva:create" }
+    requirements: { _method: post }
+
+admin_tva_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:Tva:edit" }
+
+admin_tva_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:Tva:update" }
+    requirements: { _method: post|put }
+
+admin_tva_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:Tva:delete" }

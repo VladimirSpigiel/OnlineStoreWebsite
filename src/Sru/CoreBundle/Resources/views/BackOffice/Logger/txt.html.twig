@@ -1,0 +1,28 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Consultation de Logs.txt</h1>
+    <hr>
+
+
+        {% for log in logs %}
+
+            {% if log|split("Erreur")|length > 1 %}
+                <p style="background-color: #d2322d; color:#FFF;">
+                    {{ log|raw }}
+                </p>
+
+            {% else %}
+                   <p>{{ log|raw }}</p>
+            {% endif %}
+
+
+
+            {% if  loop.index != logs|length %}
+                <hr>
+            {% endif %}
+
+        {% endfor %}
+ 
+{% endblock %}

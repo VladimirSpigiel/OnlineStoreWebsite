@@ -1,0 +1,8 @@
+<div class="alert alert-warning">
+    <span class="glyphicon glyphicon-warning-sign"></span>&nbsp;  ATTENTION : <br>
+    <ul>
+    {% for path in paths %}
+        <li>Le chemin "{{ path.path }}" est accessible par : {{ path.roles }}</li>
+    {% endfor %}
+    </ul>
+</div>

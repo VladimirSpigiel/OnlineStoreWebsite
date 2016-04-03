@@ -1,0 +1,23 @@
+<a class="btn btn-default" href="{{ path('cart') }}">
+    <span class="glyphicon glyphicon-shopping-cart"></span>
+    {% if cart.choice|length >0 %}
+        {% set prix = 0 %}
+
+        {% for choice in cart.choice %}
+            {% set prix = choice.product.priceTtc * choice.quantity + prix %}
+        {% endfor %}
+
+        {{ cart.choice|length }}
+        {% if cart.choice|length == 1 %}
+            article
+        {% else %}
+            articles
+        {% endif %}
+        [<b><span class="text-success ">{{ prix|number_format(2,",") }} €</span></b>]
+
+    {% else %}
+        Votre panier est vide
+    {% endif %}
+
+
+</a>

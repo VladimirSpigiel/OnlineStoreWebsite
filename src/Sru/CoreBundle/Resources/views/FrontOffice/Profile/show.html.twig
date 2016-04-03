@@ -1,0 +1,34 @@
+{% extends "SruCoreBundle:FrontOffice:layout.html.twig" %}
+
+    {% block title %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+    {% endblock %}
+
+
+    {% block body %}
+        {{ parent() }}
+        <br>
+        <div class="row">
+        <h2 class="">Vos adresses</h2>
+            <hr>
+
+            {{ render(controller("SruCoreBundle:UserInfo:index")) }}
+
+        <h2 style="clear: both;">
+            <br>
+            Vos commandes</h2>
+            <hr>
+
+            {{ render(controller("SruCoreBundle:OrderUser:resume")) }}
+        </div>
+    {% endblock %}
+
+
+
+    {% block javascripts %}
+        {{ parent() }}
+    {% endblock %}

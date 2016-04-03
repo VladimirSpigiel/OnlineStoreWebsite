@@ -1,0 +1,30 @@
+admin_order:
+    pattern:  /page/{page}
+    defaults: { _controller: "SruCoreBundle:OrderUser:index", page: 1 }
+
+admin_order_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:OrderUser:show" }
+
+admin_order_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:OrderUser:new" }
+
+admin_order_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:OrderUser:create" }
+    requirements: { _method: post }
+
+admin_order_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:OrderUser:edit" }
+
+admin_order_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:OrderUser:update" }
+    requirements: { _method: post|put }
+
+admin_order_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:OrderUser:delete" }
+

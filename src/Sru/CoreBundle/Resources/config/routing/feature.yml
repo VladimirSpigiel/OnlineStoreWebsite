@@ -1,0 +1,33 @@
+admin_feature:
+    pattern:  /page/{page}/filter/{field}.{orderby}/options/{fieldO}{criteria}
+    defaults: { _controller: "SruCoreBundle:Feature:index", page : 1, field: name, orderby : asc, fieldO : null, criteria : null }
+
+admin_feature_options:
+    pattern:  /options
+    defaults: { _controller: "SruCoreBundle:Feature:options" }
+
+admin_feature_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:Feature:show" }
+
+admin_feature_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:Feature:new" }
+
+admin_feature_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:Feature:create" }
+    requirements: { _method: post }
+
+admin_feature_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:Feature:edit" }
+
+admin_feature_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:Feature:update" }
+    requirements: { _method: post|put }
+
+admin_feature_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:Feature:delete" }

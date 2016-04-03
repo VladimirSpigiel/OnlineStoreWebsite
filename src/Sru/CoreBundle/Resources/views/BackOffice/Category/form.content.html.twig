@@ -1,0 +1,105 @@
+
+
+
+<div class="well col-sm-8 category" >
+    <div class="form-group">
+        {% if form_errors(form.name) %}
+            <div class="alert alert-danger">
+                {{ form_errors(form.name) }}
+            </div>
+        {% endif %}
+        {{ form_label(form.name, 'Nom') }}
+        {{ form_widget(form.name, {'attr' : {'class' : 'form-control test'} }) }}
+
+    </div>
+
+
+
+    <div class="form-group">
+        {% if form_errors(form.parentCategory) %}
+            <div class="alert alert-danger">
+                {{ form_errors(form.parentCategory) }}
+            </div>
+        {% endif %}
+        {{ form_label(form.parentCategory, 'Catégorie supérieure') }}
+        {{ form_widget(form.parentCategory, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+
+    <div class="form-group">
+        {% if form_errors(form.childCategory) %}
+            <div class="alert alert-danger">
+                {{ form_errors(form.childCategory) }}
+            </div>
+        {% endif %}
+        {{ form_label(form.childCategory, 'Catégorie inférieure') }}
+        {{ form_widget(form.childCategory, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+
+    <div class="form-group">
+
+        {{ form_label(form.picture, 'Image') }}
+        <br>
+        <h4> Glissez déposez vos images sur cet onglet </h4>
+        <br>
+
+        <div class="picturesInfo">
+
+        </div>
+
+        <input type="hidden" class="pictures" name="pictures">
+
+        <div class="preview">
+
+
+            {% if entity.picture %}
+                {% if entity.picture.defaultPicture == false %}
+
+                <div class='img-thumbnail thumbnail' data-default='' data-id='{{ entity.picture.id }}'>
+                    {% else %}
+
+                    <div class='img-thumbnail thumbnail default' data-default='default' data-id='{{ entity.picture.id }}'>
+                        {% endif %}
+                        <div>
+                            {% if entity.picture.defaultPicture == false %}
+                                <button class='btn btn-success pull-left makeDefault'><span class='glyphicon glyphicon-pushpin'></span></button>
+                            {% else %}
+                                <button class='btn btn-default pull-left makeDefault'><span class='glyphicon glyphicon-pushpin'></span></button>
+
+                            {% endif %}
+                            <button class='btn btn-danger pull-right remove'><span class='glyphicon glyphicon-remove'></span></button>
+
+                        </div>
+                        <img class='img-responsive' src='{{ asset('bundles/srucore/images/') ~ entity.picture.name }}'>
+
+                        <input class='form-control text-center' value='{{ entity.picture.name }}'>
+                    </div>
+
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+<script>
+
+    $(function($){
+
+        new DropFile(".category",
+                false,
+                false,
+                '{{ path('admin_picture_upload') }}',
+                '{{ asset('bundles/srucore/images') }}',
+                '{{ path('admin_picture_delete', {id:"PLACEHOLDER"}) }}'
+        );
+
+    })
+
+
+</script>

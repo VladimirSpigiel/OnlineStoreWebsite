@@ -1,0 +1,17 @@
+
+
+{% for c in categories %}
+
+    <div class="columns large-2 text-center ">
+    <a href="{{ path('category_show', {id: c.id}) }}" class="univers">{{ c }}</a>
+        <br><br>
+    </div>
+
+    {% if loop.index % 6 ==0 %}
+    <hr>
+    {% endif %}
+
+
+
+{% endfor %}
+

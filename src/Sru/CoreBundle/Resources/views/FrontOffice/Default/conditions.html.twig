@@ -1,0 +1,15 @@
+{% extends "SruCoreBundle:FrontOffice:layout.html.twig" %}
+
+
+    {% block content %}
+        {{ parent() }}
+        <br><br><br>
+        <div class="row">
+            <h2>Conditions générales.</h2>
+            <hr>
+            <br><br>
+            {% include "SruCoreBundle:FrontOffice/Default:conditions.content.html.twig" %}
+        </div>
+
+
+    {% endblock %}

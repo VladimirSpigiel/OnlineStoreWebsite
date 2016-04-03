@@ -1,0 +1,32 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+
+{% block content %}
+    {{ parent() }}
+
+    <h1>Déplacement de produits</h1>
+    <hr>
+
+    <form class="form-group col-lg-6" method="POST" action="{{ path('admin_product_move') }}">
+    <button class="btn btn-warning">
+        <span class="glyphicon glyphicon-random"></span> &nbsp;Déplacer
+    </button>
+        <br><br>
+    <div class="well">
+
+
+            <label for="select">Déplacer les {{ products|length }} produits vers la catégorie</label>
+            <select id="select" class="form-control" name="category">
+                {% for category in categories %}
+                    <option value="{{ category.id }}">
+                        {{ category.name }}
+                    </option>
+                {% endfor %}
+            </select>
+
+    </div>
+
+        <input type="hidden" value="{{ productsId }}" name="products">
+    </form>
+
+{% endblock %}

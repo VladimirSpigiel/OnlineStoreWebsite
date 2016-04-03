@@ -1,0 +1,20 @@
+<form method="post" class="text-left" role="form" action="{{ path('admin_picture_create') }}" {{ form_enctype(form) }}>
+
+    <button class="btn btn-success">
+        <span class="glyphicon glyphicon-ok"></span> &nbsp;
+        Ajouter une image</button>
+
+    <br><br>
+
+    {% include "SruCoreBundle:BackOffice/Picture:form.content.html.twig" %}
+
+    <div class="well col-sm-8">
+        <div class="form-control">
+            <label>Aperçu de l'image</label>
+        </div>
+        <br>
+        <img src=""
+             class="img-responsive preview">
+
+    </div>
+</form>

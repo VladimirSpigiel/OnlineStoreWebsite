@@ -1,0 +1,29 @@
+order_resume:
+    pattern:  /
+    defaults: { _controller: "SruCoreBundle:OrderUser:resume" }
+
+order_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:OrderUser:new" }
+
+order_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:OrderUser:create" }
+    requirements: { _method: post }
+
+order_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:OrderUser:edit" }
+
+order_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:OrderUser:update" }
+    requirements: { _method: post|put }
+
+order_step:
+    pattern:  /etape/{step}
+    defaults: { _controller: "SruCoreBundle:OrderUser:step" }
+
+
+
+

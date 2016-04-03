@@ -1,0 +1,221 @@
+
+
+<div class="well col-sm-10 dropfile">
+    {% if error is defined %}
+    <div class="alert alert-danger">
+
+            {% if error != null %}
+             {{ error|raw }}
+            {% endif %}
+
+    </div>
+    {% endif %}
+    <br>
+    <div class="form-group">
+        {% if form_errors(form.code) %}
+            <div class="alert alert-danger">
+                {{ form_errors(form.code) }}
+            </div>
+        {% endif %}
+        {{ form_label(form.code, 'Code') }}
+
+        <div class="input-group ">
+
+            {{ form_widget(form.code, {'attr' : {'class' : 'form-control code'} }) }}
+                              <span class="input-group-btn">
+                                <a href="#" class="btn btn-primary generate">Générer un code</a>
+                              </span>
+
+        </div>
+        <!-- /input-group -->
+
+
+    </div>
+
+    <div class="form-group">
+
+        {% if form_errors(form.name) %}
+            <div class="alert alert-danger">
+                {{ form_errors(form.name) }}
+            </div>
+        {% endif %}
+        {{ form_label(form.name, 'Nom représentatif') }}
+        {{ form_widget(form.name, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+
+    <div class="form-group">
+
+        {% if form_errors(form.min) %}
+            <div class="alert alert-danger">
+                {{ form_errors(form.min) }}
+            </div>
+        {% endif %}
+        {{ form_label(form.min, 'Disponible pour un montant miniumum de ') }}
+        {{ form_widget(form.min, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+
+    <div class="form-group">
+        {% if form_errors(form.reduction) %}
+            <div class="alert alert-danger">
+                {{ form_errors(form.reduction) }}
+            </div>
+        {% endif %}
+        {{ form_label(form.reduction, 'Réduction (%)') }}
+        {{ form_widget(form.reduction, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+
+    <div class="form-group">
+        {% if form_errors(form.category) %}
+            <div class="alert alert-danger">
+                {{ form_errors(form.category) }}
+            </div>
+        {% endif %}
+        {{ form_label(form.category, 'Promotion sur la catégorie') }}
+        {{ form_widget(form.category, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+
+    <div class="form-group">
+        {% if form_errors(form.product) %}
+            <div class="alert alert-danger">
+                {{ form_errors(form.product) }}
+            </div>
+        {% endif %}
+        {{ form_label(form.product, 'Promotion sur le produit') }}
+        {{ form_widget(form.product, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+
+    <div class="form-group">
+        {% if form_errors(form.beginAtDate) %}
+            <div class="alert alert-danger">
+                {{ form_errors(form.beginAtDate) }}
+            </div>
+        {% endif %}
+        {{ form_label(form.beginAtDate, 'Date de début') }}
+        {{ form_widget(form.beginAtDate, {'attr' : {'class' : ''} }) }}
+
+    </div>
+
+    <div class="form-group">
+        {% if form_errors(form.expireAtDate) %}
+            <div class="alert alert-danger">
+                {{ form_errors(form.expireAtDate) }}
+            </div>
+        {% endif %}
+        {{ form_label(form.expireAtDate, 'Date de fin') }}
+        {{ form_widget(form.expireAtDate, {'attr' : {'class' : ''} }) }}
+
+    </div>
+
+    <div class="form-group">
+        {% if form_errors(form.enabled) %}
+            <div class="alert alert-danger">
+                {{ form_errors(form.enabled) }}
+            </div>
+        {% endif %}
+        {{ form_label(form.enabled, 'Actif') }}
+        <br>
+        {{ form_widget(form.enabled, {'attr' : {'class' : 'actif'} }) }}
+
+    </div>
+
+
+    <br><br>
+
+
+    <div class="form-group">
+
+        {{ form_label(form.picture, 'Image') }}
+        <br>
+        <h4> Glissez déposez vos images sur cet onglet </h4>
+        <br>
+
+        <div class="picturesInfo">
+
+        </div>
+
+        <input type="hidden" class="pictures" name="pictures">
+
+        <div class="preview">
+
+
+            {% if entity.picture %}
+                {% if entity.picture.defaultPicture == false %}
+
+                    <div class='img-thumbnail thumbnail' data-default='' data-id='{{ entity.picture.id }}'>
+                {% else %}
+
+                    <div class='img-thumbnail thumbnail default' data-default='default' data-id='{{ entity.picture.id }}'>
+                {% endif %}
+                <div>
+                    {% if entity.picture.defaultPicture == false %}
+                        <button class='btn btn-success pull-left makeDefault'><span class='glyphicon glyphicon-pushpin'></span></button>
+                    {% else %}
+                        <button class='btn btn-default pull-left makeDefault'><span class='glyphicon glyphicon-pushpin'></span></button>
+
+                    {% endif %}
+                    <button class='btn btn-danger pull-right remove'><span class='glyphicon glyphicon-remove'></span></button>
+
+                </div>
+                <img class='img-responsive' src='{{ asset('bundles/srucore/images/') ~ entity.picture.name }}'>
+
+                <input class='form-control text-center name' value='{{ entity.picture.name }}'>
+                <input class='form-control text-center caption' value='{{ entity.picture.caption }}'>
+                </div>
+
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<script>
+    function randomString(length) {
+        var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZ'.split('');
+
+        if (!length) {
+            length = Math.floor(Math.random() * chars.length);
+        }
+
+        var str = '';
+        for (var i = 0; i < length; i++) {
+            str += chars[Math.floor(Math.random() * chars.length)];
+        }
+        return str;
+    }
+    $(function(){
+        $('.generate').click(function(){
+            $(".code").val(randomString(8))
+        })
+    })
+
+</script>
+
+
+<script>
+
+    $(function($){
+
+        $(".actif").bootstrapSwitch();
+
+        new DropFile(".dropfile",
+                false,
+                true,
+                '{{ path('admin_picture_upload') }}',
+                '{{ asset('bundles/srucore/images') }}',
+                '{{ path('admin_picture_delete', {id:"PLACEHOLDER"}) }}'
+        );
+
+    })
+
+
+</script>
+

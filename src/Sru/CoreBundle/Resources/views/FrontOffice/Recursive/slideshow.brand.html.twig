@@ -1,0 +1,11 @@
+
+<div class="your-class">
+    {% for brand in entities %}
+        {% if brand.picture %}
+            <div  style="margin-left: 25px; margin-right: 25px;" class="">
+                <a href="{{ path('brand_show', {id: brand.id}) }}"><img src="{{ asset('bundles/srucore/images/')~brand.picture.name }}"></a>
+            </div>
+        {% endif %}
+
+    {% endfor %}
+</div>

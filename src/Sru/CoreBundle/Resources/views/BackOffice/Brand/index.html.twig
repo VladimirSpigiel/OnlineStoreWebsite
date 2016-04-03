@@ -1,0 +1,96 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Gestion des marques</h1>
+    <hr>
+
+    <a href="{{ path('admin_brand_new') }}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>&nbsp; Créer une marque</a>
+    <div class="text-center"> {{ knp_pagination_render(entities) }}</div>
+<form method="post" action="{{ path('admin_brand_options') }}">
+
+
+
+    {% include "SruCoreBundle:BackOffice/Filter:checkbox.html.twig"
+    with {"enable" : "true","disable": "true"}%}
+    <br>
+
+    <div class="table-responsive">
+        <table class="table table-bordered text-left table-striped table-hover">
+            <thead class="bg-primary">
+            <tr>
+                <th class="text-center"><input type="checkbox" class="selectAll"  ></th>
+
+                <th>Image</th>
+                <th>
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Nom", "field" : "name"} %}
+                </th>
+
+                <th class="text-center dropdown">
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Actif", "field" : "enabled"} %}
+                    &nbsp;&nbsp;<span class="glyphicon glyphicon-list stock pull-right" data-toggle="dropdown"></span>
+
+                    <div class="dropdown-menu-right dropdown-menu" style="min-width: 300px; padding: 20px; color: #000;">
+                        <h4>Choix dans actif</h4>
+                        <br>
+                        <a href="{{ path('admin_brand', {page: 1, fieldO: "enabled", criteria : "=false"}) }}" class="btn btn-danger">Isoler inactifs</a>
+                        <a href="{{ path('admin_brand', {page: 1, fieldO: "enabled", criteria : "=true"}) }}" class="btn btn-success">Isoler actifs</a>
+                    </div>
+                </th>
+                <th class="text-center">Modifier</th>
+                <th class="text-center">Supprimer</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td class="text-center"><input type="checkbox" class="checker" name="entity[]" value="{{ entity.id }}"></td>
+
+                    <td class="col-lg-1">
+
+                        {% if entity.picture %}
+
+                                    <img src="{{ asset('bundles/srucore/images/') ~ entity.picture.name }}" height="50">
+
+                        {% else %}
+                            <div class="img-thumbnail text-center">
+                                <b>Aucune image</b>
+                            </div>
+                        {% endif %}
+                    </td>
+
+                    <td>{{ entity.name }}</td>
+
+
+                    <td class="text-center">
+                        <a href="{{ path('admin_brand_state', {id : entity.id}) }}">
+                        {% if entity.enabled == true %}
+                            <span class="glyphicon glyphicon-thumbs-up text-success"></span>
+                        {% else %}
+                            <span class="glyphicon glyphicon-thumbs-down text-danger"></span>
+                        {% endif %}
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a href="{{ path('admin_brand_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                    </td>
+                    <td class="text-center">
+                        <a href="{{ path('admin_brand_delete', { 'id': entity.id }) }}" onclick="return confirm('Etes-vous sur de vouloir supprimer {{ entity.name }} ?')">
+                            <span class="glyphicon glyphicon-remove text-danger"></span>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% include "SruCoreBundle:BackOffice/Filter:checkbox.html.twig"
+    with {"enable" : "true","disable": "true"}%}
+
+    </form>
+    <div class="text-center"> {{ knp_pagination_render(entities) }}</div>
+{% endblock %}

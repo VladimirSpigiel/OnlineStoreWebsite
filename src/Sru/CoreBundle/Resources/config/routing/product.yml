@@ -1,0 +1,48 @@
+admin_product:
+    pattern:  /page/{page}/filter/{field}.{orderby}/options/{fieldO}{criteria}
+    defaults: { _controller: "SruCoreBundle:Product:index", page : 1, field: name, orderby : asc, fieldO : null, criteria : null }
+
+admin_product_options:
+    pattern:  /options
+    defaults: { _controller: "SruCoreBundle:Product:options" }
+
+admin_product_move:
+    pattern:  /options/move
+    defaults: { _controller: "SruCoreBundle:Product:move" }
+
+admin_product_pictures:
+    pattern:  /pictures/{id}
+    defaults: { _controller: "SruCoreBundle:Product:joinPictures", id: -1 }
+
+admin_product_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:Product:show" }
+
+admin_product_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:Product:new" }
+
+admin_product_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:Product:create" }
+    requirements: { _method: post }
+
+admin_product_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:Product:edit" }
+
+admin_product_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:Product:update" }
+    requirements: { _method: post|put }
+
+admin_product_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:Product:delete" }
+
+admin_product_state:
+    pattern:  /{id}/state
+    defaults: { _controller: "SruCoreBundle:Product:changeState" }
+
+
+

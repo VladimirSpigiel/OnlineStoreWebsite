@@ -1,0 +1,86 @@
+<?php
+
+namespace Sru\CoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Order
+ *
+ * @ORM\Table(name="order", indexes={@ORM\Index(name="FKOrder702417", columns={"user"}), @ORM\Index(name="FKOrder873057", columns={"order_info"}), @ORM\Index(name="FKOrder214776", columns={"user_info_delivery"}), @ORM\Index(name="FKOrder956437", columns={"user_info_invoicing"})})
+ * @ORM\Entity
+ */
+class Order
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="creation_date", type="datetime", nullable=false)
+     */
+    private $creationDate;
+
+    /**
+     * @var \Userinfo
+     *
+     * @ORM\ManyToOne(targetEntity="Userinfo")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_info_invoicing", referencedColumnName="id")
+     * })
+     */
+    private $userInfoInvoicing;
+
+    /**
+     * @var \Userinfo
+     *
+     * @ORM\ManyToOne(targetEntity="Userinfo")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_info_delivery", referencedColumnName="id")
+     * })
+     */
+    private $userInfoDelivery;
+
+    /**
+     * @var \User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user", referencedColumnName="id")
+     * })
+     */
+    private $user;
+
+    /**
+     * @var \OrderInfo
+     *
+     * @ORM\ManyToOne(targetEntity="OrderInfo")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="order_info", referencedColumnName="id")
+     * })
+     */
+    private $orderInfo;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Choice", mappedBy="order")
+     */
+    private $choice;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->choice = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}

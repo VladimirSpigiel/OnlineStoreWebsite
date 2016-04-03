@@ -1,0 +1,80 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Catégorie : {{ entity.name }}</h1>
+    <hr>
+
+    <a href="{{ path('admin_category_edit', {id: entity.id} ) }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>&nbsp; Modifier</a>
+    <a href="{{ path('admin_category_delete', {id: entity.id} ) }}" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>&nbsp; Supprimer</a>
+    <br><br>
+    <div class="table-responsive">
+        <table class="table table-bordered text-left table-striped table-hover">
+            <thead class="bg-primary">
+            <tr>
+
+                <th>Image</th>
+                <th>Nom</th>
+                <th>Catégorie parent</th>
+                <th>Catégorie enfant</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="col-lg-1">
+
+                        {% if entity.picture %}
+                            <img src="{{ asset('bundles/srucore/images/') ~ entity.picture.name }}" height="50">
+                        {% else %}
+                            <div class="img-thumbnail text-center">
+                                <b>Aucune image</b>
+                            </div>
+                        {% endif %}
+                    </td>
+
+                    <td>{{ entity.name }}</td>
+
+                    <td>
+                        {% if entity.parentCategory %}
+                            {{ entity.parentCategory.name }}
+                        {% else %}
+                            Aucune
+                        {% endif %}
+                    </td>
+
+                    <td>
+                        {% if entity.childCategory %}
+                            {{ entity.childCategory.name }}
+                        {% else %}
+                            Aucune
+                        {% endif %}
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    {% if entity.product|length > 0 %}
+        <div class="table-responsive">
+            <table class="table table-bordered text-left table-striped table-hover">
+                <thead class="bg-primary">
+                <tr>
+
+                    <th>Produits associés</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for product in entity.product %}
+                    <tr>
+                    <td><a href="{{ path('admin_product_show',{id:product.id}) }}">{{ product.name }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,288 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/srucore/css/bootstrap-multiselect.css') }}">
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+
+
+    <form method="post" class="text-left" role="form" action="{{ path('admin_product_create') }}" {{ form_enctype(form) }}>
+    <h1>Création d'un produit</h1>
+
+
+    <hr>
+
+
+
+    <button class="btn btn-success">
+        <span class="glyphicon glyphicon-ok"></span> &nbsp;
+        Créer le produit</button>
+
+    <br><br>
+
+    <div class="">
+    <ul class="nav nav-tabs col-sm-8">
+        <li class="active"><a href="#tab_a" data-toggle="tab">Informations</a></li>
+        <li><a href="#tab_c" data-toggle="tab">Tarifications</a></li>
+        <li><a href="#tab_b" data-toggle="tab">Laisons</a></li>
+
+        <li><a href="#tab_d" data-toggle="tab">Permissions</a></li>
+    </ul>
+    <div class="tab-content ">
+
+
+        <!--------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------->
+        <div class="tab-pane active" id="tab_a">
+            <div class="well col-sm-8">
+                <div class="form-group">
+                    {{ form_errors(form.ref) }}
+                    {{ form_label(form.ref, 'Référence') }}
+                    {{ form_widget(form.ref, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_errors(form.ean) }}
+                    {{ form_label(form.ean, 'Code EAN') }}
+                    {{ form_widget(form.ean, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+
+
+
+                <div class="form-group">
+                    {{ form_errors(form.name) }}
+                    {{ form_label(form.name, 'Nom du produit') }}
+                    {{ form_widget(form.name, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_errors(form.shortDescription) }}
+                    {{ form_label(form.shortDescription, 'Courte description') }}
+                    {{ form_widget(form.shortDescription, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_errors(form.description) }}
+                    {{ form_label(form.description, 'Description') }}
+                    {{ form_widget(form.description, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_errors(form.weight) }}
+                    {{ form_label(form.weight, 'Poids en gramme') }}
+                    {{ form_widget(form.weight, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_errors(form.stock) }}
+                    {{ form_label(form.stock, 'Stock') }}
+                    {{ form_widget(form.stock, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------->
+        <div class="tab-pane" id="tab_b">
+            <div class="well col-sm-8">
+
+                <div class="form-group">
+                    {{ form_errors(form.brand) }}
+                    {{ form_label(form.brand, 'Marque') }}
+                    {{ form_widget(form.brand, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_errors(form.provider) }}
+                    {{ form_label(form.provider, 'Fournisseur') }}
+                    {{ form_widget(form.provider, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_errors(form.feature) }}
+                    {{ form_label(form.feature, 'Caractéristique(s)') }}<br>
+                    {{ form_widget(form.feature, {'attr' : {'class' : 'form-control feature'} }) }}
+                    <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>
+                        &nbsp; Créer une caractéristique
+                    </a>
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_errors(form.category) }}
+                    {{ form_label(form.category, 'Catégorie(s)') }}<br>
+                    {{ form_widget(form.category, {'attr' : {'class' : 'form-control category'} }) }}
+                    <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>
+                        &nbsp; Créer une catégorie
+                    </a>
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_errors(form.picture) }}
+                    {{ form_label(form.picture, 'Image(s)') }}<br>
+                    {{ form_widget(form.picture, {'attr' : {'class' : 'form-control picture'} }) }}
+                    <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>
+                        &nbsp; Ajouter une image
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <!--------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------->
+        <div class="tab-pane tarif" id="tab_c">
+            <div class="well col-sm-8">
+
+                <div class="form-group">
+                    {{ form_errors(form.priceProvider) }}
+                    {{ form_label(form.priceProvider, 'Prix fournisseur ( € )') }}
+                    {{ form_widget(form.priceProvider, {'attr' : {'class' : 'form-control prixF'} }) }}
+
+                </div>
+
+
+
+                <div class="form-group">
+                    {{ form_errors(form.ecoParticipation) }}
+                    {{ form_label(form.ecoParticipation, 'Eco participation ( € )') }}
+                    {{ form_widget(form.ecoParticipation, {'attr' : {'class' : 'form-control prixE'} }) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_errors(form.margin) }}
+                    {{ form_label(form.margin, 'Marge ( € )') }}
+                    {{ form_widget(form.margin, {'attr' : {'class' : 'form-control prixM'} }) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_errors(form.priceHt) }}
+                    {{ form_label(form.priceHt, 'Prix HT ( € )') }}
+                    {{ form_widget(form.priceHt, {'attr' : {'class' : 'form-control prixH'} }) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_errors(form.tva) }}
+                    {{ form_label(form.tva, 'Tva') }}
+                    {{ form_widget(form.tva, {'attr' : {'class' : 'form-control tva', 'taux' : form.vars.value.tva } }) }}
+
+                </div>
+
+
+
+                <div class="form-group">
+                    {{ form_errors(form.priceTtc) }}
+                    {{ form_label(form.priceTtc, 'Prix TTC ( € )') }}
+                    {{ form_widget(form.priceTtc, {'attr' : {'class' : 'form-control prixT'} }) }}
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------->
+        <div class="tab-pane permissions" id="tab_d">
+            <div class="well col-sm-8">
+
+                <div class="form-group">
+                    {{ form_errors(form.enabled) }}
+                    {{ form_label(form.enabled, 'Actif') }}
+                    {{ form_widget(form.enabled, {'attr' : {'class' : 'form-control'} }) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_errors(form.deleteDate) }}
+                    {{ form_label(form.deleteDate, 'Date de suppression') }}
+                    {{ form_widget(form.deleteDate, {'attr' : {'class' : ''} }) }}
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    </form>
+
+    </div>
+    <ul class="record_actions">
+
+    </ul>
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('bundles/srucore/js/bootstrap-multiselect.js') }}" type="text/javascript"></script>
+
+
+    <script>
+        $(document).ready(function(e){
+
+            function operate(){
+
+                var price_Four = $('.prixF').val();
+                var price_Ttc = $('.prixT').val();
+                var price_Ht = $('.prixH').val();
+                var eco = $('.prixE').val();
+                var marge = $('.prixM').val();
+                var tva = $('.tva').find("option:selected").text();
+
+
+                var prix_HT = parseFloat(price_Four) + parseFloat(eco) +  parseFloat(marge);
+                var prix_TTC = parseFloat(prix_HT) + parseFloat((tva * price_Four) / 100 );
+
+                if(!isNaN(prix_HT))
+                    $('.prixH').val(prix_HT)
+                else
+                    $('.prixH').val("Prix manquant !")
+
+                if(!isNaN(prix_TTC))
+                    $('.prixT').val(prix_TTC)
+                else
+                    $('.prixT').val("Prix ou TVA manquant !")
+
+                console.log(price_Four, price_Ttc,price_Ht,eco,marge,tva)
+            }
+
+
+
+            $('.tarif input:not(".prixT"):not(".prixH")').keyup(operate);
+            $('.tarif select').change(operate);
+
+
+
+            $('.category , .picture , .feature').multiselect({
+                'buttonClass':'btn btn-primary',
+                'nonSelectedText' : 'Aucun choix'
+            });
+
+        })
+    </script>
+{% endblock %}

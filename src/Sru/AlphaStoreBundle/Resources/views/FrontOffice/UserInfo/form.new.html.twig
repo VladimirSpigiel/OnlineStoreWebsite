@@ -1,0 +1,14 @@
+<form method="post" class="text-left" role="form" action="{{ path('profil_informations_new') }}" {{ form_enctype(form) }}>
+
+
+
+
+    <button class="btn btn-success">
+        <span class="glyphicon glyphicon-ok"></span> &nbsp;
+        Créer l'adresse</button>
+
+    <br><br>
+
+    {% include "SruCoreBundle:FrontOffice/UserInfo:form.content.html.twig" %}
+
+</form>

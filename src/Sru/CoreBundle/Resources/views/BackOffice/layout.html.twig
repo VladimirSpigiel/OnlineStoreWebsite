@@ -1,0 +1,336 @@
+{% extends "::base.html.twig" %}
+
+    {% block title %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/srucore/css/custom.css') }}" />
+
+    {% endblock %}
+
+
+    {% block navbar %}
+        {{ parent() }}
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">ShowRoomUnivers</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <ul class="nav navbar-nav">
+                        <li class="loggerResume">{{ render(controller("SruCoreBundle:Logger:resume")) }}</li>
+
+                        <li><a href="{{ path("sru_core_admin") }}">Accueil</a></li>
+                        <li><a href="{{ path("sru_core_homepage") }}">Boutique</a></li>
+                    </ul>
+
+
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                       <form class="navbar-form navbar-left dropdown" role="search" action="{{ path('admin_search') }}" method="POST">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="input" placeholder="Mots clefs ...">
+                            </div>
+                            <a  href="#" class="btn btn-default search-options"
+                                data-toggle="dropdown"
+                                style="margin-left: -10px; border-left:none; border-top-left-radius: 0; border-bottom-left-radius: 0;"><span class="caret"></span></a>
+                               <div class="dropdown-menu searchmenu">
+                                <div class="col-sm-12">
+
+                                   <div class="form-group">
+                                       <input type="checkbox" id="input" name="filter[all]" class="form-control" checked>
+                                       <label for="input">Tout</label>
+                                   </div>
+
+                                </div>
+
+
+                               </div>
+                       </form>
+
+
+
+                        <form class="navbar-form navbar-right">
+
+                            {% if not app.user %}
+                                <a href="{{ path('fos_user_registration_register') }}" class="btn btn-primary">S'enregistrer</a>
+                                <a href="{{ path('fos_user_security_login') }}" class="btn btn-success">Se connecter</a>
+                            {% else %}
+                                <a href="{{ path('fos_user_profile_show') }}" class="btn btn-warning">
+                                    <span class="glyphicon glyphicon-user"></span> &nbsp;&nbsp;
+                                    {{ app.user.username | capitalize }}
+                                </a>
+                                <a href="{{ path('fos_user_security_logout') }}" class="btn btn-danger">Se déconnecter</a>
+                            {% endif %}
+
+                            &nbsp;&nbsp;
+                        </form>
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    {% endblock %}
+
+
+
+    {% block body %}
+
+<div class="container col-lg-12 col-md-12 col-sm-12">
+            <div id="wrapper">
+            {% block sidebar %}
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper">
+                    <ul class="sidebar-nav">
+
+                        <li><a href="{{ path('logger') }}"><span class="glyphicon glyphicon-fire"></span>
+                                &nbsp; Centre d'alertes</a>
+                        </li>
+                        <li><a href="{{ path('admin_user') }}">
+                                <span class="glyphicon glyphicon-user"></span>
+                                &nbsp; Utilisateurs
+                            </a>
+                        </li>
+                        <li><a href="{{ path('admin_profil') }}">
+                                <span class="glyphicon glyphicon-wrench"></span>
+                                &nbsp; Profil
+                            </a>
+                        </li>
+                        <li><a href="{{ path('admin_product') }}"><span class="glyphicon glyphicon-file"></span>
+                                &nbsp; Produits</a>
+                        </li>
+
+                        <li><a href="{{ path('admin_import') }}"><span class="glyphicon glyphicon-import"></span>
+                                &nbsp; Import</a>
+                        </li>
+
+                        <li><a href="{{ path('admin_feature') }}"><span class="glyphicon glyphicon-cog"></span>
+                                &nbsp; Caractéristiques </a>
+                        </li>
+                        <li><a href="{{ path('admin_tva') }}"><span class="glyphicon glyphicon-euro"></span>
+                                &nbsp; TVA </a>
+                        </li>
+                        <li><a href="{{ path('admin_category') }}"><span class="glyphicon glyphicon-folder-open"></span>
+                                &nbsp; Catégories</a>
+                        </li>
+                        <li><a href="{{ path('admin_order') }}"><span class="glyphicon glyphicon-shopping-cart"></span>
+                                &nbsp; Commandes</a>
+                        </li>
+
+                        <li><a href="{{ path('admin_order_info') }}"><span class="glyphicon glyphicon-time"></span>
+                                &nbsp; Etat de commandes</a>
+                        </li>
+                        <li><a href="{{ path('admin_promotion') }}"><span class="glyphicon glyphicon-gift"></span>
+                                &nbsp; Promotions</a>
+                        </li>
+                        <li><a href="{{ path('admin_slideshow') }}"><span class="glyphicon glyphicon-picture"></span>
+                                &nbsp; Carousel</a>
+                        </li>
+                        <li><a href="{{ path('admin_provider') }}"><span class="glyphicon glyphicon-transfer"></span>
+                                &nbsp; Fournisseurs </a>
+                        </li>
+                        <li><a href="{{ path('admin_transport') }}"><span class="glyphicon glyphicon-plane"></span>
+                                &nbsp; Transports </a>
+                        </li>
+                        <li><a href="{{ path('admin_shipmentZone') }}"><span class="glyphicon glyphicon-globe"></span>
+                                &nbsp; Zones de livraison </a>
+                        </li>
+
+                        <li><a href="{{ path('admin_brand') }}"><span class="glyphicon glyphicon-bookmark"></span>
+                                &nbsp; Marques</a>
+                        </li>
+                    </ul>
+                </div>
+
+            {% endblock %}
+                <div id="page-content-wrapper">
+                    {% block content %}
+
+
+                    {% endblock %}
+                </div>
+            </div>
+</div>
+    {% endblock %}
+
+
+    {% block javascripts %}
+        {{ parent() }}
+        <script>
+            $(function(){
+
+
+                $(document.body).on("click",'.log .btn',function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                })
+
+                $(document.body).on("click",'.log .errorsBtn',function(e){
+                    $('.log .informations').slideUp(500).queue(function(){
+                        $(".log .errors").slideDown(500);
+                    }).dequeue();
+                })
+
+                $(document.body).on("click",'.log .quick',function(e){
+                    window.location.replace("{{ path('logger_db') }}")
+
+                })
+
+
+
+
+                $(document.body).on("click",'.log .informationsBtn',function(e){
+                    $('.log .errors').slideUp(500).queue(function(){
+                        $(".log .informations").slideDown(500);
+                    }).dequeue();
+                })
+
+                $(document.body).on("click",'.log .consultedBtn',function(e){
+                    $.ajax({
+                        url : "{{ path('logger_consulted') }}",
+                        method : "GET",
+                        success : function(data){
+
+                            $('.loggerResume').html(data);
+
+                        },error : function(){
+
+                        }
+                    })
+                })
+
+                $(document.body).on("click",'.log .more',function(e){
+                    window.location.replace("{{ path('logger') }}")
+                })
+
+
+            })
+        </script>
+
+
+
+        <script>
+
+            $(function(){
+
+                var savedPageContent = $('#page-content-wrapper').html();
+
+                $(".searchmenu").click(function(e){
+
+                    e.stopPropagation();
+                })
+
+                var temp = "";
+
+                $('form[role="search"]').keyup(function(e){
+                    // Si la valeur de la chaine de recherche a changée, alors on invoque un submit
+                    if(temp != $(this).find('input[name="input"]').val())
+                        $(this).trigger("submit");
+                    temp = $(this).find('input[name="input"]').val();
+                })
+
+                $('form[role="search"]').submit(function(e){
+                    e.preventDefault();
+                    var inter;
+
+                    if($(this).find('input[name="input"]').val() != "")
+                        $.ajax({
+                            url: $('form[role="search"]').attr("action"),
+                            type : $('form[role="search"]').attr("method"),
+                            data : $('form[role="search"]').serialize(),
+                            beforeSend : function(){
+                                var prepend = "<div class='result'><h1>Recherche en cours ...</h1></div>";
+                                $('.result').empty();
+                                $('#page-content-wrapper').empty();
+                                $('#page-content-wrapper').prepend(prepend);
+                                 inter = setInterval(function(){
+                                    $('.result h1').append(".")
+                                },500)
+                            },
+                            success : function(data){
+                                clearInterval(inter);
+                                var prepend = "<div class='result'>"+data+"</div>";
+                                $('.result').empty();
+                                $('#page-content-wrapper').empty();
+                                $('#page-content-wrapper').prepend(prepend);
+
+                            }
+                        })
+                    else{
+                        $('.result').empty();
+                        $('#page-content-wrapper').html(savedPageContent)
+                    }
+
+
+                })
+
+
+                $(".nbr_page").change(function(){
+                    var path = "{{ path('SruCoreBundle_admin_elements',{nbr : "PLACEHOLDER" }) }}";
+                        path = path.replace("PLACEHOLDER", $(this).val());
+                    $.ajax({
+                        url : path,
+                        type: "GET",
+                        success : function(){
+                            location.reload();
+                        }
+                    })
+                    console.log(path);
+
+                })
+
+            })
+
+
+        </script>
+
+
+
+        <script>
+            $(document).ready(function(){
+                $('.selectAll').click(function(){
+                    console.log($(this).is(':checked'))
+
+                    if($(this).is(':checked')){
+                        $('.checker').each(function(){
+                            $(this).prop('checked', true)
+                        })
+                    }
+
+                    else{
+                        $('.checker').each(function(){
+                            $(this).prop('checked',false)
+                        })
+                    }
+
+                })
+
+
+                $('input[type="checkbox"]').click(function(){
+
+                    if($('.checker:checked').length > 0){
+                        $('.options').slideDown(500);
+                    }else{
+                        $('.options').slideUp(500);
+                    }
+                })
+            })
+        </script>
+
+    {% endblock %}
+
+

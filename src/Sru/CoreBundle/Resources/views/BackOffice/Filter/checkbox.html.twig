@@ -1,0 +1,26 @@
+<div class="options" style="display: none;">
+
+    {% if enable is defined %}
+    <button class="btn btn-default" name="submit" value="enable">
+        <span class="glyphicon glyphicon-thumbs-up text-success"></span>
+    </button>
+
+    <button class="btn btn-default" name="submit" value="disable">
+        <span class="glyphicon glyphicon-thumbs-down text-danger"></span>
+    </button>
+    &nbsp; - &nbsp;
+
+    {% endif %}
+
+    {% if move is defined %}
+    <button class="btn btn-warning" name="submit" value="move">
+        <span class="glyphicon glyphicon-random"></span> &nbsp;Déplacer
+    </button>
+    {% endif %}
+
+
+    <button class="btn btn-danger" name="submit" value="delete" onclick="return confirm('Etes-vous sur de vouloir supprimer la sélection ?')">
+        <span class="glyphicon glyphicon-trash"></span> &nbsp;Supprimer
+    </button>
+
+</div>

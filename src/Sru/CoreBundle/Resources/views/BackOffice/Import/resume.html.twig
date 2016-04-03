@@ -1,0 +1,35 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Import de fichier du fournisseur : {{ provider }}</h1>
+    <hr>
+    <div class="col-lg-6">
+
+        {% if informations.Added + informations.Disabled + informations.Deleted > 0 %}
+            {% if informations.Added > 0 %}
+                <div class="alert alert-success">
+                    {{ informations.Added }} entités ajoutées
+                </div>
+            {% endif %}
+
+            {% if informations.Disabled > 0 %}
+            <div class="alert alert-warning">
+                {{ informations.Disabled }} entités désactivées. Cause : Soit images irrécupérables (voir logs), soit EAN présent dans au moins 2 fournisseurs différents
+            </div>
+            {% endif %}
+
+            {% if informations.Deleted > 0 %}
+                <div class="alert alert-danger">
+                    {{ informations.Deleted }} entités supprimées
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="alert alert-success">
+                Aucune action particulière n'a été effectué, mis à part l'actualisation des entitiés.
+            </div>
+        {% endif %}
+    </div>
+
+
+{% endblock %}

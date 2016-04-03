@@ -1,0 +1,19 @@
+<div class="well col-lg-5">
+
+
+    <div class="form-group">
+
+        {% if form_errors(form.orderInfo) %}
+            <div class="alert alert-danger">
+                {{ form_errors(form.orderInfo) }}
+            </div>
+        {% endif %}
+        {{ form_label(form.orderInfo, 'Etat de la commande') }}
+        {{ form_widget(form.orderInfo, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+
+
+
+   </div>
+

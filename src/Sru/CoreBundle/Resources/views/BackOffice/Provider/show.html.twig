@@ -1,0 +1,61 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Fournisseur : {{ entity.name }}</h1>
+    <hr>
+
+    <a href="{{ path('admin_provider_edit', {id : entity.id}) }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>&nbsp; Modifier</a>
+    <a href="{{ path('admin_provider_delete', {id : entity.id}) }}" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>&nbsp; Supprimer</a>
+    <br><br>
+    <div class="table-responsive">
+        <table class="table table-bordered text-left table-striped table-hover">
+            <thead class="bg-primary">
+            <tr>
+
+                <th>Image</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Nr Siret</th>
+                <th>Transport</th>
+                <th>Memo</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="col-lg-1">
+
+                        {% if entity.picture %}
+                            <img src="{{ asset('bundles/srucore/images/') ~ entity.picture.name }}" height="50">
+                        {% else %}
+                            <div class="img-thumbnail text-center">
+                                <b>Aucune image</b>
+                            </div>
+                        {% endif %}
+                    </td>
+
+                    <td>{{ entity.name }}</td>
+                    <td>{{ entity.street ~ " " ~ entity.zipCode ~ " " ~ entity.city ~ " " ~ entity.country }}</td>
+                    <td>{{ entity.siret }}</td>
+                    <td>
+                        <select>
+                            {% for transport in entity.transport %}
+                                <option>{{ transport.name }}</option>
+                            {% endfor %}
+                        </select>
+
+                    </td>
+
+                    <td>
+                        {{ entity.memo }}
+                    </td>
+            </tbody>
+        </table>
+    </div>
+    {% set entities = products %}
+{% if products|length > 0 %}
+    {% include "SruCoreBundle:BackOffice/Product:index.content.html.twig" with {"show": "true"} %}
+{% endif %}
+{% endblock %}

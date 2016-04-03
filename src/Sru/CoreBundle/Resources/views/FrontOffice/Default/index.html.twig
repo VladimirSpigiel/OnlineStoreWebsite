@@ -1,0 +1,78 @@
+{% extends "SruCoreBundle:FrontOffice:layout.html.twig" %}
+
+    {% block title %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+
+
+    {% endblock %}
+
+
+    {% block content %}
+        {{ parent() }}
+
+        <br>
+        {% for msg in  app.session.flashbag.get('succes') %}
+            <div class="alert-box success">
+                <h5 style="color:#FFF;" class="text-center">{{ msg|raw }}</h5>
+            </div>
+        {% endfor %}
+        <br>
+
+        <div id="fond row">
+            <div class="ruban">
+                <h2 class="text-center" style="margin-top:5px;">Tout nos produits</h2>
+            </div>
+            <div class="ruban_gauche"></div>
+            <div class="ruban_droit"></div>
+        </div>
+        <br><br>
+        <div class="all_products">
+            {{ render(controller("SruCoreBundle:FrontOffice:load",{page:1})) }}
+        </div>
+
+        <div class="small-12 button load radius success">
+            <b>Charger les produits suivants</b>
+        </div>
+
+
+
+    {% endblock %}
+
+
+
+    {% block javascripts %}
+        {{ parent() }}
+
+        <script>
+
+            /*$(window).scroll(function(){
+
+                if ($(window).scrollTop()  + $(window).height() +10 >= $(document).height()){
+                   load();
+                }
+            });*/
+
+            $('.load').click(load);
+
+            function load(){
+
+                var text = $(this).html();
+                $(this).html('<b>Chargement ...</b>')
+
+                var path ='{{ path('sru_core_homepage_load', {page: "PLACEHOLDER" }) }}';
+                path = path.replace("PLACEHOLDER", parseInt($(".page:last").attr('page')) + 1);
+
+                $.get(path, function(data){
+                    $('.all_products').append(data);
+                    $('.page').slideDown(500);
+                    $('.load').html(text);
+                })
+            }
+        </script>
+
+
+    {% endblock %}

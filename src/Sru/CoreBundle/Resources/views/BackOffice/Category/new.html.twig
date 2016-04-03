@@ -1,0 +1,25 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+
+    <h1>Création d'une catégorie</h1>
+
+
+    <hr>
+
+        {% include  "SruCoreBundle:BackOffice/Category:form.new.html.twig" %}
+
+{% endblock %}
+
+
+
+{% block javascripts %}
+    {{ parent() }}
+
+
+    <script src="{{ asset('bundles/srucore/js/picture/pictureHandler.js') }}" ></script>
+    <script src="{{ asset('bundles/srucore/js/picture/classUpload.js') }}" ></script>
+    <script src="{{ asset('bundles/srucore/js/picture/classDropFile.js') }}" ></script>
+
+{% endblock %}

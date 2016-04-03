@@ -1,0 +1,29 @@
+profil_informations:
+    pattern:  /
+    defaults: { _controller: "SruCoreBundle:UserInfo:index" }
+
+profil_informations_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:UserInfo:show" }
+
+profil_informations_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:UserInfo:new" }
+
+profil_informations_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:UserInfo:create" }
+    requirements: { _method: post }
+
+profil_informations_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:UserInfo:edit" }
+
+profil_informations_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:UserInfo:update" }
+    requirements: { _method: post|put }
+
+profil_informations_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:UserInfo:delete" }

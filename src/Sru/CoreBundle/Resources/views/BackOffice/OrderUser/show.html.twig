@@ -1,0 +1,97 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+<h1>Visualisation de la commande : {{ entity.num }}</h1>
+<hr>
+
+    <a href="{{ path('admin_order_edit', {id: entity.id}) }}" class="btn btn-warning">
+        <span class="glyphicon glyphicon-pencil"></span> &nbsp; Modifier
+    </a>
+        <br><br>
+    <div class="col-lg-8 well">
+         <b>Client : </b> <a href="#">{{ entity.user.lastname|upper ~" "~entity.user.firstname|capitalize~", "~entity.user.email }}</a>
+            <br><br>
+         <b>Adresse de facturation : </b> {{ entity.userInfoInvoicing }}
+            <br>
+         <b>Adresse de livraison : </b> {{ entity.userInfoDelivery }}
+            <br>
+            <br>
+         <b>Information : </b> commandé le : {{ entity.creationDate|date('d-m-Y') }}, règlement par {{ entity.method|lower }}, <b>Etat : {{ entity.orderInfo.state|upper }}.</b>
+
+        <br><br>
+
+
+        <div class="table-responsive">
+            <table class="table table-bordered text-left table-striped table-hover">
+                <thead class="bg-primary">
+                <tr>
+
+                    <th class="col-lg-1">Image</th>
+                    <th>Nom</th>
+                    <th>Ref</th>
+                    <th>Quantité</th>
+                    <th>Prix unitaire</th>
+                    <th>Coupon de réduction</th>
+                    <th>Livraison</th>
+                    <th>Prix total</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% set total = 0 %}
+                    {% for choice in entity.choice %}
+                        <tr>
+                            <td>
+                                {% for picture in choice.product.picture %}
+                                    {% if picture.defaultPicture == true %}
+                                        <img src="{{ asset('bundles/srucore/images/') ~ picture.name }}" height="50px">
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+
+                            <td>
+                                <a href="{{ path('admin_product_show', {id : choice.product.id}) }}"> {{ choice.product.name }}</a>
+                            </td>
+
+                            <td>
+                                {{ choice.product.ref }}
+                            </td>
+
+                            <td>
+                                {{ choice.quantity }}
+                            </td>
+
+                            <td>
+                                {{ choice.product.priceTtc|number_format(2,',') }} €
+                            </td>
+
+                            <td>
+                                {% if choice.promotion %}
+                                    {{ choice.promotion.code }} - ({{ choice.promotion.reduction }} %)
+                                {% else %}
+                                    Aucun
+                                {% endif %}
+                            </td>
+
+
+                            <td>
+                                {{ choice.delivery }}
+                            </td>
+
+                            <td>
+                                {% set total = total + choice.price %}
+                                {{ choice.price|number_format(2,',') }} €
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+             </table>
+        </div>
+        <br><br>
+        <h3>Montant total TTC :  <b>{{ total|number_format(2,',') }} €</b> </h3>
+
+
+    </div>
+
+{% endblock %}

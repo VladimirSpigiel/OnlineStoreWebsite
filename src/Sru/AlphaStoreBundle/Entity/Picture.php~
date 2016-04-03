@@ -1,0 +1,24 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: crayer
+ * Date: 01/07/14
+ * Time: 09:08
+ */
+
+namespace Sru\AlphaStoreBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Sru\CoreBundle\Entity\Picture as Base;
+
+/**
+ * Picture
+ * @ORM\Table(name="Picture")
+ * @ORM\Entity(repositoryClass="Sru\CoreBundle\Entity\PictureRepository")
+ *
+ *
+ */
+class Picture extends Base {
+
+} 

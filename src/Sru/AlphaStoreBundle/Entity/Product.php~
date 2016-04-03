@@ -1,0 +1,26 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: crayer
+ * Date: 01/07/14
+ * Time: 09:09
+ */
+
+namespace Sru\AlphaStoreBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Sru\CoreBundle\Entity\Product as Base;
+
+/**
+ * Product
+ *
+ * @ORM\Table(name="Product", indexes={@ORM\Index(name="FKProduct163711", columns={"provider"}), @ORM\Index(name="FKProduct627329", columns={"brand"})})
+ * @ORM\Entity
+ * @UniqueEntity(fields={"ean","provider"}, message="Un produit avec cet EAN existe déjà avec ce fournisseur")
+ * @ORM\Entity(repositoryClass="Sru\CoreBundle\Entity\ProductRepository")
+ */
+
+class Product extends Base {
+
+} 

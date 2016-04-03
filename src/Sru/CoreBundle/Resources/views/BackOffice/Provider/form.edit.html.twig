@@ -1,0 +1,13 @@
+<form method="post" class="text-left providerForm" role="form" action="{{ path('admin_provider_update', {id:entity.id}) }}" action-picture="{{ path('admin_product_pictures') }}" {{ form_enctype(form) }}>
+
+
+
+    <button class="btn btn-warning">
+        <span class="glyphicon glyphicon-ok"></span> &nbsp;
+        Modifier le fournisseur</button>
+
+    <br><br>
+
+    {% include  "SruCoreBundle:BackOffice/Provider:form.content.html.twig" %}
+
+</form>

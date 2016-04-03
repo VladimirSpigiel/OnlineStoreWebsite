@@ -1,0 +1,136 @@
+{% extends "SruCoreBundle:FrontOffice:layout.html.twig" %}
+
+    {% block title %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+
+    {% endblock %}
+
+
+    {% block body %}
+        {{ parent() }}
+    <br><br>
+        <form method="post" action="{{ path('order_step', {step:3}) }}">
+
+
+    <div class="row large-12">
+        <h2 class="">Livraison</h2>
+        <hr>
+
+        <div class="large-4 left columns">
+            <h4 class="text-center">Livraison</h4>
+
+            {% for entity in adresses %}
+                <div class="columns">
+                    <div class="panel clearfix">
+                        <b>{{ entity.lastname }}
+                            {{ entity.firstname }}</b><hr>
+                        {{ entity.street }}<hr>
+                        {{ entity.zipCode }}
+                        {{ entity.city }}<hr>
+                        {{ entity.country }}<hr>
+                        <div class="switch small left">
+                            {% if loop.index0 == 0 %}
+                                <input id="d{{ entity.id }}" type="radio" checked value="{{ entity.id }}" name="delivery">
+                            {% else %}
+                                <input id="d{{ entity.id }}" type="radio" value="{{ entity.id }}" name="delivery">
+                            {% endif %}
+
+                            <label for="d{{ entity.id }}"></label>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="large-4 columns">
+            <h4 class="text-center">Méthode</h4>
+
+
+                <div class="columns">
+                    <div class="panel clearfix text-center">
+                        <b> Suivi</b><br><br>
+                        Les frai de ports sont offert !
+                        <hr>
+                        <div class="switch small left">
+                            <input id="exampleRadioSwitch1" type="radio" value="standard" checked name="method">
+                            <label for="exampleRadioSwitch1"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="panel clearfix text-center">
+                        <b> Recommandé</b><br><br>
+                        Cette méthode coutera 30€ de frai de port par articles<br><br>
+                        {% set total = 0 %}
+                        {% for choice in app.session.get('cart').choice %}
+                            {% set total = total + 30 %}
+                        {% endfor %}
+                        <b>Soit : {{ total }} €</b>
+                        <hr>
+                        <div class="switch small left">
+                            <input id="exampleRadioSwitch2" type="radio" value="express" name="method">
+                            <label for="exampleRadioSwitch2"></label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+        </div>
+
+        <div class="large-4 right columns">
+            <h4 class="text-center">Facturation</h4>
+
+            {% for entity in adresses %}
+                <div class="columns">
+                    <div class="panel clearfix">
+                        <b>{{ entity.lastname }}
+                            {{ entity.firstname }}</b><hr>
+                        {{ entity.street }}<hr>
+                        {{ entity.zipCode }}
+                        {{ entity.city }}<hr>
+                        {{ entity.country }}<hr>
+                        <div class="switch small left">
+                            {% if loop.index0 == 0 %}
+                                <input id="i{{ entity.id }}" type="radio" checked value="{{ entity.id }}" name="invoice">
+                            {% else %}
+                                <input id="i{{ entity.id }}" type="radio" value="{{ entity.id }}" name="invoice">
+                            {% endif %}
+                            <label for="i{{ entity.id }}"></label>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+
+
+            <div class="row">
+                <hr>
+                <a href="{{ path('cart') }}" class="button left alert">Retour au panier</a>
+                <button type="submit" class="button right">Suivant</button>
+            </div>
+
+        </form>
+    {% endblock %}
+
+
+    {% block javascripts %}
+        {{ parent() }}
+         <script>
+             $(function(){
+                 $("input[name='delivery']").change(function(){
+
+                     $("input[id='i"+$(this).val()+"']").click();
+                 })
+             })
+         </script>
+    {% endblock %}

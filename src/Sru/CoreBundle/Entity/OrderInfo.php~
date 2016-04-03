@@ -1,0 +1,32 @@
+<?php
+
+namespace Sru\CoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * OrderInfo
+ *
+ * @ORM\Table(name="order_info")
+ * @ORM\Entity
+ */
+class OrderInfo
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="state", type="string", length=255, nullable=false)
+     */
+    private $state = 'En attente de paiement';
+
+
+}

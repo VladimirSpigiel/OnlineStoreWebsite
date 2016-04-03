@@ -1,0 +1,30 @@
+admin_slideshow:
+    pattern:  /
+    defaults: { _controller: "SruCoreBundle:Slideshow:index" }
+
+admin_slideshow_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:Slideshow:show" }
+
+admin_slideshow_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:Slideshow:new" }
+
+admin_slideshow_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:Slideshow:create" }
+    requirements: { _method: post }
+
+admin_slideshow_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:Slideshow:edit" }
+
+admin_slideshow_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:Slideshow:update" }
+    requirements: { _method: post|put }
+
+admin_slideshow_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:Slideshow:delete" }
+    requirements: { _method: post|delete }

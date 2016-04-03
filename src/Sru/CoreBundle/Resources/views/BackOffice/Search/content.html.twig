@@ -1,0 +1,200 @@
+<h1>Résultats de recherche</h1>
+<hr>
+
+<div class="col-lg-12">
+    {% if products|length > 0 %}
+        <div class="table-responsive col-lg-3">
+            <table class="table table-bordered text-left table-striped table-hover">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Produits</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in products %}
+                    <tr>
+                        <td><a href="{{  path('admin_product_show',{id:entity.id})}}">{{ entity.name }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+    {% if brands|length > 0 %}
+        <div class="table-responsive col-lg-3">
+            <table class="table table-bordered text-left table-striped table-hover">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Marques</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in brands  %}
+                    <tr>
+                        <td><a href="{{  path('admin_brand_show',{id:entity.id})}}">{{ entity.name }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+    {% if categories|length > 0 %}
+        <div class="table-responsive col-lg-3">
+            <table class="table table-bordered text-left table-striped table-hover">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Catégories</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in categories %}
+                    <tr>
+                        <td><a href="{{  path('admin_category_show',{id:entity.id})}}">{{ entity.name }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+
+    {% if providers|length > 0 %}
+        <div class="table-responsive col-lg-3">
+            <table class="table table-bordered text-left table-striped table-hover">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Founisseurs</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in providers %}
+                    <tr>
+                        <td><a href="{{  path('admin_provider_show',{id:entity.id})}}">{{ entity.name }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+
+    {% if transports|length > 0 %}
+        <div class="table-responsive col-lg-3">
+            <table class="table table-bordered text-left table-striped table-hover">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Transports</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in transports %}
+                    <tr>
+                        <td><a href="{{  path('admin_transport_show',{id:entity.id})}}">{{ entity.name }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+
+    {% if shipmentZones|length > 0 %}
+        <div class="table-responsive col-lg-3">
+            <table class="table table-bordered text-left table-striped table-hover">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Zones de livraison</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in shipmentZones %}
+                    <tr>
+                        <td><a href="{{  path('admin_shipmentZone_show',{id:entity.id})}}">{{ entity.zone }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+
+    {% if promotions|length > 0 %}
+        <div class="table-responsive col-lg-3">
+            <table class="table table-bordered text-left table-striped table-hover">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Promotions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in promotions %}
+                    <tr>
+                        <td><a href="{{  path('admin_promotion_show',{id:entity.id})}}">{{ entity.code }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+    {% if profiles|length > 0 %}
+        <div class="table-responsive col-lg-3">
+            <table class="table table-bordered text-left table-striped table-hover">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Profils</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in profiles %}
+                    <tr>
+                        <td><a href="{{  path('admin_profil_show',{id:entity.id})}}">{{ entity.libelle }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+
+    {% if users|length > 0 %}
+        <div class="table-responsive col-lg-3">
+            <table class="table table-bordered text-left table-striped table-hover">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Utilisateurs</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in users %}
+                    <tr>
+                        <td><a href="{{  path('admin_user_show',{id:entity.id})}}">{{ entity.username }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+    {% if features|length > 0 %}
+        <div class="table-responsive col-lg-3">
+            <table class="table table-bordered text-left table-striped table-hover">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Caractéristiques</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in features %}
+                    <tr>
+                        <td><a href="{{  path('admin_feature_show',{id:entity.id})}}">{{ entity.name }} : {{ entity.value }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+</div>

@@ -1,0 +1,26 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Gestion des produits</h1>
+    <hr>
+
+
+        <a href="{{ path('admin_product_new') }}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>&nbsp; Créer un produit</a>
+
+        {% include "SruCoreBundle:BackOffice/Product:index.content.html.twig" %}
+
+
+    {% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+
+
+    <script>
+        $(function(){
+
+        })
+    </script>
+{% endblock %}

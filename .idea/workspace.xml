@@ -1,0 +1,1488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="94a1ff2c-faa5-4af2-a13b-5510e3c6f073" name="Default" comment="SRU SF&#10;#Please enter the commit message for your changes. Lines starting&#10;# with '#' will be ignored, and an empty message aborts the commit.&#10;# On branch master&#10;#&#10;# Initial commit&#10;#&#10;# Changes to be committed:&#10;#&#9;new file:   .gitignore&#10;#&#9;new file:   .idea/.name&#10;#&#9;new file:   .idea/encodings.xml&#10;#&#9;new file:   .idea/misc.xml&#10;#&#9;new file:   .idea/modules.xml&#10;#&#9;new file:   .idea/php.xml&#10;#&#9;new file:   .idea/scopes/scope_settings.xml&#10;#&#9;new file:   .idea/symfony.iml&#10;#&#9;new file:   .idea/vcs.xml&#10;#&#9;new file:   .idea/workspace.xml&#10;#&#9;new file:   .travis.yml&#10;#&#9;new file:   LICENSE&#10;#&#9;new file:   README.md&#10;#&#9;new file:   UPGRADE-2.2.md&#10;#&#9;new file:   UPGRADE-2.3.md&#10;#&#9;new file:   UPGRADE-2.4.md&#10;#&#9;new file:   UPGRADE.md&#10;#&#9;new file:   app/.htaccess&#10;#&#9;new file:   app/AppCache.php&#10;#&#9;new file:   app/AppKernel.php&#10;#&#9;new file:   app/Resources/views/base.html.twig&#10;#&#9;new file:   app/SymfonyRequirements.php&#10;#&#9;new file:   app/autoload.php&#10;#&#9;new file:   app/cache/.gitkeep&#10;#&#9;new file:   app/check.php&#10;#&#9;new file:   app/config/config.yml&#10;#&#9;new file:   app/config/config_dev.yml&#10;#&#9;new file:   app/config/config_prod.yml&#10;#&#9;new file:   app/config/config_test.yml&#10;#&#9;new file:   app/config/parameters.yml.dist&#10;#&#9;new file:   app/config/routing.yml&#10;#&#9;new file:   app/config/routing_dev.yml&#10;#&#9;new file:   app/config/security.yml&#10;#&#9;new file:   app/console&#10;#&#9;new file:   app/logs/.gitkeep&#10;#&#9;new file:   app/phpunit.xml.dist&#10;#&#9;new file:   composer.json&#10;#&#9;new file:   composer.lock&#10;#&#9;new file:   src/.htaccess&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/BackOfficeController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/BrandController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/CartController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/CategoryController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/DefaultController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/FeatureController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/FrontOfficeController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/LoggerController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/OrderUserController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/OrderUserInfoController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/PictureController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ProductController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ProfilController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/PromotionController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ProviderController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ProviderInfoController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/RegistrationController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/SearchController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ShipmentZoneController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/TransportController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/TvaController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/UserController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/UserInfoController.php&#10;#&#9;new file:   src/Sru/CoreBundle/DependencyInjection/Configuration.php&#10;#&#9;new file:   src/Sru/CoreBundle/DependencyInjection/SruCoreExtension.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Brand.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Brand.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Category.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Category.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Choice.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Choice.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Feature.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Feature.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Group.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Group.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Logger.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Logger.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Order.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderInfo.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderUser.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderUser.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderUserInfo.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderUserInfo.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Picture.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Picture.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Product.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Product.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Profil.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Profil.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Promotion.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Promotion.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Provider.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Provider.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/ProviderInfo.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/ProviderInfo.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/ShipmentZone.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/ShipmentZone.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Transport.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Transport.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Tva.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Tva.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/User.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/User.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/UserInfo.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Userinfo.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Form/BrandType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/CategoryType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/FeatureType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/OrderUserInfoType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/OrderUserType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/PictureType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ProductType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ProfilType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/PromotionType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ProviderInfoType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ProviderType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ShipmentZoneType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/TransportType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/TvaType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/Type/RegistrationFormType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/UserEditType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/UserInfoType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/UserType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Listener/LoginListener.php&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/change_password.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/group.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/profile.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/registration.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/resetting.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/security.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/brand.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/cart.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/category.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/feature.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/logger.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/orderuser.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/orderuseradmin.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/orderuserinfo.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/picture.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/product.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/profil.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/promotion.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/provider.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/providerinfo.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/shipmentzone.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/transport.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/tva.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/user.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/userinfo.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/services.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/doc/index.rst&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/translations/messages.fr.xlf&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Default/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Logger/database.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Logger/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Logger/resume.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Logger/txt.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUser/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUser/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/informations.paths.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ProviderInfo/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ProviderInfo/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ProviderInfo/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ProviderInfo/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/User/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/User/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/User/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/User/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/UserInfo/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/UserInfo/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/UserInfo/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/UserInfo/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/layout.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/Authentication/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/Cart/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/Cart/resume.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/Default/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/layout.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/checkEmail.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/confirmed.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/email.txt.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/register.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/register_content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Security/login.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Security/login_content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Service/LoggerHandler.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/PictureHandler.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/PictureHandlerBase.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/PictureHandlerInterface.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/PictureHandlerProduct.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/test.txt&#10;#&#9;new file:   src/Sru/CoreBundle/SruCoreBundle.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/BrandControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/CategoryControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/DefaultControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/FeatureControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/OrderControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/OrderUserControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/OrderUserInfoControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/PictureControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ProductControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ProfilControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/PromotionControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ProviderControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ProviderInfoControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ShipmentZoneControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/TransportControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/TvaControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/UserControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/UserInfoControllerTest.php&#10;#&#9;new file:   src/dustbin/Brand.php&#10;#&#9;new file:   src/dustbin/Category.php&#10;#&#9;new file:   src/dustbin/Choice.php&#10;#&#9;new file:   src/dustbin/Feature.php&#10;#&#9;new file:   src/dustbin/Group.php&#10;#&#9;new file:   src/dustbin/OrderUser.php&#10;#&#9;new file:   src/dustbin/OrderUserInfo.php&#10;#&#9;new file:   src/dustbin/Picture.php&#10;#&#9;new file:   src/dustbin/Product.php&#10;#&#9;new file:   src/dustbin/Promotion.php&#10;#&#9;new file:   src/dustbin/Provider.php&#10;#&#9;new file:   src/dustbin/ProviderInfo.php&#10;#&#9;new file:   src/dustbin/ShipmentZone.php&#10;#&#9;new file:   src/dustbin/Transport.php&#10;#&#9;new file:   src/dustbin/User.php&#10;#&#9;new file:   src/dustbin/UserInfo.php&#10;#&#9;new file:   src/dustbin/new.html.twig&#10;#&#9;new file:   test.php&#10;#&#9;new file:   web/.htaccess&#10;#&#9;new file:   web/app.php&#10;#&#9;new file:   web/app_dev.php&#10;#&#9;new file:   web/apple-touch-icon.png&#10;#&#9;new file:   web/chaos.jpg&#10;#&#9;new file:   web/config.php&#10;#&#9;new file:   web/favicon.ico&#10;#&#9;new file:   web/logs.txt&#10;#&#9;new file:   web/robots.txt&#10;#&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/frameworkRootSettings.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Authentication/index.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Cart/index.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Cart/resume.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Default/index.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/edit.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/index.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/new.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/show.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/layout.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\symfony2\.idea\php.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\symfony2\.idea\symfony.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\symfony2\src\Sru\CoreBundle\Resources\views\BackOffice\UserInfo\edit.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\symfony2\src\Sru\CoreBundle\Resources\views\BackOffice\UserInfo\index.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\symfony2\src\Sru\CoreBundle\Resources\views\BackOffice\UserInfo\new.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\symfony2\src\Sru\CoreBundle\Resources\views\BackOffice\UserInfo\show.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\symfony2\src\Sru\CoreBundle\Service\test.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/BackOfficeController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/BackOfficeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Brand.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Brand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/BrandController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/BrandController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/CartController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/CartController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Category.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/CategoryController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/CategoryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Choice.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Choice.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dustbin/Choice.php" afterPath="$PROJECT_DIR$/src/dustbin/Choice.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/DefaultController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Feature.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Feature.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/FeatureController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/FeatureController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/FrontOfficeController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/FrontOfficeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Logger.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Logger.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/LoggerController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/LoggerController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Service/LoggerHandler.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Service/LoggerHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/OrderUser.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/OrderUser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/OrderUserController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/OrderUserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/OrderUserInfo.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/OrderUserInfo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/OrderUserInfoController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/OrderUserInfoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Form/OrderUserInfoType.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Form/OrderUserInfoType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Form/OrderUserType.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Form/OrderUserType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Picture.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Picture.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/PictureController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/PictureController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Service/PictureHandler.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Service/PictureHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Service/PictureHandlerProduct.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Service/PictureHandlerProduct.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Product.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Product.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/ProductController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/ProductController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Profil.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Profil.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/ProfilController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/ProfilController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Promotion.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Promotion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dustbin/Promotion.php" afterPath="$PROJECT_DIR$/src/dustbin/Promotion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/PromotionController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/PromotionController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Form/PromotionType.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Form/PromotionType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Provider.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Provider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/ProviderController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/ProviderController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/ProviderInfo.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/ProviderInfo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Form/Type/RegistrationFormType.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Form/Type/RegistrationFormType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/SearchController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/SearchController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/ShipmentZone.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/ShipmentZone.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/ShipmentZoneController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/ShipmentZoneController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Transport.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Transport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/TransportController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/TransportController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Tva.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Tva.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/TvaController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/TvaController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dustbin/User.php" afterPath="$PROJECT_DIR$/src/dustbin/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Form/UserEditType.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Form/UserEditType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/UserInfo.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/UserInfo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/UserInfoController.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/UserInfoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Form/UserInfoType.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Form/UserInfoType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Form/UserType.php" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Form/UserType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/brand.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/brand.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/cart.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/cart.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/category.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/category.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/Registration/checkEmail.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/Registration/checkEmail.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/Registration/confirmed.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/Registration/confirmed.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/OrderUser/edit.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/OrderUser/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/edit.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/edit.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/User/edit.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/User/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/feature.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/feature.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Brand/form.content.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Brand/form.content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Category/form.content.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Category/form.content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Feature/form.content.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Feature/form.content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Product/form.content.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Product/form.content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Profil/form.content.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Profil/form.content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/form.content.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/form.content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Provider/form.content.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Provider/form.content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Tva/form.content.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Tva/form.content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Brand/index.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Brand/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Category/index.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Category/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Feature/index.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Feature/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Logger/index.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Logger/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/OrderUser/index.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/OrderUser/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/index.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Product/index.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Product/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Profil/index.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Profil/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/index.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Provider/index.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Provider/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/index.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Transport/index.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Transport/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Tva/index.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Tva/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/User/index.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/User/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Profil/informations.paths.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Profil/informations.paths.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/layout.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/Security/login_content.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/Security/login_content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/logs.txt" afterPath="$PROJECT_DIR$/web/logs.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/new.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/new.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/User/new.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/User/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/orderuser.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/orderuser.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/orderuseradmin.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/orderuseradmin.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/orderuserinfo.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/orderuserinfo.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/product.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/product.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/profil.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/profil.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/FOSUser/profile.xml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/FOSUser/profile.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/promotion.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/promotion.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/provider.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/provider.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/Registration/register_content.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/Registration/register_content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/services.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/shipmentzone.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/shipmentzone.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Category/show.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Category/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Product/show.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Product/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Profil/show.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Profil/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Provider/show.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Provider/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Transport/show.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Transport/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/User/show.html.twig" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/User/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/transport.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/transport.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/tva.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/tva.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/user.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/user.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/userinfo.yml" afterPath="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/userinfo.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <ignored path="symfony2.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="symfony2" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="ProductArchive.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Entity/ProductArchive.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="480" column="5" selection-start="9451" selection-end="9451" vertical-scroll-proportion="-23.538462" vertical-offset="7548" max-vertical-offset="10421">
+              <folding>
+                <element signature="e#41#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FeatureRepository.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Entity/FeatureRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="510">
+              <folding>
+                <marker date="1403515348000" expanded="true" signature="368:504" placeholder="SELECT e.nam..SruCoreBundle..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Controller/ProductController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="519" column="0" selection-start="16825" selection-end="16825" vertical-scroll-proportion="0.40869564" vertical-offset="8494" max-vertical-offset="9299">
+              <folding>
+                <element signature="e#45#76#0" expanded="true" />
+                <marker date="1406626460678" expanded="true" signature="1057:1094" placeholder="SELECT a FRO..SruCoreBundle..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Choice.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Choice.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="125" selection-start="337" selection-end="337" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="4505">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Product.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Product.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="150" selection-start="358" selection-end="413" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="15810">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="orderuser.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/orderuser.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="orderuseradmin.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/orderuseradmin.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="63" selection-start="828" selection-end="828" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Cart/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="56.23077" vertical-offset="1462" max-vertical-offset="3910">
+              <folding>
+                <marker date="1406304904133" expanded="true" signature="282:9420" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="581:9048" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="622:4297" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="669:1068" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="694:1039" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="1096:4272" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="1303:4210" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="1356:1448" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="1501:2214" placeholder="..." />
+                <marker date="1406304904133" expanded="false" signature="1832:1848" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="2267:2703" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="2727:3901" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="3955:4179" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="4051:4145" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="4380:7991" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="4433:7967" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="4636:4705" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="4921:5408" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="5048:5141" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="5195:5381" placeholder="..." />
+                <marker date="1406304904133" expanded="false" signature="5302:5333" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="5533:7941" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="6330:7735" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="6443:7545" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="6488:6627" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="6672:7503" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="6721:7457" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="6873:7001" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="7217:7346" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="8054:9029" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="8101:8395" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="8130:8366" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="8424:8999" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="8453:8970" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="8506:8616" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="8669:8775" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="8828:8940" placeholder="..." />
+                <marker date="1406304904133" expanded="true" signature="9296:9383" placeholder="..." />
+                <marker date="1406304904133" expanded="false" signature="9325:9337" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Profile/show.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="680">
+              <folding>
+                <marker date="1406282097990" expanded="true" signature="278:591" placeholder="..." />
+                <marker date="1406282097990" expanded="false" signature="426:438" placeholder="..." />
+                <marker date="1406282097990" expanded="true" signature="439:487" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="48" selection-start="845" selection-end="845" vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="1173">
+              <folding>
+                <marker date="1406627058955" expanded="true" signature="825:1851" placeholder="{% if choice.product ...%}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/OrderUser/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/UserInfo.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/OrderUser.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/CartController.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/OrderUser/show.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Profile/show.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Form/Type/RegistrationFormType.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Authentication/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Default/conditions.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Default/conditions.content.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Cart/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/web/bundles/srucore/js/picture/pictureHandler.js" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/BrandRepository.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Search/content.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/BrandController.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Default/show.category.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Default/show.brand.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/ProductRepository.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/CategoryRepository.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/SearchController.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Default/show.search.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Product.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Service/PictureHandlerProduct.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Recursive/slideshow.brand.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/step2.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Product/form.content.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/new.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/form.content.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Service/ProviderImportEntities.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Pagination/sliding.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/user.yml" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/User/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Default/index.content.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Recursive/slideshow.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Default/show.product.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Service/PixmaniaImport.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Slideshow/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/new.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/OrderUserController.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/FrontOfficeController.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/ProductArchiveController.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/ProductArchive.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Controller/ProductController.php" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/orderuseradmin.yml" />
+        <option value="$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Choice.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="srucore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="srucore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FrontOffice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FrontOffice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Profile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FrontOffice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OrderUser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FrontOffice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cache" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
+    <property name="LayoutCode.rearrangeEntriesTwig" value="false" />
+    <property name="SearchEverywhereHistory" value="Unit&#10;__CG__&#10;__CG&#10;proxi&#10;prom&#10;Cet email est déjà utilisé." />
+    <property name="recentsLimit" value="5" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\symfony2\src\Sru\CoreBundle\Controller" />
+      <recent name="C:\wamp\www\symfony2\src\Sru\CoreBundle\Entity" />
+      <recent name="C:\wamp\www\symfony2\web\bundles\srucore\css" />
+      <recent name="C:\wamp\www\symfony2\web\bundles\srucore\js" />
+      <recent name="C:\wamp\www\symfony2\src\dustbin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\symfony2\src\Sru\CoreBundle\Resources\views\BackOffice" />
+      <recent name="C:\wamp\www\symfony2\web\bundles\srucore\css" />
+      <recent name="C:\wamp\www\symfony2\src\Sru\AlphaStoreBundle\Resources\views" />
+      <recent name="C:\wamp\www\symfony2\src\Sru\AlphaStoreBundle\Resources\views\SruCoreBundle" />
+      <recent name="C:\wamp\www\symfony2\src\Sru\AlphaStoreBundle\Controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.symfony2">
+    <configuration default="false" name="symfony2" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="PHPUnit.symfony2" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="PHPUnit.symfony2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94a1ff2c-faa5-4af2-a13b-5510e3c6f073" name="Default" comment="" />
+      <created>1403791680198</created>
+      <updated>1403791680198</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2010989" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30617678" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USERS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <MESSAGE value="SRU SF&#10;#Please enter the commit message for your changes. Lines starting&#10;# with '#' will be ignored, and an empty message aborts the commit.&#10;# On branch master&#10;#&#10;# Initial commit&#10;#&#10;# Changes to be committed:&#10;#&#9;new file:   .gitignore&#10;#&#9;new file:   .idea/.name&#10;#&#9;new file:   .idea/encodings.xml&#10;#&#9;new file:   .idea/misc.xml&#10;#&#9;new file:   .idea/modules.xml&#10;#&#9;new file:   .idea/php.xml&#10;#&#9;new file:   .idea/scopes/scope_settings.xml&#10;#&#9;new file:   .idea/symfony.iml&#10;#&#9;new file:   .idea/vcs.xml&#10;#&#9;new file:   .idea/workspace.xml&#10;#&#9;new file:   .travis.yml&#10;#&#9;new file:   LICENSE&#10;#&#9;new file:   README.md&#10;#&#9;new file:   UPGRADE-2.2.md&#10;#&#9;new file:   UPGRADE-2.3.md&#10;#&#9;new file:   UPGRADE-2.4.md&#10;#&#9;new file:   UPGRADE.md&#10;#&#9;new file:   app/.htaccess&#10;#&#9;new file:   app/AppCache.php&#10;#&#9;new file:   app/AppKernel.php&#10;#&#9;new file:   app/Resources/views/base.html.twig&#10;#&#9;new file:   app/SymfonyRequirements.php&#10;#&#9;new file:   app/autoload.php&#10;#&#9;new file:   app/cache/.gitkeep&#10;#&#9;new file:   app/check.php&#10;#&#9;new file:   app/config/config.yml&#10;#&#9;new file:   app/config/config_dev.yml&#10;#&#9;new file:   app/config/config_prod.yml&#10;#&#9;new file:   app/config/config_test.yml&#10;#&#9;new file:   app/config/parameters.yml.dist&#10;#&#9;new file:   app/config/routing.yml&#10;#&#9;new file:   app/config/routing_dev.yml&#10;#&#9;new file:   app/config/security.yml&#10;#&#9;new file:   app/console&#10;#&#9;new file:   app/logs/.gitkeep&#10;#&#9;new file:   app/phpunit.xml.dist&#10;#&#9;new file:   composer.json&#10;#&#9;new file:   composer.lock&#10;#&#9;new file:   src/.htaccess&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/BackOfficeController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/BrandController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/CartController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/CategoryController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/DefaultController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/FeatureController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/FrontOfficeController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/LoggerController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/OrderUserController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/OrderUserInfoController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/PictureController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ProductController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ProfilController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/PromotionController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ProviderController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ProviderInfoController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/RegistrationController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/SearchController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ShipmentZoneController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/TransportController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/TvaController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/UserController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/UserInfoController.php&#10;#&#9;new file:   src/Sru/CoreBundle/DependencyInjection/Configuration.php&#10;#&#9;new file:   src/Sru/CoreBundle/DependencyInjection/SruCoreExtension.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Brand.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Brand.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Category.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Category.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Choice.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Choice.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Feature.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Feature.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Group.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Group.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Logger.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Logger.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Order.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderInfo.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderUser.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderUser.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderUserInfo.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderUserInfo.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Picture.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Picture.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Product.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Product.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Profil.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Profil.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Promotion.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Promotion.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Provider.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Provider.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/ProviderInfo.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/ProviderInfo.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/ShipmentZone.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/ShipmentZone.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Transport.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Transport.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Tva.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Tva.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/User.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/User.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/UserInfo.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Userinfo.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Form/BrandType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/CategoryType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/FeatureType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/OrderUserInfoType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/OrderUserType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/PictureType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ProductType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ProfilType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/PromotionType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ProviderInfoType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ProviderType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ShipmentZoneType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/TransportType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/TvaType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/Type/RegistrationFormType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/UserEditType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/UserInfoType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/UserType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Listener/LoginListener.php&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/change_password.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/group.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/profile.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/registration.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/resetting.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/security.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/brand.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/cart.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/category.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/feature.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/logger.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/orderuser.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/orderuseradmin.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/orderuserinfo.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/picture.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/product.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/profil.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/promotion.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/provider.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/providerinfo.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/shipmentzone.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/transport.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/tva.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/user.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/userinfo.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/services.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/doc/index.rst&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/translations/messages.fr.xlf&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Default/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Logger/database.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Logger/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Logger/resume.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Logger/txt.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUser/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUser/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/informations.paths.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ProviderInfo/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ProviderInfo/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ProviderInfo/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ProviderInfo/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/User/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/User/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/User/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/User/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/UserInfo/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/UserInfo/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/UserInfo/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/UserInfo/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/layout.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/Authentication/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/Cart/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/Cart/resume.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/Default/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/layout.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/checkEmail.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/confirmed.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/email.txt.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/register.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/register_content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Security/login.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Security/login_content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Service/LoggerHandler.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/PictureHandler.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/PictureHandlerBase.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/PictureHandlerInterface.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/PictureHandlerProduct.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/test.txt&#10;#&#9;new file:   src/Sru/CoreBundle/SruCoreBundle.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/BrandControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/CategoryControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/DefaultControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/FeatureControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/OrderControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/OrderUserControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/OrderUserInfoControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/PictureControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ProductControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ProfilControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/PromotionControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ProviderControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ProviderInfoControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ShipmentZoneControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/TransportControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/TvaControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/UserControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/UserInfoControllerTest.php&#10;#&#9;new file:   src/dustbin/Brand.php&#10;#&#9;new file:   src/dustbin/Category.php&#10;#&#9;new file:   src/dustbin/Choice.php&#10;#&#9;new file:   src/dustbin/Feature.php&#10;#&#9;new file:   src/dustbin/Group.php&#10;#&#9;new file:   src/dustbin/OrderUser.php&#10;#&#9;new file:   src/dustbin/OrderUserInfo.php&#10;#&#9;new file:   src/dustbin/Picture.php&#10;#&#9;new file:   src/dustbin/Product.php&#10;#&#9;new file:   src/dustbin/Promotion.php&#10;#&#9;new file:   src/dustbin/Provider.php&#10;#&#9;new file:   src/dustbin/ProviderInfo.php&#10;#&#9;new file:   src/dustbin/ShipmentZone.php&#10;#&#9;new file:   src/dustbin/Transport.php&#10;#&#9;new file:   src/dustbin/User.php&#10;#&#9;new file:   src/dustbin/UserInfo.php&#10;#&#9;new file:   src/dustbin/new.html.twig&#10;#&#9;new file:   test.php&#10;#&#9;new file:   web/.htaccess&#10;#&#9;new file:   web/app.php&#10;#&#9;new file:   web/app_dev.php&#10;#&#9;new file:   web/apple-touch-icon.png&#10;#&#9;new file:   web/chaos.jpg&#10;#&#9;new file:   web/config.php&#10;#&#9;new file:   web/favicon.ico&#10;#&#9;new file:   web/logs.txt&#10;#&#9;new file:   web/robots.txt&#10;#&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="SRU SF&#10;#Please enter the commit message for your changes. Lines starting&#10;# with '#' will be ignored, and an empty message aborts the commit.&#10;# On branch master&#10;#&#10;# Initial commit&#10;#&#10;# Changes to be committed:&#10;#&#9;new file:   .gitignore&#10;#&#9;new file:   .idea/.name&#10;#&#9;new file:   .idea/encodings.xml&#10;#&#9;new file:   .idea/misc.xml&#10;#&#9;new file:   .idea/modules.xml&#10;#&#9;new file:   .idea/php.xml&#10;#&#9;new file:   .idea/scopes/scope_settings.xml&#10;#&#9;new file:   .idea/symfony.iml&#10;#&#9;new file:   .idea/vcs.xml&#10;#&#9;new file:   .idea/workspace.xml&#10;#&#9;new file:   .travis.yml&#10;#&#9;new file:   LICENSE&#10;#&#9;new file:   README.md&#10;#&#9;new file:   UPGRADE-2.2.md&#10;#&#9;new file:   UPGRADE-2.3.md&#10;#&#9;new file:   UPGRADE-2.4.md&#10;#&#9;new file:   UPGRADE.md&#10;#&#9;new file:   app/.htaccess&#10;#&#9;new file:   app/AppCache.php&#10;#&#9;new file:   app/AppKernel.php&#10;#&#9;new file:   app/Resources/views/base.html.twig&#10;#&#9;new file:   app/SymfonyRequirements.php&#10;#&#9;new file:   app/autoload.php&#10;#&#9;new file:   app/cache/.gitkeep&#10;#&#9;new file:   app/check.php&#10;#&#9;new file:   app/config/config.yml&#10;#&#9;new file:   app/config/config_dev.yml&#10;#&#9;new file:   app/config/config_prod.yml&#10;#&#9;new file:   app/config/config_test.yml&#10;#&#9;new file:   app/config/parameters.yml.dist&#10;#&#9;new file:   app/config/routing.yml&#10;#&#9;new file:   app/config/routing_dev.yml&#10;#&#9;new file:   app/config/security.yml&#10;#&#9;new file:   app/console&#10;#&#9;new file:   app/logs/.gitkeep&#10;#&#9;new file:   app/phpunit.xml.dist&#10;#&#9;new file:   composer.json&#10;#&#9;new file:   composer.lock&#10;#&#9;new file:   src/.htaccess&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/BackOfficeController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/BrandController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/CartController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/CategoryController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/DefaultController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/FeatureController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/FrontOfficeController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/LoggerController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/OrderUserController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/OrderUserInfoController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/PictureController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ProductController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ProfilController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/PromotionController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ProviderController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ProviderInfoController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/RegistrationController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/SearchController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/ShipmentZoneController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/TransportController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/TvaController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/UserController.php&#10;#&#9;new file:   src/Sru/CoreBundle/Controller/UserInfoController.php&#10;#&#9;new file:   src/Sru/CoreBundle/DependencyInjection/Configuration.php&#10;#&#9;new file:   src/Sru/CoreBundle/DependencyInjection/SruCoreExtension.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Brand.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Brand.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Category.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Category.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Choice.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Choice.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Feature.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Feature.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Group.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Group.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Logger.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Logger.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Order.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderInfo.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderUser.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderUser.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderUserInfo.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/OrderUserInfo.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Picture.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Picture.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Product.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Product.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Profil.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Profil.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Promotion.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Promotion.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Provider.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Provider.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/ProviderInfo.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/ProviderInfo.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/ShipmentZone.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/ShipmentZone.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Transport.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Transport.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Tva.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Tva.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/User.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/User.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/UserInfo.php&#10;#&#9;new file:   src/Sru/CoreBundle/Entity/Userinfo.php~&#10;#&#9;new file:   src/Sru/CoreBundle/Form/BrandType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/CategoryType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/FeatureType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/OrderUserInfoType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/OrderUserType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/PictureType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ProductType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ProfilType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/PromotionType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ProviderInfoType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ProviderType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/ShipmentZoneType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/TransportType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/TvaType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/Type/RegistrationFormType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/UserEditType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/UserInfoType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Form/UserType.php&#10;#&#9;new file:   src/Sru/CoreBundle/Listener/LoginListener.php&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/change_password.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/group.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/profile.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/registration.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/resetting.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/FOSUser/security.xml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/brand.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/cart.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/category.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/feature.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/logger.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/orderuser.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/orderuseradmin.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/orderuserinfo.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/picture.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/product.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/profil.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/promotion.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/provider.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/providerinfo.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/shipmentzone.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/transport.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/tva.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/user.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/routing/userinfo.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/config/services.yml&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/doc/index.rst&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/translations/messages.fr.xlf&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Brand/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Category/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Default/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Feature/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Logger/database.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Logger/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Logger/resume.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Logger/txt.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUser/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUser/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/OrderUserInfo/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Picture/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Product/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/informations.paths.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Profil/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Provider/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ProviderInfo/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ProviderInfo/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ProviderInfo/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ProviderInfo/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/ShipmentZone/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Transport/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/form.content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/form.edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/form.new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/Tva/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/User/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/User/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/User/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/User/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/UserInfo/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/UserInfo/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/UserInfo/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/UserInfo/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/BackOffice/layout.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/Authentication/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/Cart/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/Cart/resume.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/Default/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/edit.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/index.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/new.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/show.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/FrontOffice/layout.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/checkEmail.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/confirmed.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/email.txt.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/register.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Registration/register_content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Security/login.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Resources/views/Security/login_content.html.twig&#10;#&#9;new file:   src/Sru/CoreBundle/Service/LoggerHandler.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/PictureHandler.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/PictureHandlerBase.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/PictureHandlerInterface.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/PictureHandlerProduct.php&#10;#&#9;new file:   src/Sru/CoreBundle/Service/test.txt&#10;#&#9;new file:   src/Sru/CoreBundle/SruCoreBundle.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/BrandControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/CategoryControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/DefaultControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/FeatureControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/OrderControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/OrderUserControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/OrderUserInfoControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/PictureControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ProductControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ProfilControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/PromotionControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ProviderControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ProviderInfoControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/ShipmentZoneControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/TransportControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/TvaControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/UserControllerTest.php&#10;#&#9;new file:   src/Sru/CoreBundle/Tests/Controller/UserInfoControllerTest.php&#10;#&#9;new file:   src/dustbin/Brand.php&#10;#&#9;new file:   src/dustbin/Category.php&#10;#&#9;new file:   src/dustbin/Choice.php&#10;#&#9;new file:   src/dustbin/Feature.php&#10;#&#9;new file:   src/dustbin/Group.php&#10;#&#9;new file:   src/dustbin/OrderUser.php&#10;#&#9;new file:   src/dustbin/OrderUserInfo.php&#10;#&#9;new file:   src/dustbin/Picture.php&#10;#&#9;new file:   src/dustbin/Product.php&#10;#&#9;new file:   src/dustbin/Promotion.php&#10;#&#9;new file:   src/dustbin/Provider.php&#10;#&#9;new file:   src/dustbin/ProviderInfo.php&#10;#&#9;new file:   src/dustbin/ShipmentZone.php&#10;#&#9;new file:   src/dustbin/Transport.php&#10;#&#9;new file:   src/dustbin/User.php&#10;#&#9;new file:   src/dustbin/UserInfo.php&#10;#&#9;new file:   src/dustbin/new.html.twig&#10;#&#9;new file:   test.php&#10;#&#9;new file:   web/.htaccess&#10;#&#9;new file:   web/app.php&#10;#&#9;new file:   web/app_dev.php&#10;#&#9;new file:   web/apple-touch-icon.png&#10;#&#9;new file:   web/chaos.jpg&#10;#&#9;new file:   web/config.php&#10;#&#9;new file:   web/favicon.ico&#10;#&#9;new file:   web/logs.txt&#10;#&#9;new file:   web/robots.txt&#10;#&#10;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Entity/CategoryRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="35" selection-start="776" selection-end="776" vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="918" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Default/show.category.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="45" selection-start="630" selection-end="630" vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="799" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="17" selection-start="1122" selection-end="1924" vertical-scroll-proportion="-25.5" vertical-offset="595" max-vertical-offset="1428" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="56" selection-start="872" selection-end="872" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="2431" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Controller/SearchController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="0" selection-start="4732" selection-end="4732" vertical-scroll-proportion="-16.5" vertical-offset="1900" max-vertical-offset="2720" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Default/show.search.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="118" selection-start="452" selection-end="452" vertical-scroll-proportion="-5.8846154" vertical-offset="204" max-vertical-offset="1360" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Product/form.new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="859" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/srucore/js/picture/classUpload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="43" selection-start="1882" selection-end="1889" vertical-scroll-proportion="0.33333334" vertical-offset="658" max-vertical-offset="1853" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Service/PictureHandlerProduct.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="59" selection-start="1127" selection-end="1127" vertical-scroll-proportion="-15.038462" vertical-offset="255" max-vertical-offset="1377">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/srucore/js/picture/pictureHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="152" column="50" selection-start="3998" selection-end="3998" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3638" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/srucore/js/picture/classDropFile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="167" selection-start="1904" selection-end="1911" vertical-scroll-proportion="-32.785713" vertical-offset="0" max-vertical-offset="1309" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Recursive/slideshow.brand.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="16" selection-start="340" selection-end="340" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="272" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/step2.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="0" selection-start="3032" selection-end="3032" vertical-scroll-proportion="-26.807692" vertical-offset="714" max-vertical-offset="2397" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Product/form.content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="290" column="8" selection-start="10540" selection-end="10570" vertical-scroll-proportion="-6.0555553" vertical-offset="4603" max-vertical-offset="5491" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Product/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="59" selection-end="303" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="697" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="304" selection-end="304" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="612" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="304" selection-end="304" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="612" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Service/ProviderImportEntities.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="358" column="47" selection-start="9444" selection-end="9444" vertical-scroll-proportion="-5.423077" vertical-offset="5673" max-vertical-offset="6936">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Pagination/sliding.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="32" selection-start="3434" selection-end="3434" vertical-scroll-proportion="-30.73077" vertical-offset="952" max-vertical-offset="1938" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Controller/BrandController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="5" selection-start="580" selection-end="1565" vertical-scroll-proportion="-28.76923" vertical-offset="51" max-vertical-offset="6953" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/brand.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="220" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/user.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="16" selection-start="341" selection-end="341" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="453" selection-end="453" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="5253" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/form.content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="126" column="12" selection-start="3739" selection-end="3739" vertical-scroll-proportion="2.5714285" vertical-offset="0" max-vertical-offset="3859" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3638">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Promotion/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="63" selection-start="908" selection-end="1033" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2635">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/User/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="26" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Product/index.content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2431">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Default/index.content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="28" selection-start="2641" selection-end="2641" vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="3553">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Recursive/slideshow.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="34" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Default/show.product.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="24" selection-start="5972" selection-end="5972" vertical-scroll-proportion="0.0" vertical-offset="2193" max-vertical-offset="3281">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Service/PixmaniaImport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="153" column="26" selection-start="4393" selection-end="4393" vertical-scroll-proportion="-20.5" vertical-offset="1779" max-vertical-offset="2635">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Controller/SlideshowController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4284">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/Slideshow/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="12" selection-start="344" selection-end="344" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="1241">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/BackOffice/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="80.42308" vertical-offset="2091" max-vertical-offset="5814">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="206" column="85" selection-start="8892" selection-end="8892" vertical-scroll-proportion="-5.230769" vertical-offset="3366" max-vertical-offset="4947">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Controller/PromotionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="40" selection-start="1019" selection-end="1019" vertical-scroll-proportion="131.42308" vertical-offset="3910" max-vertical-offset="9758">
+          <folding>
+            <marker date="1405603459641" expanded="true" signature="-1:-1" placeholder="SELECT a FRO..SruCoreBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Controller/OrderUserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="216" column="44" selection-start="7391" selection-end="7391" vertical-scroll-proportion="-7.4074073" vertical-offset="3119" max-vertical-offset="8942">
+          <folding>
+            <marker date="1406619364278" expanded="true" signature="-1:-1" placeholder="SELECT a FRO..SruCoreBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="225" column="80" selection-start="7796" selection-end="7796" vertical-scroll-proportion="-37.07229" vertical-offset="748" max-vertical-offset="5678">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Controller/FrontOfficeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="88" selection-end="125" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="1292">
+          <folding>
+            <marker date="1406622274499" expanded="true" signature="-1:-1" placeholder="SELECT p FRO..SruCoreBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Controller/ProductArchiveController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="69" selection-start="1713" selection-end="1713" vertical-scroll-proportion="-23.615385" vertical-offset="151" max-vertical-offset="986">
+          <folding>
+            <marker date="1406625462251" expanded="true" signature="-1:-1" placeholder="SELECT a FRO..SruCoreBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Entity/FeatureRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="861">
+          <folding>
+            <marker date="1403515348000" expanded="true" signature="368:504" placeholder="SELECT e.nam..SruCoreBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Entity/ProductArchive.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="480" column="5" selection-start="9451" selection-end="9451" vertical-scroll-proportion="-23.538462" vertical-offset="7548" max-vertical-offset="10421">
+          <folding>
+            <element signature="e#41#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Cart/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="56.23077" vertical-offset="1462" max-vertical-offset="3910">
+          <folding>
+            <marker date="1406304904133" expanded="true" signature="282:9420" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="581:9048" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="622:4297" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="669:1068" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="694:1039" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="1096:4272" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="1303:4210" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="1356:1448" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="1501:2214" placeholder="..." />
+            <marker date="1406304904133" expanded="false" signature="1832:1848" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="2267:2703" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="2727:3901" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="3955:4179" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="4051:4145" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="4380:7991" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="4433:7967" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="4636:4705" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="4921:5408" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="5048:5141" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="5195:5381" placeholder="..." />
+            <marker date="1406304904133" expanded="false" signature="5302:5333" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="5533:7941" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="6330:7735" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="6443:7545" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="6488:6627" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="6672:7503" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="6721:7457" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="6873:7001" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="7217:7346" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="8054:9029" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="8101:8395" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="8130:8366" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="8424:8999" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="8453:8970" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="8506:8616" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="8669:8775" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="8828:8940" placeholder="..." />
+            <marker date="1406304904133" expanded="true" signature="9296:9383" placeholder="..." />
+            <marker date="1406304904133" expanded="false" signature="9325:9337" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/OrderUser/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="48" selection-start="845" selection-end="845" vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="1173">
+          <folding>
+            <marker date="1406627058955" expanded="true" signature="825:1851" placeholder="{% if choice.product ...%}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/orderuser.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="859">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/config/routing/orderuseradmin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="63" selection-start="828" selection-end="828" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Resources/views/FrontOffice/Profile/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="859">
+          <folding>
+            <marker date="1406282097990" expanded="true" signature="278:591" placeholder="..." />
+            <marker date="1406282097990" expanded="false" signature="426:438" placeholder="..." />
+            <marker date="1406282097990" expanded="true" signature="439:487" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="150" selection-start="358" selection-end="413" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="15810">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Entity/Choice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="125" selection-start="337" selection-end="337" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="4505">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sru/CoreBundle/Controller/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="519" column="0" selection-start="16825" selection-end="16825" vertical-scroll-proportion="0.40869564" vertical-offset="8494" max-vertical-offset="9299">
+          <folding>
+            <element signature="e#45#76#0" expanded="true" />
+            <marker date="1406626460678" expanded="true" signature="1057:1094" placeholder="SELECT a FRO..SruCoreBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

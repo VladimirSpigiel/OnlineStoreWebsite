@@ -1,0 +1,37 @@
+admin_order_info:
+    pattern:  /page/{page}/filter/{field}.{orderby}/options/{fieldO}{criteria}
+    defaults: { _controller: "SruCoreBundle:OrderUserInfo:index", page : 1, field: state, orderby : asc, fieldO : null, criteria : null }
+
+admin_order_info_options:
+    pattern:  /options
+    defaults: { _controller: "SruCoreBundle:OrderUserInfo:options" }
+
+admin_order_info_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:OrderUserInfo:show" }
+
+admin_order_info_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:OrderUserInfo:new" }
+
+admin_order_info_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:OrderUserInfo:create" }
+    requirements: { _method: post }
+
+admin_order_info_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:OrderUserInfo:edit" }
+
+admin_order_info_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:OrderUserInfo:update" }
+    requirements: { _method: post|put }
+
+admin_order_info_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:OrderUserInfo:delete" }
+
+admin_order_info_default:
+    pattern:  /{id}/default
+    defaults: { _controller: "SruCoreBundle:OrderUserInfo:default" }

@@ -1,0 +1,3 @@
+admin_search:
+    pattern:  /
+    defaults: { _controller: "SruCoreBundle:Search:index" }

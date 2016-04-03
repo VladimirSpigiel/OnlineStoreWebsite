@@ -1,0 +1,108 @@
+{# default Sliding pagination control implementation #}
+
+{% if pageCount > 1 %}
+    <ul class="pagination">
+
+        {% if first is defined and current != first %}
+
+            <!-- <span class="first">
+            <a href="{{ path(route, query|merge({(pageParameterName): first})) }}">&lt;&lt;</a>
+        </span>-->
+        {% endif %}
+
+        {% if previous is defined %}
+            <li><a href="{{ path(route, query|merge({(pageParameterName): previous})) }}">
+                    <span class="glyphicon glyphicon-chevron-left"></span></a>
+            </li>
+
+
+        {% endif %}
+
+        {% for page in pagesInRange %}
+            {% if page != current %}
+            <li><a href="{{ path(route, query|merge({(pageParameterName): page})) }}">{{ page }}</a></li>
+            {% else %}
+                <li class="active"><a href="#">{{ page }}</a></li>
+            {% endif %}
+
+        {% endfor %}
+
+        {% if next is defined %}
+            <li><a href="{{ path(route, query|merge({(pageParameterName): next})) }}">
+                    <span class="glyphicon glyphicon-chevron-right" ></span></a>
+                </li>
+
+
+        {% endif %}
+
+        {% if last is defined and current != last %}
+            <!-- <span class="last">
+            <a href="{{ path(route, query|merge({(pageParameterName): last})) }}">&gt;&gt;</a>
+        </span> -->
+        {% endif %}
+
+        <li  class="dropdown">
+            <a href="#" style="color:#000;"  >
+                <div class="dropdown-menu-right dropdown-menu" style="min-width: 200px; padding: 20px;">
+                    <h4>Nombre d'éléments par page : </h4>
+
+                    <select class="form-control nbr_page">
+
+                        {% for i in 1..20     %}
+                            {% if app.session.get("elements_nbr") == i*5 %}
+                                <option value="{{ i*5 }}" selected>{{ i*5 }}</option>
+                            {% else %}
+                                <option value="{{ i*5 }}">{{ i*5 }}</option>
+
+                            {% endif %}
+                        {% endfor %}
+
+
+                    </select>
+                </div>
+                <span class="glyphicon glyphicon-list" data-toggle="dropdown"></span>
+
+            </a>
+        </li>
+
+    </ul>
+    {% else %}
+
+
+        {% if pagesInRange|length > 5 %}
+        <div href="#" class="dropdown btn-default btn">
+            <a href="#" style="color:#000;"  >
+                <div class="dropdown-menu-right dropdown-menu" style="min-width: 200px; padding: 20px;">
+                    <h4>Nombre d'éléments par page : </h4>
+
+                    <select class="form-control nbr_page">
+
+                        {% for i in 1..20     %}
+                            {% if app.session.get("elements_nbr") == i*5 %}
+                                <option value="{{ i*5 }}" selected>{{ i*5 }}</option>
+                            {% else %}
+                                <option value="{{ i*5 }}">{{ i*5 }}</option>
+
+                            {% endif %}
+                        {% endfor %}
+
+
+                    </select>
+                </div>
+                <span class="glyphicon glyphicon-list" data-toggle="dropdown">&nbsp;<b class="caret"></b></span>
+            </a>
+        </div>
+        {% endif %}
+    <br>
+{% endif %}
+
+
+<script>
+    $(function(){
+        $("select").click(function(e){
+            e.preventDefault();
+            e.stopPropagation();
+        })
+    })
+</script>
+

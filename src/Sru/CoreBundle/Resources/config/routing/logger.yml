@@ -1,0 +1,27 @@
+logger:
+    pattern:  /
+    defaults: { _controller: "SruCoreBundle:Logger:index" }
+
+logger_txt:
+    pattern:  /txt
+    defaults: { _controller: "SruCoreBundle:Logger:readFromTxt" }
+
+logger_db:
+    pattern:  /db
+    defaults: { _controller: "SruCoreBundle:Logger:readFromDatabase" }
+
+logger_txt_delete:
+    pattern:  /txt/delete
+    defaults: { _controller: "SruCoreBundle:Logger:deleteTxt" }
+
+logger_db_delete:
+    pattern:  /db/delete
+    defaults: { _controller: "SruCoreBundle:Logger:deleteDb" }
+
+logger_all_delete:
+    pattern:  /all/delete
+    defaults: { _controller: "SruCoreBundle:Logger:deleteAll" }
+
+logger_consulted:
+    pattern:  /consulted
+    defaults: { _controller: "SruCoreBundle:Logger:consulted" }

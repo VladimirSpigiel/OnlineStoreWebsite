@@ -1,0 +1,53 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Transport : {{ entity.name }}</h1>
+    <hr>
+
+    <a href="{{ path('admin_transport_edit', {id: entity.id}) }}" class="btn btn-warning">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp; Modifier</a>
+    <a href="{{ path('admin_transport_delete', {id: entity.id}) }}" class="btn btn-danger">
+        <span class="glyphicon glyphicon-trash"></span>&nbsp; Supprimer</a>
+    <br><br>
+    <div class="table-responsive">
+        <table class="table table-bordered text-left table-striped table-hover">
+            <thead class="bg-primary">
+            <tr>
+                <th>Nom</th>
+                <th>Prix (€)</th>
+                <th>Delai minimum (jours)</th>
+                <th>Delai maximum (jours)</th>
+                <th>Url tracking</th>
+                <th>Zones de livraison</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+
+                    <td>{{ entity.name }}</td>
+                    <td>{{ entity.price }}</td>
+                    <td>{{ entity.minDelay }}</td>
+                    <td>{{ entity.maxDelay }}</td>
+                    <td>{{ entity.urlTracking }}</td>
+                    <td>
+                        <select>
+                            {% for zone in entity.shipmentZone %}
+                                <option>{{ zone.zone }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+{% endblock %}

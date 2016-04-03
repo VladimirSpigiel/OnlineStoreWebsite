@@ -1,0 +1,36 @@
+<li class="has-form">
+    <a href="{{ path('cart') }}" class="button ">
+        <i class="fi-shopping-cart"></i>
+        &nbsp;
+        {% if cart.choice|length >0 %}
+            {% set prix = 0 %}
+
+            {% for choice in cart.choice %}
+                {% if choice.promotion %}
+                    {% set prix = prix+ ((choice.product.priceTtc - (choice.product.priceTtc * choice.promotion.reduction) /100)*choice.quantity) %}
+                {% else %}
+                    {% set prix = choice.product.priceTtc * choice.quantity + prix %}
+
+                {% endif %}
+
+            {% endfor %}
+
+            {% set nb_articles = 0 %}
+            {% for choice in cart.choice %}
+                {% set nb_articles = nb_articles + choice.quantity %}
+            {% endfor %}
+
+
+            {{ nb_articles }}
+            {% if cart.choice|length == 1 %}
+                article
+            {% else %}
+                articles
+            {% endif %}
+            [<b><span class="">{{ prix|number_format(2,",") }} €</span></b>]
+
+        {% else %}
+            Votre panier est vide
+        {% endif %}
+    </a>
+</li>

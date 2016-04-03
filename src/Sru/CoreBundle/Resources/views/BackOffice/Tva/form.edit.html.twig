@@ -1,0 +1,12 @@
+<form method="post" class="text-left tvaForm" role="form" action="{{ path('admin_tva_update', {id : entity.id}) }}" {{ form_enctype(form) }}>
+
+
+    <button class="btn btn-warning">
+        <span class="glyphicon glyphicon-ok"></span> &nbsp;
+        Modifier la TVA</button>
+
+    <br><br>
+
+    {% include "SruCoreBundle:BackOffice/Tva:form.content.html.twig" %}
+
+</form>

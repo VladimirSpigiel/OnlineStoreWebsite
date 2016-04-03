@@ -1,0 +1,224 @@
+{% extends "SruCoreBundle:FrontOffice:layout.html.twig" %}
+
+    {% block title %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+    {% endblock %}
+
+
+    {% block body %}
+        {{ parent() }}
+        <br><br>
+        <div class="row">
+        <h2 class="">Votre panier</h2>
+            <hr>
+
+        {% for erreur in app.session.flashbag.get("erreurs") %}
+            <div class="alert alert-danger text-center">{{ erreur }}</div>
+        {% endfor %}
+
+
+        <br>
+        {% if cart.choice|length > 0 %}
+            <div class="">
+                <table class="large-12">
+                    <thead class="bg-primary">
+                    <tr>
+                        <th class="text-center">Produit</th>
+                        <th class="text-center">Quantité</th>
+                        <th class="text-center">Prix unitaire</th>
+                        <th class="text-center">Prix total</th>
+
+                        <th class="text-center">Supprimer</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% set prixTotal = 0 %}
+                    {% set totalHt = 0 %}
+                    {% set tva = 0 %}
+                    {% for choice in cart.choice %}
+
+
+                        <tr>
+                            <td class="text-center">
+                                {{ choice.product.name }}
+                            </td>
+                            <td class="text-center">
+                                {% if choice.quantity - 1 >= 1 %}
+                                    <a href="{{ path('cart_modify', {id : choice.product.id, quantity : choice.quantity - 1}) }}"><i class="fi-minus "></i></a>
+                                {% endif %}
+                                        &nbsp;<span style="font-size: 18px;"> {{ choice.quantity }} </span>&nbsp;
+                                {% if choice.quantity + 1 <= choice.product.stock %}
+                                    <a href="{{ path('cart_modify', {id : choice.product.id, quantity : choice.quantity + 1}) }}"><i class="fi-plus success"></i></a>
+                                {% endif %}
+                            </td>
+                            <td class="text-center">
+                                {% if not choice.promotion %}
+                                        {{ choice.product.priceTtc|number_format(2,",") }} €
+
+                                    {% else %}
+                                        {{ (choice.product.priceTtc - (choice.product.priceTtc * choice.promotion.reduction) /100)|number_format(2,",") }} €
+
+                                {% endif %}
+
+
+                            <td class="text-center">
+                                {% if not choice.promotion %}
+                                    {{ (choice.product.priceTtc * choice.quantity)|number_format(2,",") }} €
+                                    {% set prixTotal = prixTotal + choice.product.priceTtc * choice.quantity %}
+                                    {% set totalHt = totalHt + (choice.product.priceHt* choice.quantity) %}
+                                    {% set tva = prixTotal - totalHt %}
+                                {% else %}
+                                    {{ ((choice.product.priceTtc - (choice.product.priceTtc * choice.promotion.reduction) /100)*choice.quantity)|number_format(2,",") }} €
+                                    {% set prixTotal = prixTotal + ((choice.product.priceTtc - (choice.product.priceTtc * choice.promotion.reduction) /100)*choice.quantity) %}
+                                    {% set totalHt = totalHt + (choice.product.priceHt - ((choice.product.priceHt * choice.promotion.reduction) / 100))*choice.quantity %}
+                                    {% set tva = prixTotal - totalHt %}
+                                {% endif %}
+                            </td>
+
+                            <td class="text-center">
+                                <a href="{{ path('cart_remove', { id: choice.product.id }) }}">
+                                    <i class="fi-x"></i>
+                                </a>
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <hr>
+
+                <form action="{{ path('cart_promotion') }}">
+                <div class="panel large-12 columns">
+                    <h4>Coupon de réduction</h4>
+                    <hr>
+
+                    {% for msg in  app.session.flashbag.get('error') %}
+                        <div class="alert-box warning">
+                            {{ msg }}
+                        </div>
+                    {% endfor %}
+
+
+                    Vous posssédez un coupon ? Entrez son code et validez si vous souhaitez l'utiliser.
+                    <br><br>
+
+                    <div class="row collapse">
+                        <label for="code">Saisissez votre code :</label>
+                        <div class="small-9 columns">
+                            <input type="text" name="code" />
+                        </div>
+                        <div class="small-3 columns">
+                            <button class="button small" name="submit" value="code" type="submit" style="height: 37px; padding-top:10px;">Valider</button>
+                        </div>
+                    </div>
+
+
+
+
+
+                        <label for="code">Vos coupons : </label>
+                        <div class="panel radius row">
+                            {% set exist = [] %}
+
+                            {% for choice in  app.session.get('cart').choice %}
+                                {% set display = true %}
+
+                                {% for existant in exist %}
+
+                                    {% if choice.promotion %}
+                                        {% if existant == choice.promotion.id %}
+
+                                                {% set display = false %}
+
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+
+
+                                {% if choice.promotion and display == true and choice.promotion.public == false  %}
+                                    <div class="large-6 columns">
+                                    <b>{{  choice.promotion.code }}</b>
+                                    <ul>
+                                        <li>
+                                            {{  choice.promotion.reduction }} % de réduction
+                                        </li>
+                                        <li>
+                                            <ul>
+                                                {% for product in choice.promotion.product  %}
+                                                    <li>
+                                                        {{ product }}
+                                                    </li>
+                                                {% endfor %}
+
+                                                {% for category in choice.promotion.category  %}
+                                                    <li>
+                                                        {{ category }}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <a href="{{ path('cart_promotion_cancel',{id : choice.promotion.id}) }}" class="button tiny alert">Annuler</a>
+                                    </div>
+                                    {% set exist = exist|merge([choice.promotion.id]) %}
+
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+
+
+
+                </div>
+                </form>
+
+                <hr>
+                <table class="large-12">
+                    <thead class="bg-primary">
+                        <tr>
+                            <th class="text-center">Total HT</th>
+                            <th class="text-center">TVA</th>
+                            <th class="text-center" rowspan="2">Total TTC</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <b>{{ totalHt|number_format(2,",") }} €</b>
+                            </td>
+                            <td class="text-center">
+                                <b>{{ tva|number_format(2,",") }} €</b>
+                            </td>
+                            <td class="text-center">
+                                <b>{{ prixTotal|number_format(2,",") }} €</b>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    </table>
+            </div>
+
+
+            <a href="{{ path('order_step',{step:2}) }}" class="button right">Commander</a>
+
+            <a href="{{ path('cart_delete') }}" class="button alert left">Vider panier</a>
+        {% else %}
+            <div class="alert-box warning">
+                <h5 style="color: #FFF;">Votre panier est vide</h5>
+            </div>
+        {% endif %}
+
+
+        </div>
+    {% endblock %}
+
+
+
+    {% block javascripts %}
+        {{ parent() }}
+    {% endblock %}

@@ -1,0 +1,16 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>ProviderInfo creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('admin_provider_info') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

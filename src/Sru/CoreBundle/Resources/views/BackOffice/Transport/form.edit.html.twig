@@ -1,0 +1,12 @@
+<form method="post" class="text-left transportForm" role="form" action="{{ path('admin_transport_update', {id : entity.id}) }}" {{ form_enctype(form) }}>
+
+
+    <button class="btn btn-warning">
+        <span class="glyphicon glyphicon-ok"></span> &nbsp;
+        Modifier le transport</button>
+
+    <br><br>
+
+    {% include "SruCoreBundle:BackOffice/Transport:form.content.html.twig" %}
+
+</form>

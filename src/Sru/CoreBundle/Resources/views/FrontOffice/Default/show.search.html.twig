@@ -1,0 +1,74 @@
+{% extends "SruCoreBundle:FrontOffice:layout.html.twig" %}
+
+    {% block title %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+
+
+    {% endblock %}
+
+
+    {% block content %}
+        {{ parent() }}
+
+        <br><br>
+
+
+            <div id="fond row">
+                <div class="ruban">
+                    <h2 class="text-center" style="margin-top:5px;">Résultat de la recherche : " {{ keywords|upper }} "</h2>
+                </div>
+                <div class="ruban_gauche"></div>
+                <div class="ruban_droit"></div>
+            </div>
+            <br><br>
+
+
+            <hr>
+        {% if products|length > 0 %}
+            <br><br>
+
+
+            <div class="all_products">
+                {% include "SruCoreBundle:FrontOffice/Default:index.content.html.twig" with {page: 1}  %}
+            </div>
+
+            <div class="small-12 button load radius success" keywords="{{ keywords }}">
+                <b>Charger les produits suivants</b>
+            </div>
+
+        {% endif %}
+
+
+    {% endblock %}
+
+
+    {% block javascripts %}
+        {{ parent() }}
+        <script>
+
+
+
+            $('.load').click(load);
+
+            function load(){
+
+                var text = $(this).html();
+                $(this).html('<b>Chargement ...</b>')
+
+                var path ='{{ path('search_load', {page: "PLACEHOLDER", keywords: "2ND" }) }}';
+                path = path.replace("PLACEHOLDER", parseInt($(".page:last").attr('page')) + 1);
+                path = path.replace("2ND", $('.load').attr('keywords'));
+
+                $.get(path, function(data){
+                    $('.all_products').append(data);
+                    $('.page').slideDown(500);
+                    $('.load').html(text);
+                })
+            }
+        </script>
+    {% endblock %}
+

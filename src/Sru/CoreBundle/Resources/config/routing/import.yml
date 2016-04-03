@@ -1,0 +1,7 @@
+admin_import:
+    pattern:  /
+    defaults: { _controller: "SruCoreBundle:Import:index" }
+
+admin_import_upload:
+    pattern:  /upload
+    defaults: { _controller: "SruCoreBundle:Import:upload" }

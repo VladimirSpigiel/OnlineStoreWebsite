@@ -1,0 +1,34 @@
+sru_alpha_store:
+    resource: "@SruAlphaStoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+sru_core:
+    resource: "@SruCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user_security:
+    resource: "@SruCoreBundle/Resources/config/routing/FOSUser/security.xml"
+
+fos_user_profile:
+    resource: "@SruCoreBundle/Resources/config/routing/FOSUser/profile.xml"
+    prefix: /profil
+
+fos_user_register:
+    resource: "@SruCoreBundle/Resources/config/routing/FOSUser/registration.xml"
+    prefix: /enregistrement
+
+fos_user_resetting:
+    resource: "@SruCoreBundle/Resources/config/routing/FOSUser/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@SruCoreBundle/Resources/config/routing/FOSUser/change_password.xml"
+    prefix: /profil
+
+fos_user_group:
+    resource: "@SruCoreBundle/Resources/config/routing/FOSUser/group.xml"
+    prefix: /group
+
+console:
+    resource: "@CoreSphereConsoleBundle/Resources/config/routing.yml"
+

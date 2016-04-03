@@ -1,0 +1,37 @@
+{% extends "SruCoreBundle:FrontOffice:layout.html.twig" %}
+
+    {% block title %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+    {% endblock %}
+
+
+    {% block body %}
+        {{ parent() }}
+
+        {% for product in products %}
+            <div class="col-sm-3 text-center">
+                <div class="well thumbnail">
+                        {{ product.name }}
+                    <br><hr>
+
+                    <a href="{{ path('cart_add', {id: product.id}) }}" class="btn btn-default">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        Ajouter au panier
+                    </a>
+
+                </div>
+            </div>
+
+        {% endfor %}
+
+    {% endblock %}
+
+
+
+    {% block javascripts %}
+        {{ parent() }}
+    {% endblock %}

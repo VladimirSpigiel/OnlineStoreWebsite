@@ -1,0 +1,13 @@
+<form method="post" class="text-left categoryForm" role="form" action="{{ path('admin_category_create') }}" {{ form_enctype(form) }}>
+
+
+
+    <button class="btn btn-success">
+        <span class="glyphicon glyphicon-ok"></span> &nbsp;
+        Créer la catégorie</button>
+
+    <br><br>
+
+    {% include  "SruCoreBundle:BackOffice/Category:form.content.html.twig" %}
+
+</form>

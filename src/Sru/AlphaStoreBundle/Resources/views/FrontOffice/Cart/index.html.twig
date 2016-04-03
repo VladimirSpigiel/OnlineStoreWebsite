@@ -1,0 +1,86 @@
+{% extends "SruCoreBundle:FrontOffice:layout.html.twig" %}
+
+    {% block title %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+    {% endblock %}
+
+
+    {% block body %}
+        {{ parent() }}
+        <h2 class="text-center">Votre panier</h2>
+
+        {% for erreur in app.session.flashbag.get("erreurs") %}
+            <div class="alert alert-danger text-center">{{ erreur }}</div>
+        {% endfor %}
+
+        <br>
+        {% if cart.choice|length > 0 %}
+            <div class="table-responsive">
+                <table class="table table-bordered text-left table-striped table-hover">
+                    <thead class="bg-primary">
+                    <tr>
+                        <th class="text-center">Produit</th>
+                        <th class="text-center">Quantité</th>
+                        <th class="text-center">Prix unitaire</th>
+                        <th class="text-center">Prix final</th>
+
+                        <th class="text-center">Supprimer</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% set prixTotal = 0 %}
+                    {% for choice in cart.choice %}
+                        {% set prixTotal = prixTotal + choice.product.priceTtc * choice.quantity %}
+                        <tr>
+                            <td class="text-center">
+                                {{ choice.product.name }}
+                            </td>
+                            <td class="text-center">
+                                {% if choice.quantity - 1 >= 1 %}
+                                    <a href="{{ path('cart_modify', {id : choice.product.id, quantity : choice.quantity - 1}) }}"><span class="glyphicon glyphicon-minus-sign text-danger"></span></a>
+                                {% endif %}
+                                        &nbsp;<span style="font-size: 18px;"> {{ choice.quantity }} </span>&nbsp;
+                                {% if choice.quantity + 1 <= choice.product.stock %}
+                                    <a href="{{ path('cart_modify', {id : choice.product.id, quantity : choice.quantity + 1}) }}"><span class="glyphicon glyphicon-plus-sign text-success"></span></a>
+                                {% endif %}
+                            </td>
+                            <td class="text-center">
+                                {{ choice.product.priceTtc|number_format(2,",") }} €
+                            </td>
+                            <td class="text-center">
+                                {{ (choice.product.priceTtc * choice.quantity)|number_format(2,",") }} €
+                            </td>
+
+                            <td class="text-center">
+                                <a href="{{ path('cart_remove', { id: choice.product.id }) }}">
+                                    <span class="glyphicon glyphicon-remove text-danger"></span>
+                                </a>
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <a href="{{ path('order_new') }}" class="btn btn-success">Commander [ {{ prixTotal|number_format(2,",") }} € ]</a>
+            <br><br>
+            <a href="{{ path('cart_delete') }}" class="btn btn-danger">Vider panier</a>
+        {% else %}
+            Panier vide
+        {% endif %}
+
+
+
+    {% endblock %}
+
+
+
+    {% block javascripts %}
+        {{ parent() }}
+    {% endblock %}

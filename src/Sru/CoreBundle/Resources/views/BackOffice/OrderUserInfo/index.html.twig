@@ -1,0 +1,83 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Gestion des états de commandes</h1>
+    <hr>
+
+    <a href="{{ path('admin_order_info_new') }}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>&nbsp; Créer un état</a>
+    <div class="text-center"> {{ knp_pagination_render(entities) }}</div>
+
+<form method="post" action="{{ path('admin_order_info_options') }}">
+
+
+
+    {% include "SruCoreBundle:BackOffice/Filter:checkbox.html.twig"
+     %}
+    <br>
+
+    <div class="table-responsive">
+        <table class="table table-bordered text-left table-striped table-hover">
+            <thead class="bg-primary">
+            <tr>
+                <th class="text-center col-lg-1"><input type="checkbox" class="selectAll"  ></th>
+                <th>
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Etat", "field" : "state"} %}
+
+                </th>
+
+
+
+                <th>
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Défaut", "field" : "default"} %}
+
+                </th>
+
+
+                <th class="text-center">Modifier</th>
+                <th class="text-center">Supprimer</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td class="text-center col-lg-1"><input type="checkbox" class="checker" name="entity[]" value="{{ entity.id }}"></td>
+
+
+                    <td>{{ entity.state}}</td>
+
+
+                    <td class="text-center">
+                        <a href="{{ path('admin_order_info_default', {id : entity.id}) }}">
+                            {% if entity.default == true %}
+                                <span class="glyphicon glyphicon-thumbs-up text-success"></span>
+                            {% else %}
+                                <span class="glyphicon glyphicon-thumbs-down text-danger"></span>
+                            {% endif %}
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a href="{{ path('admin_order_info_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                    </td>
+
+                    <td class="text-center">
+                        <a href="{{ path('admin_order_info_delete', { 'id': entity.id }) }}" onclick="return confirm('Etes-vous sur de vouloir supprimer {{ entity.state }} ?')"><span class="glyphicon glyphicon-remove text-danger"></span></a>
+                    </td>
+
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% include "SruCoreBundle:BackOffice/Filter:checkbox.html.twig"
+    %}
+    </form>
+
+    <div class="text-center"> {{ knp_pagination_render(entities) }}</div>
+{% endblock %}

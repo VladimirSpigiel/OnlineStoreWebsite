@@ -1,0 +1,78 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Import de fichier</h1>
+    <hr>
+
+    {% if erreur is defined %}
+        <div class="alert alert-danger">
+            {{ erreur }}
+        </div>
+    {% endif %}
+
+
+    <form method="post" action="{{ path('admin_import_upload') }}" enctype="multipart/form-data">
+
+        <div class="form-group col-lg-5 well">
+
+
+            <label>Type de service</label>
+            <select class="form-control" name="service">
+                {% for service in services %}
+                    <option value="{{ service }}">{{ service }}</option>
+                {% endfor %}
+            </select>
+            <br>
+           <!-- <label>Restrictions</label>
+
+            <div class="input-group">
+              <span class="input-group-addon">
+                <input type="checkbox" name="update_category" checked>
+              </span>
+                <button type="text" class="form-control btn btn-primary" disabled>Mettre à jour les catégories</button>
+            </div>
+            <br>
+
+            <div class="input-group">
+              <span class="input-group-addon">
+                <input type="checkbox" name="update_pictures" checked>
+              </span>
+                <button type="text" class="form-control btn btn-primary" disabled>Mettre à jour les images</button>
+            </div>
+            <br>
+
+            <div class="input-group">
+              <span class="input-group-addon">
+                <input type="checkbox" name="update_brands" checked>
+              </span>
+                <button type="text" class="form-control btn btn-primary" disabled>Mettre à jour les marques</button>
+            </div><br>-->
+
+
+            <label>Fichier</label>
+            <input name="file" type="file" class="filestyle" data-buttonName="btn-primary" data-buttonBefore="true">
+
+            <hr><br><br>
+
+            <input type="submit" class="btn btn-success" value="Importer le fichier">
+
+        </div>
+
+
+    </form>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('bundles/srucore/js/filestyle.js') }}"></script>
+
+    <script>
+        $(function () {
+            $(":file").filestyle({buttonName: "btn-primary"});
+        })
+    </script>
+{% endblock %}

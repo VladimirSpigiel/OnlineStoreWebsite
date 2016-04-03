@@ -1,0 +1,95 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+
+    <h1>Modification d'un utilisateur</h1>
+
+    <hr>
+    {% if erreurs is defined  %}
+        <div class="alert alert-danger">Erreurs :  {{ erreurs }}</div>
+    {% endif %}
+
+    <form method="post" class="text-left" role="form" action="{{ path('admin_user_update', {id: entity.id}) }}" {{ form_enctype(form) }}>
+
+
+        <button class="btn btn-warning">
+            <span class="glyphicon glyphicon-ok"></span> &nbsp;
+            Modifier l'utilisateur</button>
+
+        <br><br>
+
+        <div class="well col-sm-10">
+            <div class="form-group">
+                {% if form_errors(form.username) %}
+                    <div class="alert alert-danger">
+                        {{ form_errors(form.username) }}
+                    </div>
+                {% endif %}
+                {{ form_label(form.username, 'Pseudo') }}
+                {{ form_widget(form.username, {'attr' : {'class' : 'form-control'} }) }}
+
+
+            </div>
+
+            <div class="form-group">
+                {% if form_errors(form.lastname) %}
+                    <div class="alert alert-danger">
+                        {{ form_errors(form.lastname) }}
+                    </div>
+                {% endif %}
+                {{ form_label(form.lastname, 'Nom') }}
+                {{ form_widget(form.lastname, {'attr' : {'class' : 'form-control'} }) }}
+
+
+            </div>
+
+            <div class="form-group">
+                {% if form_errors(form.firstname) %}
+                    <div class="alert alert-danger">
+                        {{ form_errors(form.firstname) }}
+                    </div>
+                {% endif %}
+                {{ form_label(form.firstname, 'Prénom') }}
+                {{ form_widget(form.firstname, {'attr' : {'class' : 'form-control'} }) }}
+
+
+            </div>
+            <div class="form-group">
+                {% if form_errors(form.email) %}
+                    <div class="alert alert-danger">
+                        {{ form_errors(form.email) }}
+                    </div>
+                {% endif %}
+
+                {{ form_label(form.email, 'Email') }}
+                {{ form_widget(form.email, {'attr' : {'class' : 'form-control'} }) }}
+
+            </div>
+
+
+            <div class="form-group">
+                {% if form_errors(form.profil) %}
+                    <div class="alert alert-danger">
+                        {{ form_errors(form.profil) }}
+                    </div>
+                {% endif %}
+                {{ form_label(form.profil, 'Profil') }}
+                {{ form_widget(form.profil, {'attr' : {'class' : 'form-control'} }) }}
+
+            </div>
+        </div>
+
+    </form>
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Gestion des transports</h1>
+    <hr>
+
+    <a href="{{ path('admin_transport_new') }}" class="btn btn-success">
+        <span class="glyphicon glyphicon-plus"></span>&nbsp; Créer un transport</a>
+    <div class="text-center"> {{ knp_pagination_render(entities) }}</div>
+
+
+<form method="post" action="{{ path('admin_transport_options') }}">
+
+
+
+    {% include "SruCoreBundle:BackOffice/Filter:checkbox.html.twig"
+    %}
+    <br>
+    <div class="table-responsive">
+        <table class="table table-bordered text-left table-striped table-hover">
+            <thead class="bg-primary">
+            <tr>
+
+                <th class="text-center"><input type="checkbox" class="selectAll"  ></th>
+                <th>
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Nom", "field" : "name"} %}
+
+                </th>
+                <th>Prix (€)</th>
+                <th>
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Delai minimum (jours)", "field" : "minDelay"} %}
+
+                </th>
+                <th>
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "Delai maximum (jours)", "field" : "maxDelay"} %}
+                </th>
+                <th>
+                    {% include "SruCoreBundle:BackOffice/Filter:header.html.twig"
+                    with {'name' : "URL Tracking", "field" : "urlTracking"} %}
+                </th>
+                <th>Zones de livraison</th>
+
+                <th class="text-center">Modifier</th>
+                <th class="text-center">Supprimer</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td class="text-center"><input type="checkbox" class="checker" name="entity[]" value="{{ entity.id }}"></td>
+
+                    <td>{{ entity.name }}</td>
+                    <td>
+                        <select>
+                        {% for price in entity.price %}
+                            <option>
+                                {{ entity.price }}
+                            </option>
+                        {% endfor %}
+                        </select>
+                        </td>
+                    <td>{{ entity.minDelay }}</td>
+                    <td>{{ entity.maxDelay }}</td>
+                    <td>{{ entity.urlTracking }}</td>
+                    <td>
+                        <select>
+                            {% for zone in entity.shipmentZone %}
+                                <option>{{ zone.zone }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+
+                    <td class="text-center">
+                        <a href="{{ path('admin_transport_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                    </td>
+                    <td class="text-center">
+                        <a href="{{ path('admin_transport_delete', { 'id': entity.id }) }}" onclick="return confirm('Etes-vous sur de vouloir supprimer {{ entity.name }} ?')">
+                            <span class="glyphicon glyphicon-remove text-danger"></span>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% include "SruCoreBundle:BackOffice/Filter:checkbox.html.twig"
+    %}
+    </form>
+
+    <div class="text-center"> {{ knp_pagination_render(entities) }}</div>
+{% endblock %}

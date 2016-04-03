@@ -1,0 +1,36 @@
+admin_category:
+    pattern:  /page/{page}/filter/{field}.{orderby}/options/{fieldO}{criteria}
+    defaults: { _controller: "SruCoreBundle:Category:index", page : 1, field: name, orderby : asc, fieldO : null, criteria : null }
+
+admin_category_options:
+    pattern:  /options
+    defaults: { _controller: "SruCoreBundle:Category:options" }
+
+admin_category_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:Category:show" }
+
+admin_category_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:Category:new"}
+
+admin_category_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:Category:create" }
+    requirements: { _method: post }
+
+admin_category_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:Category:edit" }
+
+admin_category_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:Category:update" }
+    requirements: { _method: post|put }
+
+admin_category_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:Category:delete" }
+
+
+

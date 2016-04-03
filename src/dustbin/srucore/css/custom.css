@@ -1,0 +1,179 @@
+
+#page-content-wrapper {
+    padding-top: 70px;
+
+}
+#sidebar-wrapper{ padding-top: 70px; }
+
+.sidebar-nav li {
+    line-height: 40px;
+    text-indent: 20px;
+    background-color: #35333D;
+    border-bottom: #1C1C1F 2px solid;
+
+
+}
+
+.sidebar-nav li span {
+    line-height: 40px;
+    text-indent: 20px;
+    margin-left: -20px;
+
+
+}
+
+.sidebar-nav li:first-child {
+    line-height: 40px;
+    text-indent: 20px;
+    margin-top: -20px;
+    border-top: #1C1C1F 2px solid;
+}
+
+
+.modal-footer {
+
+    border: none;
+}
+
+.instructions{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    font-weight: bold;
+    color: inherit;
+    font-size: 11.7pt;
+    height: 40px;
+    margin-top: -21px;
+    text-align: center;
+    z-index: 9;
+}
+
+.thumbnail{
+    display : inline-block;
+    margin-right: 52px;
+}
+
+.thumbnail > img{
+    margin-top: 10px;
+    margin-bottom:10px;
+    height:128px;
+    display: inherit;
+    border-radius: 5%;
+}
+
+.thumbnail{
+    margin-bottom: 45px;
+    border : 10px solid;
+}
+
+.thumbnail.default{
+
+        border : 10px solid #5cb85c;
+
+}
+
+select, .multiselect{
+    margin-bottom: 5px;
+}
+
+.log{
+    position: relative;
+    margin-top: 18px;
+    margin-right: 20px;
+    margin-left:20px;
+    cursor: pointer;
+}
+
+.log .icon{
+    font-size: 20px;
+    color: #999;
+}
+
+.log .nbr{
+    position: absolute;
+    font-size: 15px;
+    top:-12px;
+    right:-13px;
+    width:18px;
+    height:18px;
+    text-align: center;
+    border-radius: 100%;
+    background-color: #FFF;
+    z-index : -5;
+    font-weight: bold;
+    color: #000;
+
+    display: none;
+    
+}
+
+.log.dropdown ul{
+    padding:10px;
+    min-width: 600px;
+}
+
+.log .dropdown-menu {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+
+.log.dropdown .alert{
+    margin-bottom: 5px;
+    padding:10px;
+    border: 2px solid #000;
+}
+
+.log.dropdown .alert.alert-danger{
+    background-color: #d9534f;
+    color:#FFF;
+}
+
+.log.dropdown .alert.alert-danger:hover{
+    background-color: #d2322d;
+    color:#FFF;
+}
+
+
+.log.dropdown .alert.alert-warning{
+
+        background-color: #f0ad4e;
+        color:#FFF;
+}
+
+.log .nbr.min{
+
+
+    display: inline;
+    color: #000;
+}
+
+.log .nbr.med{
+    background-color: #d58512;
+    color: #000;
+    display: inline;
+
+}
+
+.log .nbr.max{
+    background-color: #d9534f;
+    color: #000;
+    display: inline;
+
+
+}
+
+.log .min{
+    color: #FFF;
+
+}
+
+.log .med{
+    color: #d58512;
+}
+
+.log .max{
+    color: #d9534f;
+}
+

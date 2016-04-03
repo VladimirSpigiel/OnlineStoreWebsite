@@ -1,0 +1,103 @@
+sru_core_homepage:
+    pattern:  /
+    defaults: { _controller: SruCoreBundle:FrontOffice:index }
+
+sru_core_admin:
+    pattern:  /admin
+    defaults: { _controller: SruCoreBundle:BackOffice:index }
+
+authentication:
+    pattern:  /authentification
+    defaults: { _controller: SruCoreBundle:Registration:register }
+
+SruCoreBundle_order:
+        resource: "@SruCoreBundle/Resources/config/routing/orderuser.yml"
+        prefix:   /commande
+
+SruCoreBundle_logger:
+        resource: "@SruCoreBundle/Resources/config/routing/logger.yml"
+        prefix:   /admin/logger
+
+SruCoreBundle_admin_search:
+        resource: "@SruCoreBundle/Resources/config/routing/search.yml"
+        prefix:   /admin/search
+
+SruCoreBundle_admin_elements:
+       pattern:  /admin/elements/{nbr}
+       defaults: { _controller: SruCoreBundle:BackOffice:editElementsPerPage, nbr : 10 }
+
+SruCoreBundle_admin_import:
+        resource: "@SruCoreBundle/Resources/config/routing/import.yml"
+        prefix:   /admin/import
+
+#---------------------------------------------------
+# ---------------------- CRUD ----------------------
+
+SruCoreBundle_admin_brand:
+        resource: "@SruCoreBundle/Resources/config/routing/brand.yml"
+        prefix:   /admin/brand
+
+SruCoreBundle_admin_category:
+        resource: "@SruCoreBundle/Resources/config/routing/category.yml"
+        prefix:   /admin/category
+
+SruCoreBundle_admin_feature:
+        resource: "@SruCoreBundle/Resources/config/routing/feature.yml"
+        prefix:   /admin/feature
+
+SruCoreBundle_admin_order:
+        resource: "@SruCoreBundle/Resources/config/routing/orderuseradmin.yml"
+        prefix:   /admin/order
+
+SruCoreBundle_admin_picture:
+        resource: "@SruCoreBundle/Resources/config/routing/picture.yml"
+        prefix:   /admin/picture
+
+SruCoreBundle_admin_product:
+        resource: "@SruCoreBundle/Resources/config/routing/product.yml"
+        prefix:   /admin/product
+
+SruCoreBundle_admin_promotion:
+        resource: "@SruCoreBundle/Resources/config/routing/promotion.yml"
+        prefix:   /admin/promotion
+
+SruCoreBundle_admin_provider:
+        resource: "@SruCoreBundle/Resources/config/routing/provider.yml"
+        prefix:   /admin/provider
+
+SruCoreBundle_admin_order_info:
+        resource: "@SruCoreBundle/Resources/config/routing/orderuserinfo.yml"
+        prefix:   /admin/order/info
+
+SruCoreBundle_admin_provider_info:
+        resource: "@SruCoreBundle/Resources/config/routing/providerinfo.yml"
+        prefix:   /admin/provider/info
+
+SruCoreBundle_admin_shipmentZone:
+        resource: "@SruCoreBundle/Resources/config/routing/shipmentzone.yml"
+        prefix:   /admin/shipmentZone
+
+SruCoreBundle_admin_transport:
+        resource: "@SruCoreBundle/Resources/config/routing/transport.yml"
+        prefix:   /admin/transport
+
+SruCoreBundle_profil_informations:
+        resource: "@SruCoreBundle/Resources/config/routing/userinfo.yml"
+        prefix:   /profil/informations
+
+SruCoreBundle_admin_user:
+        resource: "@SruCoreBundle/Resources/config/routing/user.yml"
+        prefix:   /admin/user
+
+SruCoreBundle_admin_tva:
+        resource: "@SruCoreBundle/Resources/config/routing/tva.yml"
+        prefix:   /admin/tva
+
+SruCoreBundle_admin_cart:
+        resource: "@SruCoreBundle/Resources/config/routing/cart.yml"
+        prefix:   /panier
+
+SruCoreBundle_admin_profil:
+        resource: "@SruCoreBundle/Resources/config/routing/profil.yml"
+        prefix:   /admin/profil
+

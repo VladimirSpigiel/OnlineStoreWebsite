@@ -1,0 +1,20 @@
+<div class="anim-bg hide-for-small" style="background-color: #074E68;margin-top: -3px;">
+    <div class="row">
+        <br><br>
+        <ul class="bxslider" style="margin: 0;">
+
+            {% for promotion in slideshow.promotion %}
+                {% if promotion.picture %}
+                    <li><img src="{{ asset('bundles/srucore/images/') ~ promotion.picture.name  }}" title="{{ promotion.picture.caption }}" /></li>
+                {% endif %}
+            {% endfor %}
+
+            {% for picture in  slideshow.picture %}
+
+                <li><img src="{{ asset('bundles/srucore/images/') ~ picture.name  }}" title="{{ picture.caption }}" /></li>
+
+            {% endfor %}
+
+        </ul>
+    </div>
+</div>

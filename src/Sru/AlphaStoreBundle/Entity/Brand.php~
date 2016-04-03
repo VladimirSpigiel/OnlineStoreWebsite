@@ -1,0 +1,21 @@
+<?php
+
+namespace Sru\AlphaStoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Sru\CoreBundle\Entity\Brand as Base;
+
+/**
+ * Brand
+ *
+ * @ORM\Table(name="Brand", indexes={@ORM\Index(name="FKBrand619355", columns={"picture"})})
+ * @ORM\Entity
+ * @UniqueEntity(fields="name", message="Ce nom est déjà utilisé.")
+ * @ORM\Entity(repositoryClass="Sru\CoreBundle\Entity\BrandRepository")
+ */
+class Brand extends Base{
+
+
+}

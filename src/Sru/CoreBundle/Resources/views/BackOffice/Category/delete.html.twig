@@ -1,0 +1,15 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+<h1>Suppression de la catégorie : {{ entity.name }}</h1>
+<hr>
+<form method="post" action="{{ path('admin_category_delete', {id : entity.id}) }}">
+    {% if entity.parentCategory != null %}
+     <button class="btn btn-warning" value="delete_move" name="action"><span class="glyphicon glyphicon-random"></span> &nbsp;Supprimer et déplacer les produits vers la catégorie parente : " {{ entity.parentCategory.name }} "</button><br><br>
+    {% endif %}
+    <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> &nbsp;Supprimer la catégorie et ses produits</button>
+</form>
+
+
+{% endblock %}

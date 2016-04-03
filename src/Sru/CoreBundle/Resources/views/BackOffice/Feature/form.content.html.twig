@@ -1,0 +1,30 @@
+
+        <div class="well col-sm-8 drop">
+
+
+            <div class="form-group">
+                {% if form_errors(form.name) %}
+                <div class="alert alert-danger">
+                    {{ form_errors(form.name) }}
+                </div>
+                {% endif %}
+                {{ form_label(form.name, 'Nom') }}
+                {{ form_widget(form.name, {'attr' : {'class' : 'form-control'} }) }}
+
+            </div>
+
+
+            <div class="form-group">
+                {% if form_errors(form.value) %}
+                    <div class="alert alert-danger">
+                        {{ form_errors(form.value) }}
+                    </div>
+                {% endif %}
+                {{ form_label(form.value, 'Valeur') }}<br>
+                {{ form_widget(form.value, {'attr' : {'class' : 'form-control'} }) }}
+
+            </div>
+
+            <br>
+
+        </div>

@@ -1,0 +1,203 @@
+{% macro recursiveCategoryImage(category) %}
+    {% if category.promotion|length > 0 %}
+        {% if category.promotion|last.enabled == true and  category.promotion|last.public == true %}
+            <img class="promo" style="position: absolute; height: 100px;" src="{{ asset('bundles/srucore/images/promo.png') }}">
+        {% endif %}
+    {% endif %}
+    {% if category.parentCategory %}
+        {{ _self.recursiveCategoryImage(category.parentCategory) }}
+    {% endif %}
+
+{% endmacro %}
+
+     {% macro recursiveCategoryPrice(category, product) %}
+         {% if category.promotion|length > 0 %}
+             {% if category.promotion|last.enabled == true and  category.promotion|last.public == true %}
+                 <s><b> {{ product.priceTtc|number_format(2,",") }} €</b></s>
+             {% endif %}
+         {% endif %}
+         {% if category.parentCategory %}
+             {{ _self.recursiveCategoryPrice(category.parentCategory,product) }}
+         {% endif %}
+
+     {% endmacro %}
+
+     {% macro recursiveCategoryRealPrice(category, product, promo) %}
+         {% if category.promotion|length > 0 %}
+
+             {% if category.promotion|last.enabled == true and  category.promotion|last.public == true %}
+                 {% set promo = true %}
+                 {% if product.stock > 0 %}
+                     <a href="{{ path('cart_add', {id: product.id, idPromotion: category.promotion|last.id}) }}" class="button small">
+                         <i class="fi-shopping-cart"></i>&nbsp;
+                         {{ (product.priceTtc - (product.priceTtc*category.promotion|last.reduction)/100)|number_format(2,",") }} €
+                     </a>
+
+                  {% else %}
+
+                      <a href="#" class="button small alert">
+                          Approvisionnement
+                      </a>
+
+                  {% endif %}
+
+             {% endif %}
+         {% endif %}
+
+
+         {% if category.parentCategory %}
+
+             {{ _self.recursiveCategoryRealPrice(category.parentCategory,product,promo) }}
+         {% else %}
+
+             {% if promo == false  %}
+
+                 {% if product.stock > 0 %}
+                 <!-- Sinon ne pas mettre la promo dans la route  -->
+                 <a href="{{ path('cart_add', {id: product.id}) }}" class="button small">
+                     <i class="fi-shopping-cart"></i>&nbsp;
+                     {{ product.priceTtc|number_format(2,",") }} €
+                 </a>
+
+                 {% else %}
+
+                     <a href="#" class="button small alert">
+                         Approvisionnement
+                     </a>
+
+                 {% endif %}
+
+             {% else %}
+
+
+
+             {% endif %}
+         {% endif %}
+
+
+
+     {% endmacro %}
+
+{% if page == 1 %}
+<div class="page" page="{{ page }}">
+{% else %}
+    <div class="page" page="{{ page }}" style="display: none;">
+{% endif %}
+
+
+{% for product in products %}
+
+
+    {% set p = null %}
+    {% set promo = false %}
+
+    {% set prix = product.priceTtc %}
+
+    <!-- Calcul de réductions -->
+    {% if product.promotion|length > 0 %}
+        {% for promotion in product.promotion %}
+            {% if promotion.enabled == true and promotion.public == true %}
+                {% set prix = prix - (prix * product.promotion|last.reduction)/100 %}
+
+            {% endif %}
+
+        {% endfor %}
+    {% endif %}
+
+    {% for picture in product.picture %}
+        {% if picture.defaultPicture %}
+            {% set p = picture %}
+        {% endif %}
+    {% endfor %}
+
+    <a href="{{ path('product_show', {id : product.id}) }}" style="text-decoration: none;color: #000;">
+
+            <div class="small-6 medium-4 large-3 columns text-center">
+
+
+
+
+                <!-- Affichage bandeau de promo ou non -->
+                <div style="position: relative;">
+                    {% if product.promotion|length > 0 %}
+                        {% for promotion in product.promotion %}
+                            {% if promotion.enabled == true and promotion.public == true %}
+                                <img class="promo" style="position: absolute; height: 100px;" src="{{ asset('bundles/srucore/images/promo.png') }}">
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% for category in product.category %}
+                        {{ _self.recursiveCategoryImage(category) }}
+                    {% endfor %}
+
+
+                    <img class="th promo" src="{{ asset('bundles/srucore/images/' ~ p.name) }}">
+
+                </div>
+
+                <div class="panel">
+                    <div style="max-height: 10px;">
+                        {% if product.name|length > 50 %}
+                            {{ product.name[:50] ~ '...' }}
+                        {% else %}
+                            {{ product.name }}
+                        {% endif %}
+                        <br>
+                        <!-- Affichage prix barré -->
+                        {% if product.promotion|length > 0 %}
+                            {% for promotion in product.promotion %}
+                                {% if promotion.enabled == true and promotion.public == true %}
+                                    <s><b> {{ product.priceTtc|number_format(2,",") }} €</b></s>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+
+                        {% for category in product.category %}
+                            {{ _self.recursiveCategoryPrice(category, product) }}
+                        {% endfor %}
+                    </div>
+                    <br>
+                    <br><br><br>
+
+                    {% if product.promotion|length > 0 %}
+                        <!-- Si promo afficher bouton avec dans la route la promo-->
+                        {% for promotion in product.promotion if promo == false %}
+                            {% if promotion.enabled == true and promotion.public == true %}
+                                {% if product.stock > 0 %}
+                                    <a href="{{ path('cart_add', {id: product.id, idPromotion: product.promotion|last.id}) }}" class="button small">
+                                        <i class="fi-shopping-cart"></i>&nbsp;
+                                        {{ prix|number_format(2,",") }} €
+                                    </a>
+                                {% else %}
+                                    <a href="#" class="button small alert">
+                                       Approvisionnement
+                                    </a>
+                                {% endif %}
+                                {% set promo = true %}
+
+                            {% endif %}
+
+
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if promo == false %}
+                        {% for category in product.category %}
+
+                            {{ _self.recursiveCategoryRealPrice(category, product, promo) }}
+                        {% endfor %}
+                    {% endif %}
+
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+    </a>
+{% endfor %}
+</div>

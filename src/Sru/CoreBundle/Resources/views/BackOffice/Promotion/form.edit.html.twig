@@ -1,0 +1,12 @@
+<form method="post" class="text-left" role="form" action="{{ path('admin_promotion_update', {id :entity.id}) }}" {{ form_enctype(form) }}>
+
+
+    <button class="btn btn-warning">
+        <span class="glyphicon glyphicon-ok"></span> &nbsp;
+        Modifier la promotion</button>
+
+    <br><br>
+
+    {% include "SruCoreBundle:BackOffice/Promotion:form.content.html.twig" %}
+
+</form>

@@ -1,0 +1,30 @@
+admin_provider_info:
+    pattern:  /
+    defaults: { _controller: "SruCoreBundle:ProviderInfo:index" }
+
+admin_provider_info_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:ProviderInfo:show" }
+
+admin_provider_info_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:ProviderInfo:new" }
+
+admin_provider_info_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:ProviderInfo:create" }
+    requirements: { _method: post }
+
+admin_provider_info_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:ProviderInfo:edit" }
+
+admin_provider_info_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:ProviderInfo:update" }
+    requirements: { _method: post|put }
+
+admin_provider_info_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:ProviderInfo:delete" }
+    requirements: { _method: post|delete }

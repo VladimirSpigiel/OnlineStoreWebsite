@@ -1,0 +1,70 @@
+{% extends "SruCoreBundle:BackOffice:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Consultation des logs depuis la base de données</h1>
+    <hr>
+
+   <br>
+    <h3><span class="glyphicon glyphicon-fire"></span> {{ errors|length }} Erreurs</h3>
+    <div class="table-responsive">
+        <table class="table table-bordered text-left table-striped table-hover">
+            <thead class="bg-primary">
+            <tr>
+                <th>Date</th>
+                <th>Message</th>
+                <th>Cause</th>
+                <th>Par</th>
+                <th>Depuis</th>
+                <th>Lien</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for error in errors %}
+                    <tr>
+                        <td>{{ error.thrownAt|date('H:i:s d-m-Y') }}</td>
+                        <td>{{ error.message }}</td>
+                        <td>{{ error.reason }}</td>
+                        <td>{{ error.thrownBy }}</td>
+                        <td>{{ error.thrownFrom }}</td>
+                        <td>{{ error.href }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <br>
+        <hr>
+    <br>
+    
+    <h3><span class="glyphicon glyphicon-warning-sign"></span> {{ informations|length }} informations</h3>
+    <div class="table-responsive">
+        <table class="table table-bordered text-left table-striped table-hover">
+            <thead class="bg-primary">
+                <tr>
+                    <th>Date</th>
+                    <th>Message</th>
+
+                    <th>Par</th>
+                    <th>Depuis</th>
+                    <th>Lien</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for information in informations %}
+                <tr>
+                    <td>{{ information.thrownAt|date('H:i:s d-m-Y') }}</td>
+                    <td>{{ information.message }}</td>
+
+                    <td>{{ information.thrownBy }}</td>
+                    <td>{{ information.thrownFrom }}</td>
+                    <td>{{ information.href }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

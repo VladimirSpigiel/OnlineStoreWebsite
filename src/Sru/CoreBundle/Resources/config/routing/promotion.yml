@@ -1,0 +1,41 @@
+admin_promotion:
+     pattern:  /page/{page}/filter/{field}.{orderby}/options/{fieldO}{criteria}
+     defaults: { _controller: "SruCoreBundle:Promotion:index", page : 1, field: code, orderby : asc, fieldO : null, criteria : null }
+
+admin_promotion_options:
+    pattern:  /options
+    defaults: { _controller: "SruCoreBundle:Promotion:options" }
+
+admin_promotion_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:Promotion:show" }
+
+admin_promotion_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:Promotion:new" }
+
+admin_promotion_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:Promotion:create" }
+    requirements: { _method: post }
+
+admin_promotion_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:Promotion:edit" }
+
+admin_promotion_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:Promotion:update" }
+    requirements: { _method: post|put }
+
+admin_promotion_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:Promotion:delete" }
+
+admin_promotion_state:
+    pattern:  /{id}/state
+    defaults: { _controller: "SruCoreBundle:Promotion:changeState" }
+
+admin_promotion_public:
+    pattern:  /{id}/public
+    defaults: { _controller: "SruCoreBundle:Promotion:changePublic" }

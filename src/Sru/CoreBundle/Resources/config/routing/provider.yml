@@ -1,0 +1,33 @@
+admin_provider:
+    pattern:  /page/{page}/filter/{field}.{orderby}/options/{fieldO}{criteria}
+    defaults: { _controller: "SruCoreBundle:Provider:index", page : 1, field: name, orderby : asc, fieldO : null, criteria : null }
+
+admin_provider_options:
+    pattern:  /options
+    defaults: { _controller: "SruCoreBundle:Provider:options" }
+
+admin_provider_show:
+    pattern:  /{id}/show/page/{page}/filter/{field}.{orderby}/options/{fieldO}{criteria}
+    defaults: { _controller: "SruCoreBundle:Provider:show", page : 1, field: name, orderby : asc, fieldO : null, criteria : null }
+
+admin_provider_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:Provider:new" }
+
+admin_provider_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:Provider:create" }
+    requirements: { _method: post }
+
+admin_provider_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:Provider:edit" }
+
+admin_provider_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:Provider:update" }
+    requirements: { _method: post|put }
+
+admin_provider_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:Provider:delete" }

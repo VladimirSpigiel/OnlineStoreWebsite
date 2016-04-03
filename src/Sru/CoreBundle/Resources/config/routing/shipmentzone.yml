@@ -1,0 +1,33 @@
+admin_shipmentZone:
+    pattern:  /page/{page}/filter/{field}.{orderby}/options/{fieldO}{criteria}
+    defaults: { _controller: "SruCoreBundle:ShipmentZone:index", page : 1, field: zone, orderby : asc, fieldO : null, criteria : null }
+
+admin_shipmentZone_options:
+    pattern:  /options
+    defaults: { _controller: "SruCoreBundle:ShipmentZone:options" }
+
+admin_shipmentZone_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:ShipmentZone:show" }
+
+admin_shipmentZone_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:ShipmentZone:new" }
+
+admin_shipmentZone_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:ShipmentZone:create" }
+    requirements: { _method: post }
+
+admin_shipmentZone_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:ShipmentZone:edit" }
+
+admin_shipmentZone_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:ShipmentZone:update" }
+    requirements: { _method: post|put }
+
+admin_shipmentZone_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:ShipmentZone:delete" }

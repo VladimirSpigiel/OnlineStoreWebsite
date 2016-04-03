@@ -1,0 +1,40 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+
+    <div class="large-6 columns">
+        <form class="form-signin" role="form" action="{{ path("fos_user_security_check") }}" method="post">
+            <h2>DÉJÀ ENREGISTRÉ ?</h2>
+            <hr>
+            {% if error %}
+                 <div data-alert class="alert-box alert text-center">{{ error|trans }}
+                    <a href="#" class="close">&times;</a>
+                    </div>
+
+            {% endif %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            <div class="form-group">
+                <label for="username">Email</label>
+                <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" class="form-control" id="password" name="_password" required="required" />
+            </div>
+
+            <label>Se souvenir de moi</label>
+            <div class="switch">
+
+                <input id="remember_me" type="checkbox" name="_remember_me" value="on">
+                <label for="remember_me"></label>
+            </div>
+
+
+            <input class="button" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+
+
+            <a href="{{ path('fos_user_resetting_request') }}" class="button secondary">Mot de passe oublié</a>
+
+
+        </form>
+    </div>

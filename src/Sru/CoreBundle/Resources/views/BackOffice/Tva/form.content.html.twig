@@ -1,0 +1,13 @@
+<div class="well col-sm-10">
+    <div class="form-group">
+        {% if form_errors(form.taux) %}
+            <div class="alert alert-danger">
+                {{ form_errors(form.taux) }}
+            </div>
+        {% endif %}
+        {{ form_label(form.taux, 'Taux') }}
+        {{ form_widget(form.taux, {'attr' : {'class' : 'form-control'} }) }}
+
+    </div>
+</div>
+

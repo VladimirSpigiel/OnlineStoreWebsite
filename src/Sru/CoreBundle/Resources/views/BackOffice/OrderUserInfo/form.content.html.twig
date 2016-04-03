@@ -1,0 +1,87 @@
+
+        <div class="well col-sm-5 drop">
+
+
+            <div class="form-group">
+                {% if form_errors(form.state) %}
+                    <div class="alert alert-danger">
+                        {{ form_errors(form.state) }}
+                    </div>
+                {% endif %}
+                {{ form_label(form.state, 'Etat') }}
+                {{ form_widget(form.state, {'attr' : {'class' : 'form-control'} }) }}
+
+            </div>
+            <div class="form-group">
+                {% if form_errors(form.default) %}
+                    <div class="alert alert-danger">
+                        {{ form_errors(form.default) }}
+                    </div>
+                {% endif %}
+                {{ form_label(form.default, 'Etat par défault') }}
+                <br>
+                {{ form_widget(form.default, {'attr' : {'class' : 'form-control default'} }) }}
+
+            </div>
+
+            <hr>
+            <h3>Configuration de l'email</h3>
+            <div class="form-group">
+                {% if form_errors(form.subject) %}
+                    <div class="alert alert-danger">
+                        {{ form_errors(form.subject) }}
+                    </div>
+                {% endif %}
+                {{ form_label(form.subject, 'Sujet') }}
+                {{ form_widget(form.subject, {'attr' : {'class' : 'form-control'} }) }}
+
+            </div>
+            <br>
+            <div class="form-group">
+                {% if form_errors(form.body) %}
+                    <div class="alert alert-danger">
+                        {{ form_errors(form.body) }}
+                    </div>
+                {% endif %}
+                {{ form_label(form.body, 'Contenu') }}
+                {{ form_widget(form.body, {'attr' : {'class' : 'form-control body','style':'height:150px;'} }) }}
+                <br>
+                <div class="well">
+                    <b>Informations sur les constantes :</b>
+                    <ul>
+                        <li>/NUM/ <span class="glyphicon glyphicon-arrow-right"></span> : Numéro de commande</li>
+                        <li>/PRODUCT_LIST/ <span class="glyphicon glyphicon-arrow-right"></span> : Produits dans la commande</li>
+                        <li>/NAME/ <span class="glyphicon glyphicon-arrow-right"></span> : Nom, prénom du client</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label>Aperçu</label>
+                <div class="preview" >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+<script>
+
+
+    $(function(){
+        $('.default').bootstrapSwitch();
+
+        $('.preview').html($(".body").val());
+
+        $('.body').keyup(function(e){
+            $('.preview').html($(this).val());
+        })
+
+
+
+
+    })
+</script>

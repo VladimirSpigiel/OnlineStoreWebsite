@@ -1,0 +1,33 @@
+admin_transport:
+    pattern:  /page/{page}/filter/{field}.{orderby}/options/{fieldO}{criteria}
+    defaults: { _controller: "SruCoreBundle:Transport:index", page : 1, field: name, orderby : asc, fieldO : null, criteria : null }
+
+admin_transport_options:
+    pattern:  /options
+    defaults: { _controller: "SruCoreBundle:Transport:options" }
+
+admin_transport_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SruCoreBundle:Transport:show" }
+
+admin_transport_new:
+    pattern:  /new
+    defaults: { _controller: "SruCoreBundle:Transport:new" }
+
+admin_transport_create:
+    pattern:  /create
+    defaults: { _controller: "SruCoreBundle:Transport:create" }
+    requirements: { _method: post }
+
+admin_transport_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SruCoreBundle:Transport:edit" }
+
+admin_transport_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SruCoreBundle:Transport:update" }
+    requirements: { _method: post|put }
+
+admin_transport_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SruCoreBundle:Transport:delete" }
